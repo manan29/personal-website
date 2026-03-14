@@ -27,7 +27,7 @@ export function Navigation() {
           className="font-bold"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--text)' }}
         >
-          Manan Shah
+          Manan
         </Link>
 
         <div className="flex items-center gap-8">
