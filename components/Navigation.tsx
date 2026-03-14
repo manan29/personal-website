@@ -21,7 +21,7 @@ export function Navigation() {
       backdropFilter: 'blur(10px)',
       borderBottom: '1px solid var(--border)'
     }}>
-      <div className="max-w-5xl mx-auto px-6 h-full flex items-center justify-between">
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '0 24px', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link
           href="/"
           className="font-bold"

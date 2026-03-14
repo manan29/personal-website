@@ -28,7 +28,8 @@ export default function HiringPostPage({ params }: { params: { slug: string } })
   };
 
   return (
-    <main style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <main>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
       {/* Back link */}
       <Link
         href="/hiring"
@@ -115,6 +116,7 @@ export default function HiringPostPage({ params }: { params: { slug: string } })
       >
         {renderBody(post.body)}
       </div>
+          </div>
     </main>
   );
 }

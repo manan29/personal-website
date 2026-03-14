@@ -28,7 +28,8 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <main style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <main>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
       {/* Back link */}
       <Link
         href="/playbooks"
@@ -115,6 +116,7 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
       >
         {renderBody(playbook.body)}
       </div>
+          </div>
     </main>
   );
 }

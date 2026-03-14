@@ -5,7 +5,8 @@ export default function HiringPage() {
   const hiringPosts = getAllHiring();
 
   return (
-    <main style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <main>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
       <h1
         style={{
           fontFamily: 'var(--font-ui)',
@@ -90,6 +91,7 @@ export default function HiringPage() {
           </Link>
         ))}
       </div>
+          </div>
     </main>
   );
 }

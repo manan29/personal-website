@@ -5,7 +5,8 @@ export default function BooksPage() {
   const books = getAllBooks();
 
   return (
-    <main style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <main>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
       <h1
         style={{
           fontFamily: 'var(--font-ui)',
@@ -18,6 +19,7 @@ export default function BooksPage() {
       </h1>
 
       <BooksClient books={books} />
+          </div>
     </main>
   );
 }

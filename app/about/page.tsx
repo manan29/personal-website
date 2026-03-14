@@ -7,7 +7,8 @@ export default function AboutPage() {
   ];
 
   return (
-    <main style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <main>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
       <h1
         style={{
           fontFamily: 'var(--font-ui)',
@@ -149,6 +150,7 @@ export default function AboutPage() {
           LinkedIn
         </a>
       </section>
+          </div>
     </main>
   );
 }
