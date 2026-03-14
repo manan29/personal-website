@@ -1,65 +1,358 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { getAllDeals, getAllPlaybooks, getAllBooks } from '@/lib/content';
 
-export default function Home() {
+export default function HomePage() {
+  const deals = getAllDeals().slice(0, 3);
+  const playbooks = getAllPlaybooks().slice(0, 2);
+  const books = getAllBooks().slice(0, 3);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+      {/* Hero Section */}
+      <section style={{ marginBottom: '60px' }}>
+        {/* Avatar */}
+        <div
+          style={{
+            width: '72px',
+            height: '72px',
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #C2550A, #F97316)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '16px',
+          }}
+        >
+          <span style={{ color: 'white', fontSize: '32px', fontWeight: '700' }}>M</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Name */}
+        <h1
+          style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '20px',
+            fontWeight: '700',
+            marginBottom: '4px',
+          }}
+        >
+          Manan Shah
+        </h1>
+
+        {/* Tagline */}
+        <p
+          style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '11.5px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            color: 'var(--accent)',
+            marginBottom: '24px',
+          }}
+        >
+          Sales · GTM · Bengaluru
+        </p>
+
+        {/* One-liner */}
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '16.5px',
+            lineHeight: '1.85',
+            marginBottom: '16px',
+          }}
+        >
+          I think strategically, execute relentlessly — and write down what I learn.
+        </p>
+
+        {/* Bio */}
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '15.5px',
+            color: 'var(--muted)',
+            lineHeight: '1.7',
+            marginBottom: '16px',
+          }}
+        >
+          Multiple revenue roles across sales and GTM at Signeasy. This site is where I put the
+          patterns, playbooks, and lessons that don't fit in a LinkedIn post.
+        </p>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/manansachdeva/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-hover"
+          style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '13px',
+            color: 'var(--muted)',
+            textDecoration: 'underline',
+          }}
+        >
+          LinkedIn
+        </a>
+      </section>
+
+      {/* Recent Deal Learnings */}
+      <section style={{ marginBottom: '48px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '16px',
+          }}
+        >
+          <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: '600' }}>
+            Recent Deal Learnings
+          </h2>
+          <Link
+            href="/deal-learnings"
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '13px',
+              color: 'var(--muted)',
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            All entries →
+          </Link>
         </div>
-      </main>
-    </div>
+
+        <div style={{ borderTop: '1px solid var(--border)' }}>
+          {deals.map((deal) => (
+            <div
+              key={deal.slug}
+              style={{
+                padding: '12px 0',
+                borderBottom: '1px solid var(--border)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                flexWrap: 'wrap',
+              }}
+            >
+              {/* Outcome badge */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '10px',
+                  fontWeight: '600',
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  background: deal.outcome === 'win' ? '#F0FDF4' : '#FFF1F1',
+                  color: deal.outcome === 'win' ? '#166534' : '#991B1B',
+                }}
+              >
+                {deal.outcome}
+              </span>
+
+              {/* Tag */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '10px',
+                  fontWeight: '500',
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  border: '1px solid var(--border)',
+                  color: 'var(--muted)',
+                }}
+              >
+                {deal.tag}
+              </span>
+
+              {/* Title */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '14.5px',
+                  flex: 1,
+                }}
+              >
+                {deal.title}
+              </span>
+
+              {/* Date */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '12px',
+                  color: 'var(--faint)',
+                }}
+              >
+                {deal.date}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Playbooks */}
+      <section style={{ marginBottom: '48px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '16px',
+          }}
+        >
+          <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: '600' }}>
+            Playbooks
+          </h2>
+          <Link
+            href="/playbooks"
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '13px',
+              color: 'var(--muted)',
+            }}
+          >
+            All playbooks →
+          </Link>
+        </div>
+
+        <div style={{ borderTop: '1px solid var(--border)' }}>
+          {playbooks.map((playbook) => (
+            <Link
+              key={playbook.slug}
+              href={`/playbooks/${playbook.slug}`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 0',
+                borderBottom: '1px solid var(--border)',
+                textDecoration: 'none',
+                color: 'inherit',
+                flexWrap: 'wrap',
+              }}
+            >
+              {/* Tag */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '10px',
+                  fontWeight: '500',
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  border: '1px solid var(--border)',
+                  color: 'var(--muted)',
+                }}
+              >
+                {playbook.tag}
+              </span>
+
+              {/* Title */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '14.5px',
+                  flex: 1,
+                }}
+              >
+                {playbook.title}
+              </span>
+
+              {/* Date */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '12px',
+                  color: 'var(--faint)',
+                }}
+              >
+                {playbook.date}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Books */}
+      <section>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '16px',
+          }}
+        >
+          <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: '600' }}>
+            Books
+          </h2>
+          <Link
+            href="/books"
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '13px',
+              color: 'var(--muted)',
+            }}
+          >
+            Full list →
+          </Link>
+        </div>
+
+        <div style={{ borderTop: '1px solid var(--border)' }}>
+          {books.map((book) => (
+            <div
+              key={book.slug}
+              style={{
+                padding: '12px 0',
+                borderBottom: '1px solid var(--border)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                flexWrap: 'wrap',
+              }}
+            >
+              {/* Tag */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '10px',
+                  fontWeight: '500',
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  border: '1px solid var(--border)',
+                  color: 'var(--muted)',
+                }}
+              >
+                {book.tag}
+              </span>
+
+              {/* Title */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '14.5px',
+                  flex: 1,
+                }}
+              >
+                {book.title}
+              </span>
+
+              {/* Author */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '12px',
+                  color: 'var(--faint)',
+                }}
+              >
+                {book.author}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
