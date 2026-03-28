@@ -39,6 +39,16 @@ export interface Book {
   why: string;
 }
 
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  tag: string;
+  summary: string;
+  body: string;
+  category: string;
+}
+
 function getContentByType<T>(type: 'deals' | 'playbooks' | 'hiring' | 'books'): T[] {
   const typeDirectory = path.join(contentDirectory, type);
 
@@ -114,4 +124,51 @@ export function getPlaybookBySlug(slug: string): Playbook | null {
 export function getHiringBySlug(slug: string): HiringPost | null {
   const hiring = getAllHiring();
   return hiring.find(h => h.slug === slug) || null;
+}
+
+export function getBlogPostsByCategory(category: string): BlogPost[] {
+  const categoryDirectory = path.join(contentDirectory, 'blog', category);
+
+  if (!fs.existsSync(categoryDirectory)) {
+    return [];
+  }
+
+  const fileNames = fs.readdirSync(categoryDirectory);
+  const posts = fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map(fileName => {
+      const slug = fileName.replace(/\.md$/, '');
+      const fullPath = path.join(categoryDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents);
+
+      return {
+        slug,
+        title: data.title,
+        date: data.date,
+        tag: data.tag,
+        summary: data.summary,
+        body: content.trim(),
+        category,
+      };
+    });
+
+  return posts;
+}
+
+export function getBlogPostBySlug(category: string, slug: string): BlogPost | null {
+  const posts = getBlogPostsByCategory(category);
+  return posts.find(p => p.slug === slug) || null;
+}
+
+export function getAllBlogPosts(): BlogPost[] {
+  const categories = ['large-deal-learnings', 'hiring-top-talent', 'sales-systems'];
+  const allPosts: BlogPost[] = [];
+
+  categories.forEach(category => {
+    const posts = getBlogPostsByCategory(category);
+    allPosts.push(...posts);
+  });
+
+  return allPosts;
 }

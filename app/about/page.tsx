@@ -20,60 +20,6 @@ export default function AboutPage() {
         About
       </h1>
 
-      {/* Bio Paragraphs */}
-      <div style={{ marginBottom: '48px' }}>
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '16.5px',
-            lineHeight: '1.9',
-            marginBottom: '24px',
-          }}
-        >
-          I've spent the last few years in sales and go-to-market roles at Signeasy, working mostly
-          with mid-market and enterprise customers. I like the puzzle of revenue work — figuring out
-          why a deal stalls, how to qualify harder, when to walk away.
-        </p>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '16.5px',
-            lineHeight: '1.9',
-            marginBottom: '24px',
-          }}
-        >
-          Most of what I've learned came from doing it wrong first. Chasing unqualified pipeline.
-          Building proposals for people who couldn't buy. Assuming interest meant intent. This site
-          is where I write down the corrections.
-        </p>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '16.5px',
-            lineHeight: '1.9',
-            marginBottom: '24px',
-          }}
-        >
-          I believe in process over intuition, specificity over generalization, and writing things
-          down so they compound. Sales is pattern recognition. The faster you name the patterns, the
-          faster you improve.
-        </p>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '16.5px',
-            lineHeight: '1.9',
-            marginBottom: '24px',
-          }}
-        >
-          If you're in a similar role and something here is useful, that's the point. If you want to
-          discuss a specific problem or approach, reach out on LinkedIn.
-        </p>
-      </div>
-
       {/* Currently Section */}
       <section style={{ marginBottom: '48px' }}>
         <h2

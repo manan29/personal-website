@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { getAllDeals, getAllPlaybooks, getAllBooks } from '@/lib/content';
+import { getBlogPostsByCategory, getAllPlaybooks, getAllBooks } from '@/lib/content';
 import { Avatar } from '@/components/Avatar';
 
 export default function HomePage() {
-  const deals = getAllDeals().slice(0, 3);
+  const dealPosts = getBlogPostsByCategory('large-deal-learnings').slice(0, 3);
   const playbooks = getAllPlaybooks().slice(0, 2);
   const books = getAllBooks().slice(0, 3);
 
@@ -114,7 +114,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* Recent Deal Learnings */}
+        {/* Large Deal Learnings */}
         <section style={{ marginBottom: '48px' }}>
           <div
             style={{
@@ -125,10 +125,10 @@ export default function HomePage() {
             }}
           >
             <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: '600' }}>
-              Recent Deal Learnings
+              Large Deal Learnings
             </h2>
             <Link
-              href="/deal-learnings"
+              href="/blog/large-deal-learnings"
               style={{
                 fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
@@ -140,34 +140,21 @@ export default function HomePage() {
           </div>
 
           <div style={{ borderTop: '1px solid var(--border)' }}>
-            {deals.map((deal) => (
-              <div
-                key={deal.slug}
+            {dealPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.category}/${post.slug}`}
                 style={{
-                  padding: '12px 0',
-                  borderBottom: '1px solid var(--border)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
+                  padding: '12px 0',
+                  borderBottom: '1px solid var(--border)',
+                  textDecoration: 'none',
+                  color: 'inherit',
                   flexWrap: 'wrap',
                 }}
               >
-                {/* Outcome badge */}
-                <span
-                  style={{
-                    fontFamily: 'var(--font-ui)',
-                    fontSize: '10px',
-                    fontWeight: '600',
-                    padding: '2px 8px',
-                    borderRadius: '4px',
-                    textTransform: 'uppercase',
-                    background: deal.outcome === 'win' ? '#F0FDF4' : '#FFF1F1',
-                    color: deal.outcome === 'win' ? '#166534' : '#991B1B',
-                  }}
-                >
-                  {deal.outcome}
-                </span>
-
                 {/* Tag */}
                 <span
                   style={{
@@ -181,7 +168,7 @@ export default function HomePage() {
                     color: 'var(--muted)',
                   }}
                 >
-                  {deal.tag}
+                  {post.tag}
                 </span>
 
                 {/* Title */}
@@ -192,7 +179,7 @@ export default function HomePage() {
                     flex: 1,
                   }}
                 >
-                  {deal.title}
+                  {post.title}
                 </span>
 
                 {/* Date */}
@@ -203,9 +190,9 @@ export default function HomePage() {
                     color: 'var(--faint)',
                   }}
                 >
-                  {deal.date}
+                  {post.date}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
