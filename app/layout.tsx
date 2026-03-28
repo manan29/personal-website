@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Inter } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/Navigation";
+import { Sidebar } from "@/components/Sidebar";
 
 const lato = Lato({
   weight: ['300', '400', '700'],
@@ -28,8 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable} ${inter.variable}`}>
       <body className="antialiased">
-        <Navigation />
-        {children}
+        <Sidebar />
+        <div className="main-content">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -58,3 +58,17 @@ body {
   color: #C2550A;
   font-weight: 600;
 }
+
+/* Layout */
+.main-content {
+  margin-left: 220px;
+  padding: 52px 52px 100px;
+  max-width: 940px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 24px 20px;
+  }
+}

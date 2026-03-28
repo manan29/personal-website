@@ -50,7 +50,15 @@ export interface BlogPost {
   hero?: string;
 }
 
-function getContentByType<T>(type: 'deals' | 'playbooks' | 'hiring' | 'books'): T[] {
+export interface Note {
+  slug: string;
+  title: string;
+  date: string;
+  tag: string;
+  body: string;
+}
+
+function getContentByType<T>(type: 'deals' | 'playbooks' | 'hiring' | 'books' | 'notes'): T[] {
   const typeDirectory = path.join(contentDirectory, type);
 
   if (!fs.existsSync(typeDirectory)) {
@@ -173,4 +181,13 @@ export function getAllBlogPosts(): BlogPost[] {
   });
 
   return allPosts;
+}
+
+export function getAllNotes(): Note[] {
+  return getContentByType<Note>('notes');
+}
+
+export function getNoteBySlug(slug: string): Note | null {
+  const notes = getAllNotes();
+  return notes.find(n => n.slug === slug) || null;
 }
