@@ -1,5 +1,10 @@
 import Link from 'next/link';
 import { getAllNotes } from '@/lib/content';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Notes — Manan Sachdeva',
+};
 
 export default function NotesPage() {
   const notes = getAllNotes();

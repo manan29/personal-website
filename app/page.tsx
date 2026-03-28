@@ -1,5 +1,10 @@
 import Link from 'next/link';
 import { getBlogPostsByCategory, getAllBooks } from '@/lib/content';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Manan Sachdeva — Sales · GTM · Talent Building',
+};
 
 export default function HomePage() {
   const complexDeals = getBlogPostsByCategory('large-deal-learnings').slice(0, 3);

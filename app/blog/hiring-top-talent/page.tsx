@@ -1,5 +1,10 @@
 import Link from 'next/link';
 import { getBlogPostsByCategory } from '@/lib/content';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Hiring Top Talent — Manan Sachdeva',
+};
 
 export default function HiringTopTalentPage() {
   const posts = getBlogPostsByCategory('hiring-top-talent');

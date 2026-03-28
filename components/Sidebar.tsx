@@ -21,8 +21,8 @@ export function Sidebar() {
         {imageError ? (
           <div
             style={{
-              width: '72px',
-              height: '72px',
+              width: '96px',
+              height: '96px',
               borderRadius: '50%',
               background: 'linear-gradient(135deg, #C2550A, #F97316)',
               display: 'flex',
@@ -30,14 +30,14 @@ export function Sidebar() {
               justifyContent: 'center',
             }}
           >
-            <span style={{ color: 'white', fontSize: '32px', fontWeight: '700' }}>M</span>
+            <span style={{ color: 'white', fontSize: '40px', fontWeight: '700' }}>M</span>
           </div>
         ) : (
           <Image
             src="/photo.jpg"
             alt="Manan Sachdeva"
-            width={72}
-            height={72}
+            width={96}
+            height={96}
             style={{ borderRadius: '50%', objectFit: 'cover' }}
             onError={() => setImageError(true)}
             priority
@@ -45,18 +45,28 @@ export function Sidebar() {
         )}
       </div>
 
-      {/* Name */}
-      <h1
+      {/* Name as Home Link */}
+      <Link
+        href="/"
         style={{
           fontFamily: 'var(--font-ui)',
-          fontSize: '14px',
+          fontSize: '15px',
           fontWeight: '700',
-          color: '#1A1A1A',
+          color: '#C2550A',
           marginBottom: '4px',
+          textDecoration: 'none',
+          display: 'block',
+          transition: 'opacity 0.2s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.opacity = '0.8';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.opacity = '1';
         }}
       >
         Manan Sachdeva
-      </h1>
+      </Link>
 
       {/* Tagline */}
       <div
@@ -131,7 +141,7 @@ export function Sidebar() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '13px',
-            fontWeight: '500',
+            fontWeight: isActive('/blog/large-deal-learnings') ? '600' : '500',
             color: isActive('/blog/large-deal-learnings') ? '#C2550A' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
@@ -146,7 +156,7 @@ export function Sidebar() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '13px',
-            fontWeight: '500',
+            fontWeight: isActive('/blog/hiring-top-talent') ? '600' : '500',
             color: isActive('/blog/hiring-top-talent') ? '#C2550A' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
@@ -161,7 +171,7 @@ export function Sidebar() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '13px',
-            fontWeight: '500',
+            fontWeight: isActive('/blog/sales-systems') ? '600' : '500',
             color: isActive('/blog/sales-systems') ? '#C2550A' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
@@ -192,7 +202,7 @@ export function Sidebar() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '13px',
-            fontWeight: '500',
+            fontWeight: isActive('/courses') ? '600' : '500',
             color: isActive('/courses') ? '#C2550A' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
@@ -223,7 +233,7 @@ export function Sidebar() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '13px',
-            fontWeight: '500',
+            fontWeight: isActive('/notes') ? '600' : '500',
             color: isActive('/notes') ? '#C2550A' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
@@ -238,7 +248,7 @@ export function Sidebar() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '13px',
-            fontWeight: '500',
+            fontWeight: isActive('/reading-list') ? '600' : '500',
             color: isActive('/reading-list') ? '#C2550A' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',

@@ -23,7 +23,6 @@ export default function About() {
       <div style={{ marginBottom: 40 }}>
         {[
           ['Email', 'manan.sachdeva89@gmail.com', 'mailto:manan.sachdeva89@gmail.com'],
-          ['Phone', '+91 9582006876', 'tel:+919582006876'],
           ['LinkedIn', 'linkedin.com/in/manansachdeva ↗', 'https://www.linkedin.com/in/manansachdeva/'],
           ['Based in', 'Bengaluru, India', null],
         ].map(([label, value, href]) => (
@@ -41,9 +40,9 @@ export default function About() {
       <SectionLabel>What I'm doing now</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
-          ['Role', 'Head of Growth', 'Signeasy — AI contract management'],
+          ['Role', 'Head of Sales & Success', 'Signeasy — AI contract management'],
           ['Focus', '0 → 1 sales org', 'Pipeline, hiring, GTM systems'],
-          ['Markets', 'India · US · UK', 'Also Israel, Australia'],
+          ['Markets', 'US · India · Middle East', 'Also South Africa'],
           ['Also', 'Writing here', 'Deals, hiring, sales systems'],
         ].map(([label, val, sub]) => (
           <div key={label} style={{ background: '#F5F4EF', padding: '18px 16px' }}>

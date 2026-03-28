@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   weight: ['400', '500', '600', '700'],
@@ -11,7 +12,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Manan Sachdeva",
-  description: "Sales · GTM · Talent Building",
+  description: "Sales leader writing about GTM, deals, hiring, and building revenue orgs.",
+  openGraph: {
+    title: "Manan Sachdeva",
+    description: "Sales leader writing about GTM, deals, hiring, and building revenue orgs.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +32,7 @@ export default function RootLayout({
         <div className="main-content">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

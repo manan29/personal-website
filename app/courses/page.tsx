@@ -1,3 +1,9 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Courses — Manan Sachdeva',
+};
+
 export default function CoursesPage() {
   const courses = [
     {

@@ -1,5 +1,10 @@
 import Link from 'next/link';
 import { getBlogPostsByCategory } from '@/lib/content';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sales Systems — Manan Sachdeva',
+};
 
 export default function SalesSystemsPage() {
   const posts = getBlogPostsByCategory('sales-systems');

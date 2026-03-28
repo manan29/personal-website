@@ -1,5 +1,10 @@
 import Link from 'next/link';
 import { getBlogPostsByCategory } from '@/lib/content';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Large Deal Learnings — Manan Sachdeva',
+};
 
 export default function LargeDealLearningsPage() {
   const posts = getBlogPostsByCategory('large-deal-learnings');
