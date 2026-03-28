@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllDeals, getAllPlaybooks, getAllBooks } from '@/lib/content';
+import { Avatar } from '@/components/Avatar';
 
 export default function HomePage() {
   const deals = getAllDeals().slice(0, 3);
@@ -12,20 +13,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <section style={{ marginBottom: '60px' }}>
           {/* Avatar */}
-          <div
-            style={{
-              width: '72px',
-              height: '72px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #C2550A, #F97316)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: '16px',
-            }}
-          >
-            <span style={{ color: 'white', fontSize: '32px', fontWeight: '700' }}>M</span>
-          </div>
+          <Avatar />
 
           {/* Name */}
           <h1
@@ -50,50 +38,80 @@ export default function HomePage() {
               marginBottom: '24px',
             }}
           >
-            Sales · GTM · Bengaluru
+            Sales · GTM · Talent Building
           </p>
 
-          {/* One-liner */}
+          {/* Bio Paragraphs */}
           <p
             style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-lato)',
               fontSize: '16.5px',
-              lineHeight: '1.85',
-              marginBottom: '16px',
+              lineHeight: '1.9',
+              color: '#2D2D2D',
+              marginBottom: '18px',
             }}
           >
-            I think strategically, execute relentlessly — and write down what I learn.
+            I'm Manan, a sales guy who writes. I grew up in Delhi, represented my school at various levels at different sports, and from that moment on, I hated to lose.
           </p>
 
-          {/* Bio */}
           <p
             style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '15.5px',
-              color: 'var(--muted)',
-              lineHeight: '1.7',
-              marginBottom: '16px',
+              fontFamily: 'var(--font-lato)',
+              fontSize: '16.5px',
+              lineHeight: '1.9',
+              color: '#2D2D2D',
+              marginBottom: '18px',
             }}
           >
-            Multiple revenue roles across sales and GTM at Signeasy. This site is where I put the
-            patterns, playbooks, and lessons that don't fit in a LinkedIn post.
+            My focus has been combining strategic thinking with relentless execution, building Sales and Customer Success orgs that actually compound over time.
           </p>
 
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/manansachdeva/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-hover"
+          <p
             style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
-              color: 'var(--muted)',
-              textDecoration: 'underline',
+              fontFamily: 'var(--font-lato)',
+              fontSize: '16.5px',
+              lineHeight: '1.9',
+              color: '#2D2D2D',
+              marginBottom: '18px',
             }}
           >
-            LinkedIn
-          </a>
+            I've been lucky to work with world-class teams at o9 Solutions and Hevo Data. Right now I'm building the sales org from scratch at Signeasy, an AI-powered contract management platform.
+          </p>
+
+          <p
+            style={{
+              fontFamily: 'var(--font-lato)',
+              fontSize: '16.5px',
+              lineHeight: '1.9',
+              color: '#2D2D2D',
+              marginBottom: '18px',
+            }}
+          >
+            I spend a lot of time hiring, developing talent, and staying hands-on with my team in the field — working through complex deals and building systems that support them.
+          </p>
+
+          {/* Call to Action */}
+          <p
+            style={{
+              fontFamily: 'var(--font-lato)',
+              fontSize: '14px',
+              color: 'var(--muted)',
+            }}
+          >
+            <a
+              href="https://www.linkedin.com/in/manansachdeva/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+              style={{
+                color: 'var(--muted)',
+                textDecoration: 'underline',
+              }}
+            >
+              Reach out
+            </a>
+            {' '}if you'd like to work together.
+          </p>
         </section>
 
         {/* Recent Deal Learnings */}
