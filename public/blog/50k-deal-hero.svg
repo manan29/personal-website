@@ -1,0 +1,55 @@
+<svg width="680" height="420" viewBox="0 0 680 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="680" height="420" fill="#F5F4EF"/>
+
+  <!-- Title Area -->
+  <text x="40" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#2D2D2D">$50K Deal Journey</text>
+  <text x="40" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#666666">800 users · Healthcare · Q4 close</text>
+
+  <!-- Timeline Path -->
+  <path d="M 60 150 Q 200 150, 200 200 T 340 250 T 480 280 T 620 290" stroke="#C2550A" stroke-width="3" fill="none" stroke-dasharray="0"/>
+
+  <!-- Stage 1: Discovery -->
+  <circle cx="60" cy="150" r="12" fill="#C2550A"/>
+  <rect x="20" y="110" width="80" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
+  <text x="60" y="129" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D2D2D" text-anchor="middle">Discovery</text>
+
+  <!-- Stage 2: CEO Outreach -->
+  <circle cx="200" cy="200" r="12" fill="#C2550A"/>
+  <rect x="145" y="215" width="110" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
+  <text x="200" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D2D2D" text-anchor="middle">CEO Outreach</text>
+
+  <!-- Stage 3: CFO Engagement -->
+  <circle cx="340" cy="250" r="12" fill="#C2550A"/>
+  <rect x="270" y="205" width="140" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
+  <text x="340" y="224" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D2D2D" text-anchor="middle">CFO Engagement</text>
+
+  <!-- Stage 4: Proposal Stall -->
+  <circle cx="480" cy="280" r="12" fill="#DC2626"/>
+  <rect x="420" y="295" width="120" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
+  <text x="480" y="314" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">Proposal Stall</text>
+
+  <!-- Stage 5: SSO Pivot -->
+  <circle cx="620" cy="290" r="12" fill="#15803D"/>
+  <rect x="565" y="245" width="110" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
+  <text x="620" y="264" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#15803D" text-anchor="middle">SSO Pivot</text>
+
+  <!-- Key Metrics Box -->
+  <rect x="40" y="345" width="600" height="55" rx="6" fill="white" stroke="#E5E4DF" stroke-width="1"/>
+
+  <!-- Metric 1 -->
+  <text x="60" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">TIMELINE</text>
+  <text x="60" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#2D2D2D">Last week of Q4</text>
+
+  <!-- Metric 2 -->
+  <text x="230" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">DEAL SIZE</text>
+  <text x="230" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#2D2D2D">$50,000</text>
+
+  <!-- Metric 3 -->
+  <text x="370" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">USERS</text>
+  <text x="370" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#2D2D2D">800+</text>
+
+  <!-- Metric 4 -->
+  <text x="490" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">KEY INSIGHT</text>
+  <text x="490" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#C2550A">ROI &gt; Price</text>
+</svg>

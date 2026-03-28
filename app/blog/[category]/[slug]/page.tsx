@@ -1,6 +1,7 @@
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -84,6 +85,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.summary}
           </p>
         </header>
+
+        {/* Hero Image */}
+        {post.slug === '50k-deal-breakthrough' && (
+          <Image
+            src="/blog/50k-deal-hero.svg"
+            alt="$50K Deal Breakdown"
+            width={680}
+            height={420}
+            style={{width:'100%', borderRadius:'8px', marginBottom:'40px', marginTop:'24px'}}
+          />
+        )}
 
         {/* Content */}
         <article
