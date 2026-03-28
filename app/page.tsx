@@ -24,7 +24,7 @@ export default function HomePage() {
               marginBottom: '4px',
             }}
           >
-            Manan Shah
+            Manan Sachdeva
           </h1>
 
           {/* Tagline */}

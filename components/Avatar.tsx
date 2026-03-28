@@ -11,8 +11,8 @@ export function Avatar() {
     return (
       <div
         style={{
-          width: '72px',
-          height: '72px',
+          width: '96px',
+          height: '96px',
           borderRadius: '50%',
           background: 'linear-gradient(135deg, #C2550A, #F97316)',
           display: 'flex',
@@ -21,7 +21,7 @@ export function Avatar() {
           marginBottom: '16px',
         }}
       >
-        <span style={{ color: 'white', fontSize: '32px', fontWeight: '700' }}>M</span>
+        <span style={{ color: 'white', fontSize: '40px', fontWeight: '700' }}>M</span>
       </div>
     );
   }
@@ -30,9 +30,9 @@ export function Avatar() {
     <div style={{ marginBottom: '16px' }}>
       <Image
         src="/photo.jpg"
-        alt="Manan Shah"
-        width={72}
-        height={72}
+        alt="Manan Sachdeva"
+        width={96}
+        height={96}
         style={{
           borderRadius: '50%',
           objectFit: 'cover',
