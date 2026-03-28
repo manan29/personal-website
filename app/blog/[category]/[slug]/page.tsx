@@ -257,16 +257,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </ReactMarkdown>
         </article>
       </div>
-
-      <style jsx global>{`
-        .custom-bullet-list li::marker {
-          color: #C2550A;
-        }
-        .custom-numbered-list li::marker {
-          color: #C2550A;
-          font-weight: 600;
-        }
-      `}</style>
     </main>
   );
 }

@@ -48,3 +48,13 @@ body {
 .link-hover:hover {
   color: var(--accent) !important;
 }
+
+/* Blog post list markers */
+.custom-bullet-list li::marker {
+  color: #C2550A;
+}
+
+.custom-numbered-list li::marker {
+  color: #C2550A;
+  font-weight: 600;
+}
