@@ -8,6 +8,20 @@ export default function HomePage() {
 
   return (
     <main>
+      {/* Greeting */}
+      <h1
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '28px',
+          fontWeight: '700',
+          color: '#1A1A1A',
+          letterSpacing: '-0.02em',
+          marginBottom: '20px',
+        }}
+      >
+        Hey, I'm Manan.
+      </h1>
+
       {/* Intro */}
       <p
         style={{
