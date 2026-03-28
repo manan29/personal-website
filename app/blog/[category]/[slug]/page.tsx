@@ -18,6 +18,24 @@ export async function generateStaticParams() {
   }));
 }
 
+// Calculate reading time (assuming 200 words per minute)
+function calculateReadingTime(text: string): number {
+  const words = text.trim().split(/\s+/).length;
+  return Math.ceil(words / 200);
+}
+
+// Check if paragraph contains only bold text
+function isStandaloneBold(children: any): boolean {
+  if (!children) return false;
+  if (Array.isArray(children)) {
+    return children.every(child =>
+      (typeof child === 'object' && child.type === 'strong') ||
+      (typeof child === 'string' && child.trim() === '')
+    );
+  }
+  return false;
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { category, slug } = await params;
   const post = getBlogPostBySlug(category, slug);
@@ -26,65 +44,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const readingTime = calculateReadingTime(post.body);
+
   return (
     <main>
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
-        {/* Header */}
-        <header style={{ marginBottom: '48px' }}>
-          <h1
-            style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: '28px',
-              fontWeight: '700',
-              lineHeight: '1.3',
-              marginBottom: '16px',
-            }}
-          >
-            {post.title}
-          </h1>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '16px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '10px',
-                fontWeight: '500',
-                padding: '2px 8px',
-                borderRadius: '4px',
-                textTransform: 'uppercase',
-                border: '1px solid var(--border)',
-                color: 'var(--muted)',
-              }}
-            >
-              {post.tag}
-            </span>
-            <span
-              style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '12px',
-                color: 'var(--faint)',
-              }}
-            >
-              {post.date}
-            </span>
-          </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '16px',
-              lineHeight: '1.6',
-              color: 'var(--muted)',
-            }}
-          >
-            {post.summary}
-          </p>
-        </header>
+        {/* Title */}
+        <h1
+          style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '28px',
+            fontWeight: '700',
+            lineHeight: '1.3',
+            marginBottom: '16px',
+            color: '#1A1A1A',
+          }}
+        >
+          {post.title}
+        </h1>
+
+        {/* Meta Line */}
+        <div
+          style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '12px',
+            color: '#AAAAAA',
+            marginBottom: '32px',
+          }}
+        >
+          {post.date} · {post.tag} · {readingTime} min read
+        </div>
 
         {/* Hero Image */}
         {post.slug === '50k-deal-breakthrough' && (
@@ -93,14 +82,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             alt="$50K Deal Breakdown"
             width={680}
             height={420}
-            style={{width:'100%', borderRadius:'8px', marginBottom:'40px', marginTop:'24px'}}
+            style={{width:'100%', borderRadius:'8px', marginBottom:'40px'}}
           />
         )}
+
+        {/* Summary / Intro */}
+        <div
+          style={{
+            fontFamily: 'var(--font-lato)',
+            fontSize: '17px',
+            lineHeight: '1.8',
+            color: '#4A4744',
+            fontStyle: 'italic',
+            paddingBottom: '28px',
+            borderBottom: '1px solid #E2E0D8',
+            marginBottom: '36px',
+          }}
+        >
+          {post.summary}
+        </div>
 
         {/* Content */}
         <article
           style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-lato)',
             fontSize: '16.5px',
             lineHeight: '1.9',
             color: '#2D2D2D',
@@ -112,10 +117,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <h2
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '20px',
+                    fontSize: '19px',
                     fontWeight: '700',
-                    marginTop: '32px',
+                    color: '#1A1A1A',
+                    marginTop: '48px',
                     marginBottom: '16px',
+                    paddingBottom: '8px',
+                    borderBottom: '1px solid #E2E0D8',
                   }}
                 >
                   {children}
@@ -125,34 +133,120 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '18px',
+                    fontSize: '16px',
                     fontWeight: '600',
-                    marginTop: '24px',
+                    color: '#1A1A1A',
+                    marginTop: '32px',
                     marginBottom: '12px',
                   }}
                 >
                   {children}
                 </h3>
               ),
-              p: ({ children }) => (
-                <p style={{ marginBottom: '18px' }}>{children}</p>
-              ),
+              p: ({ children }) => {
+                // Check if this is a standalone bold line
+                if (isStandaloneBold(children)) {
+                  return (
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-ui)',
+                        fontSize: '17px',
+                        fontWeight: '700',
+                        color: '#1A1A1A',
+                        background: '#FEF3E7',
+                        padding: '16px 20px',
+                        borderRadius: '6px',
+                        margin: '32px 0',
+                        display: 'block',
+                      }}
+                    >
+                      {children}
+                    </div>
+                  );
+                }
+
+                // Check if paragraph starts with em (italic) - treat as pullquote
+                const hasItalic = Array.isArray(children) &&
+                  children.some(child => typeof child === 'object' && child.type === 'em');
+
+                if (hasItalic) {
+                  return (
+                    <p
+                      style={{
+                        fontStyle: 'italic',
+                        color: '#4A4744',
+                        borderLeft: '3px solid #C2550A',
+                        paddingLeft: '20px',
+                        margin: '32px 0',
+                        marginBottom: '22px',
+                      }}
+                    >
+                      {children}
+                    </p>
+                  );
+                }
+
+                return (
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-lato)',
+                      fontSize: '16.5px',
+                      lineHeight: '1.9',
+                      color: '#2D2D2D',
+                      marginBottom: '22px',
+                    }}
+                  >
+                    {children}
+                  </p>
+                );
+              },
               ul: ({ children }) => (
                 <ul
                   style={{
-                    marginBottom: '18px',
-                    paddingLeft: '24px',
+                    marginLeft: '0',
+                    paddingLeft: '20px',
+                    marginBottom: '22px',
                     listStyleType: 'disc',
                   }}
+                  className="custom-bullet-list"
                 >
                   {children}
                 </ul>
               ),
+              ol: ({ children }) => (
+                <ol
+                  style={{
+                    marginLeft: '0',
+                    paddingLeft: '20px',
+                    marginBottom: '22px',
+                  }}
+                  className="custom-numbered-list"
+                >
+                  {children}
+                </ol>
+              ),
               li: ({ children }) => (
-                <li style={{ marginBottom: '8px' }}>{children}</li>
+                <li
+                  style={{
+                    fontFamily: 'var(--font-lato)',
+                    fontSize: '16px',
+                    lineHeight: '1.8',
+                    color: '#2D2D2D',
+                    marginBottom: '8px',
+                  }}
+                >
+                  {children}
+                </li>
               ),
               strong: ({ children }) => (
-                <strong style={{ fontWeight: '700' }}>{children}</strong>
+                <strong
+                  style={{
+                    color: '#1A1A1A',
+                    fontWeight: '700',
+                  }}
+                >
+                  {children}
+                </strong>
               ),
               em: ({ children }) => (
                 <em style={{ fontStyle: 'italic' }}>{children}</em>
@@ -163,6 +257,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </ReactMarkdown>
         </article>
       </div>
+
+      <style jsx global>{`
+        .custom-bullet-list li::marker {
+          color: #C2550A;
+        }
+        .custom-numbered-list li::marker {
+          color: #C2550A;
+          font-weight: 600;
+        }
+      `}</style>
     </main>
   );
 }
