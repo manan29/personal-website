@@ -50,7 +50,7 @@ export function Sidebar() {
         href="/"
         style={{
           fontFamily: 'var(--font-ui)',
-          fontSize: '15px',
+          fontSize: '16px',
           fontWeight: '700',
           color: '#C2550A',
           marginBottom: '4px',
@@ -72,7 +72,7 @@ export function Sidebar() {
       <div
         style={{
           fontFamily: 'var(--font-ui)',
-          fontSize: '10.5px',
+          fontSize: '11px',
           color: '#C2550A',
           fontWeight: '600',
           letterSpacing: '0.08em',
@@ -86,7 +86,7 @@ export function Sidebar() {
       <p
         style={{
           fontFamily: 'var(--font-lato)',
-          fontSize: '12.5px',
+          fontSize: '13.5px',
           color: '#6B6B6B',
           lineHeight: '1.7',
           marginBottom: '18px',
@@ -101,7 +101,7 @@ export function Sidebar() {
         style={{
           display: 'inline-block',
           fontFamily: 'var(--font-ui)',
-          fontSize: '12px',
+          fontSize: '13px',
           fontWeight: '600',
           color: '#C2550A',
           border: '1px solid #E2E0D8',
@@ -126,7 +126,7 @@ export function Sidebar() {
         <div
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '9px',
+            fontSize: '10px',
             fontWeight: '700',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
@@ -140,7 +140,7 @@ export function Sidebar() {
           href="/blog/large-deal-learnings"
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: isActive('/blog/large-deal-learnings') ? '600' : '500',
             color: isActive('/blog/large-deal-learnings') ? '#C2550A' : '#1A1A1A',
             display: 'block',
@@ -155,7 +155,7 @@ export function Sidebar() {
           href="/blog/hiring-top-talent"
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: isActive('/blog/hiring-top-talent') ? '600' : '500',
             color: isActive('/blog/hiring-top-talent') ? '#C2550A' : '#1A1A1A',
             display: 'block',
@@ -170,7 +170,7 @@ export function Sidebar() {
           href="/blog/sales-systems"
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: isActive('/blog/sales-systems') ? '600' : '500',
             color: isActive('/blog/sales-systems') ? '#C2550A' : '#1A1A1A',
             display: 'block',
@@ -187,7 +187,7 @@ export function Sidebar() {
         <div
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '9px',
+            fontSize: '10px',
             fontWeight: '700',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
@@ -201,7 +201,7 @@ export function Sidebar() {
           href="/courses"
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: isActive('/courses') ? '600' : '500',
             color: isActive('/courses') ? '#C2550A' : '#1A1A1A',
             display: 'block',
@@ -218,7 +218,7 @@ export function Sidebar() {
         <div
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '9px',
+            fontSize: '10px',
             fontWeight: '700',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
@@ -232,7 +232,7 @@ export function Sidebar() {
           href="/notes"
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: isActive('/notes') ? '600' : '500',
             color: isActive('/notes') ? '#C2550A' : '#1A1A1A',
             display: 'block',
@@ -247,7 +247,7 @@ export function Sidebar() {
           href="/reading-list"
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: isActive('/reading-list') ? '600' : '500',
             color: isActive('/reading-list') ? '#C2550A' : '#1A1A1A',
             display: 'block',
