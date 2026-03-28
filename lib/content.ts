@@ -47,6 +47,7 @@ export interface BlogPost {
   summary: string;
   body: string;
   category: string;
+  hero?: string;
 }
 
 function getContentByType<T>(type: 'deals' | 'playbooks' | 'hiring' | 'books'): T[] {
@@ -150,6 +151,7 @@ export function getBlogPostsByCategory(category: string): BlogPost[] {
         summary: data.summary,
         body: content.trim(),
         category,
+        hero: data.hero,
       };
     });
 

@@ -3,6 +3,7 @@ title: "The $50K Deal That Almost Slipped Through"
 date: "Oct 2025"
 tag: "large-deal-learnings"
 summary: "Last week of the quarter. My AE is at 80% attainment — this deal takes him to 120%. Here is how we navigated a complex 800-user enterprise deal that almost fell apart."
+hero: "/blog/50k-deal-hero.svg"
 ---
 
 Last week of the quarter. My AE is at 80% attainment — this deal takes him to 120%.

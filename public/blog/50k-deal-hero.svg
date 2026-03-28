@@ -1,55 +1,66 @@
-<svg width="680" height="420" viewBox="0 0 680 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="680" height="420" fill="#F5F4EF"/>
-
-  <!-- Title Area -->
-  <text x="40" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#2D2D2D">$50K Deal Journey</text>
-  <text x="40" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#666666">800 users · Healthcare · Q4 close</text>
-
-  <!-- Timeline Path -->
-  <path d="M 60 150 Q 200 150, 200 200 T 340 250 T 480 280 T 620 290" stroke="#C2550A" stroke-width="3" fill="none" stroke-dasharray="0"/>
-
-  <!-- Stage 1: Discovery -->
-  <circle cx="60" cy="150" r="12" fill="#C2550A"/>
-  <rect x="20" y="110" width="80" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
-  <text x="60" y="129" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D2D2D" text-anchor="middle">Discovery</text>
-
-  <!-- Stage 2: CEO Outreach -->
-  <circle cx="200" cy="200" r="12" fill="#C2550A"/>
-  <rect x="145" y="215" width="110" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
-  <text x="200" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D2D2D" text-anchor="middle">CEO Outreach</text>
-
-  <!-- Stage 3: CFO Engagement -->
-  <circle cx="340" cy="250" r="12" fill="#C2550A"/>
-  <rect x="270" y="205" width="140" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
-  <text x="340" y="224" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D2D2D" text-anchor="middle">CFO Engagement</text>
-
-  <!-- Stage 4: Proposal Stall -->
-  <circle cx="480" cy="280" r="12" fill="#DC2626"/>
-  <rect x="420" y="295" width="120" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
-  <text x="480" y="314" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">Proposal Stall</text>
-
-  <!-- Stage 5: SSO Pivot -->
-  <circle cx="620" cy="290" r="12" fill="#15803D"/>
-  <rect x="565" y="245" width="110" height="28" rx="4" fill="white" stroke="#E5E4DF" stroke-width="1"/>
-  <text x="620" y="264" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#15803D" text-anchor="middle">SSO Pivot</text>
-
-  <!-- Key Metrics Box -->
-  <rect x="40" y="345" width="600" height="55" rx="6" fill="white" stroke="#E5E4DF" stroke-width="1"/>
-
-  <!-- Metric 1 -->
-  <text x="60" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">TIMELINE</text>
-  <text x="60" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#2D2D2D">Last week of Q4</text>
-
-  <!-- Metric 2 -->
-  <text x="230" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">DEAL SIZE</text>
-  <text x="230" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#2D2D2D">$50,000</text>
-
-  <!-- Metric 3 -->
-  <text x="370" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">USERS</text>
-  <text x="370" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#2D2D2D">800+</text>
-
-  <!-- Metric 4 -->
-  <text x="490" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#666666" letter-spacing="0.5">KEY INSIGHT</text>
-  <text x="490" y="387" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#C2550A">ROI &gt; Price</text>
+<svg width="100%" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #F5F4EF; }
+    .tag { font-family: -apple-system, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; fill: #C2550A; }
+    .title { font-family: Georgia, serif; font-size: 27px; font-weight: 700; fill: #1A1A1A; }
+    .section-label { font-family: -apple-system, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; fill: #AAAAAA; }
+    .tl-label { font-family: -apple-system, sans-serif; font-size: 11.5px; font-weight: 600; fill: #1A1A1A; }
+    .tl-sub { font-family: -apple-system, sans-serif; font-size: 10px; fill: #8A8580; }
+    .ch-text { font-family: -apple-system, sans-serif; font-size: 10.5px; fill: #4A4744; }
+    .lrn-text { font-family: -apple-system, sans-serif; font-size: 10.5px; font-weight: 600; fill: #1A1A1A; }
+    .meta { font-family: -apple-system, sans-serif; font-size: 10px; fill: #AAAAAA; }
+    .border { stroke: #E2E0D8; stroke-width: 0.5; fill: none; }
+  </style>
+  <rect width="680" height="420" class="bg"/>
+  <rect x="0" y="0" width="3" height="420" fill="#C2550A"/>
+  <text x="52" y="38" class="tag">LARGE DEAL LEARNING · Q4 2025</text>
+  <text x="52" y="72" class="title">The $50K Deal That Almost</text>
+  <text x="52" y="102" class="title">Slipped Through.</text>
+  <text x="52" y="122" class="meta">$50K · 800 users · Healthcare · New York</text>
+  <line x1="52" y1="138" x2="640" y2="138" class="border"/>
+  <text x="52" y="158" class="section-label">DEAL TIMELINE</text>
+  <line x1="72" y1="168" x2="72" y2="338" stroke="#E2E0D8" stroke-width="1"/>
+  <circle cx="72" cy="176" r="3.5" fill="#C4BFBA"/>
+  <text x="88" y="174" class="tl-label">Discovery + POC</text>
+  <text x="88" y="186" class="tl-sub">Budget, legal, compliance — basics checked</text>
+  <circle cx="72" cy="210" r="3.5" fill="#C2550A"/>
+  <text x="88" y="208" class="tl-label">Something felt off</text>
+  <text x="88" y="220" class="tl-sub">Too smooth for 800-user deal. Started probing.</text>
+  <circle cx="72" cy="244" r="3.5" fill="#C2550A"/>
+  <text x="88" y="242" class="tl-label">CEO writes to CIO</text>
+  <text x="88" y="254" class="tl-sub">Email reaches CFO. She calls our CEO directly.</text>
+  <circle cx="72" cy="278" r="3.5" fill="#991B1B"/>
+  <text x="88" y="276" class="tl-label" style="fill:#991B1B">Proposal in 24hrs — mistake</text>
+  <text x="88" y="288" class="tl-sub">No feedback. Total silence.</text>
+  <circle cx="72" cy="312" r="3.5" fill="#C2550A"/>
+  <text x="88" y="310" class="tl-label">SSO ask → VP Ops discovered</text>
+  <text x="88" y="322" class="tl-sub">Best discovery call of the deal. Real blocker found.</text>
+  <circle cx="72" cy="338" r="4.5" fill="#166534"/>
+  <text x="88" y="336" class="tl-label" style="fill:#166534">Closed — ROI-first proposal</text>
+  <text x="88" y="348" class="tl-sub">Start small, co-invest, scale on adoption</text>
+  <line x1="368" y1="144" x2="368" y2="404" class="border"/>
+  <text x="388" y="158" class="section-label">CHALLENGES</text>
+  <rect x="388" y="166" width="8" height="8" rx="1" fill="#E2E0D8"/>
+  <text x="402" y="175" class="ch-text">CFO looped in with no prior context</text>
+  <rect x="388" y="186" width="8" height="8" rx="1" fill="#E2E0D8"/>
+  <text x="402" y="195" class="ch-text">Proposal before understanding real blockers</text>
+  <rect x="388" y="206" width="8" height="8" rx="1" fill="#E2E0D8"/>
+  <text x="402" y="215" class="ch-text">Decision dynamics completely unmapped</text>
+  <rect x="388" y="226" width="8" height="8" rx="1" fill="#E2E0D8"/>
+  <text x="402" y="235" class="ch-text">End-user (VP Ops) never spoken to until late</text>
+  <rect x="388" y="246" width="8" height="8" rx="1" fill="#E2E0D8"/>
+  <text x="402" y="255" class="ch-text">Assumed price was the hesitation</text>
+  <line x1="388" y1="272" x2="640" y2="272" class="border"/>
+  <text x="388" y="290" class="section-label">KEY LEARNINGS</text>
+  <rect x="388" y="298" width="8" height="8" rx="1" fill="#C2550A"/>
+  <text x="402" y="307" class="lrn-text">Multi-thread before you need to</text>
+  <rect x="388" y="318" width="8" height="8" rx="1" fill="#C2550A"/>
+  <text x="402" y="327" class="lrn-text">Silence after proposal = something unmapped</text>
+  <rect x="388" y="338" width="8" height="8" rx="1" fill="#166534"/>
+  <text x="402" y="347" class="lrn-text" style="fill:#166534">Hesitation is not price. Find the real blocker.</text>
+  <rect x="388" y="358" width="8" height="8" rx="1" fill="#166534"/>
+  <text x="402" y="367" class="lrn-text" style="fill:#166534">Co-own the risk. Do not just reduce price.</text>
+  <line x1="52" y1="404" x2="640" y2="404" class="border"/>
+  <text x="52" y="416" class="meta">Manan Sachdeva</text>
+  <text x="640" y="416" class="meta" text-anchor="end">Sales is an information game.</text>
 </svg>
