@@ -13,9 +13,9 @@ export default function About() {
       </h1>
 
       {/* INTRO */}
-      <p style={{ fontSize: 17, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        Sales Manager with 9+ years building revenue functions across SaaS. I grew up in Delhi, loved competiting in Sports at highest and I hated losing. 
-        Now I hate losing deals now but don't hate losing — I learned to build the systems, hire top sales talent, and stay on the field with them.
+      <p style={{ fontSize: 19, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
+      9+ years in SaaS sales, building revenue functions that perform under pressure. I grew up competing at the highest level in sports, where losing never sat well with me.
+        Today, I see it differently — you won’t win everything, but you should never lose what was within your control to win. That belief drives how I build systems, hire A-players, and stay on the field with the team to get better, every day.
       </p>
 
       {/* CONTACT */}
@@ -41,7 +41,7 @@ export default function About() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
           ['Role', 'Head of Sales & Success', 'Signeasy — AI contract management'],
-          ['Focus', '0 → 1 sales', 'New Sales, hiring, building sales and outbound systems'],
+          ['Focus', '0 → 1 Sales', 'Increasing New Sales and Logo Aquistion, Hiring A+ Players, building sales and outbound systems'],
           ['Markets', 'US · India · Middle East', 'Also South Africa'],
           ['Also', 'Writing here', 'Deals, hiring, sales systems'],
         ].map(([label, val, sub]) => (
@@ -59,10 +59,10 @@ export default function About() {
       <SectionLabel>By the numbers</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
-          ['9+', 'Years in revenue'],
-          ['$2mn+', 'Pipeline per quarter at o9'],
-          ['30', 'Logos in 3 quarters at Hevo'],
-          ['10→25', 'Team scaled in 12 months'],
+          ['10+', 'Years in revenue'],
+          ['$500K+ New Sales in 3 Quarters, 'Scaled Mid Market Business at Hevo'],
+          ['Logo Aqusition', '30 Logos at Hevo. Sclaed from 15 Logost to 60 Logos at Signeasy in the first 2 Quarters'],
+          ['10→25', 'Team scaled in 12 months at Hevo'],
         ].map(([num, label]) => (
           <div key={label} style={{ background: '#F5F4EF', padding: '18px 14px' }}>
             <div style={{ fontSize: 24, fontWeight: 700, color: '#C2550A', letterSpacing: '-0.02em', marginBottom: 5 }}>{num}</div>
