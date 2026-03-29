@@ -3,7 +3,7 @@ import { getBlogPostsByCategory, getAllBooks } from '@/lib/content';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Manan Sachdeva — Sales · GTM · Talent Building',
+  title: 'Manan Sachdeva - Sales · GTM · Talent Building',
 };
 
 export default function HomePage() {
@@ -28,21 +28,41 @@ export default function HomePage() {
       </h1>
 
       {/* Intro */}
-      <p
-        style={{
-          fontFamily: 'var(--font-lato)',
-          fontSize: '17px',
-          lineHeight: '1.9',
-          color: '#2D2D2D',
-          maxWidth: '580px',
-          marginBottom: '48px',
-          paddingBottom: '36px',
-          borderBottom: '1px solid #E2E0D8',
-        }}
-      >
-        I'm Manan, a sales guy who writes. I grew up in Delhi, represented my school at various
-        levels at different sports, and from that moment on, I hated to lose.
-      </p>
+      <div style={{ marginBottom: '48px', paddingBottom: '36px', borderBottom: '1px solid #E2E0D8' }}>
+        <p
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontSize: '18px',
+            lineHeight: '1.9',
+            color: '#2D2D2D',
+            marginBottom: '20px',
+          }}
+        >
+          Welcome to my space for writing, sharing notes from life as a sales manager, deep dives on wins and losses, and anything else I want to put out there.
+        </p>
+        <p
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontSize: '18px',
+            lineHeight: '1.9',
+            color: '#2D2D2D',
+            marginBottom: '20px',
+          }}
+        >
+          I am currently building the sales team at Signeasy, a lean 5-person crew with a sharp focus on outbound. 9+ years in SaaS sales, building revenue functions that perform under pressure.
+        </p>
+        <p
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontSize: '18px',
+            lineHeight: '1.9',
+            color: '#2D2D2D',
+            marginBottom: '20px',
+          }}
+        >
+          I grew up competing at the highest level in sports, where losing never sat well with me. Today, I see it differently. You won't win everything, but you should never lose what was within your control to win. That belief drives how I build systems, hire A-players, and stay on the field with the team to get better, every day.
+        </p>
+      </div>
 
       {/* Credentials Strip */}
       <div
@@ -120,7 +140,7 @@ export default function HomePage() {
           >
             Markets
           </div>
-          {['India', 'United States', 'UK', 'Israel'].map((market) => (
+          {['US', 'Middle East', 'UK', 'South Africa'].map((market) => (
             <div
               key={market}
               style={{
@@ -462,7 +482,7 @@ export default function HomePage() {
                   fontWeight: '400',
                 }}
               >
-                {book.title} —{' '}
+                {book.title} -{' '}
                 <span style={{ color: '#AAAAAA' }}>{book.author}</span>
               </span>
               <div

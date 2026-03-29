@@ -13,9 +13,9 @@ export default function About() {
       </h1>
 
       {/* INTRO */}
-      <p style={{ fontSize: 19, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-      9+ years in SaaS sales, building revenue functions that perform under pressure. I grew up competing at the highest level in sports, where losing never sat well with me.
-        Today, I see it differently — you won’t win everything, but you should never lose what was within your control to win. That belief drives how I build systems, hire A-players, and stay on the field with the team to get better, every day.
+      <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
+        Sales leader with 9+ years building revenue functions across SaaS. I grew up in Delhi, hated losing, and never stopped.
+        I don't just run sales - I build the systems, hire the teams, and stay on the field with them.
       </p>
 
       {/* CONTACT */}
@@ -40,9 +40,9 @@ export default function About() {
       <SectionLabel>What I'm doing now</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
-          ['Role', 'Head of Sales & Success', 'Signeasy — AI contract management'],
-          ['Focus', '0 → 1 Sales', 'Increasing New Sales and Logo Aquistion, Hiring A+ Players, building sales and outbound systems'],
-          ['Markets', 'US · India · Middle East', 'Also South Africa'],
+          ['Role', 'Head of Sales & Success', 'Signeasy - AI contract management'],
+          ['Focus', '0 to 1 sales org', 'Pipeline, hiring, GTM systems'],
+          ['Markets', 'US - India - Middle East', 'Also South Africa'],
           ['Also', 'Writing here', 'Deals, hiring, sales systems'],
         ].map(([label, val, sub]) => (
           <div key={label} style={{ background: '#F5F4EF', padding: '18px 16px' }}>
@@ -59,10 +59,10 @@ export default function About() {
       <SectionLabel>By the numbers</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
-          ['10+', 'Years in revenue'],
-          ['$500K+ New Sales in 3 Quarters, 'Scaled Mid Market Business at Hevo'],
-          ['Logo Aqusition', '30 Logos at Hevo. Sclaed from 15 Logost to 60 Logos at Signeasy in the first 2 Quarters'],
-          ['10→25', 'Team scaled in 12 months at Hevo'],
+          ['9+', 'Years in SaaS Sales'],
+          ['$100K+', 'Closed multiple $100K+ deals in global markets at Hevo'],
+          ['60+', 'Logos scaled in 2 quarters at Signeasy'],
+          ['10 to 25', 'Team scaled at Hevo through in-house hiring'],
         ].map(([num, label]) => (
           <div key={label} style={{ background: '#F5F4EF', padding: '18px 14px' }}>
             <div style={{ fontSize: 24, fontWeight: 700, color: '#C2550A', letterSpacing: '-0.02em', marginBottom: 5 }}>{num}</div>
@@ -76,37 +76,37 @@ export default function About() {
       <div style={{ marginBottom: 40, display: 'flex', flexDirection: 'column', gap: 10 }}>
 
         <CompanyBlock
-          name="Signeasy" dates="2023 – Present"
+          name="Signeasy" dates="2023 - Present"
           tag={{ label: 'Current', color: 'green' }}
           tagline="AI-powered contract management platform"
           roles={[
-            { title: 'Head of Growth', period: '2023 – Present', stat: 'Building sales org from scratch — strategy, hiring, systems, execution across India, US, UK, Israel.', accent: true },
+            { title: 'Head of Sales and Success', period: '2023 - Present', stat: 'Building sales org from scratch - 5-person team of AEs and BDRs focused on outbound. Scaling the Success team as the next chapter.', accent: true },
           ]}
         />
 
         <CompanyBlock
-          name="Hevo Data" dates="May 2021 – 2023"
+          name="Hevo Data" dates="May 2021 - 2023"
           tags={[{ label: '3 Roles', color: 'amber' }, { label: '1 Promotion', color: 'gray' }]}
-          tagline="Cloud ETL / Data Integration · $1M–$10M ARR journey"
+          tagline="Cloud ETL / Data Integration - $1M-$10M ARR journey"
           roles={[
-            { title: 'Mid-Market Sales — EMEA & APAC', period: 'Aug 2023 – Present · CRO', stat: '$750K ARR in 3 quarters (30 logos). Target USD 1.2mn. Closed largest-ever Israel deal (~$100K) and biggest AWS Marketplace deal ($40K ARR, 2-yr).', accent: true },
-            { title: 'Expansion & Account Management', period: 'Jul 2022 – Aug 2023 · CEO', stat: 'Built AM function from scratch. Hired 5 AMs + 3 ADs. Managed $7mn+ book. Expansion rate 1.8% → 2.4% QoQ.' },
-            { title: 'SMB Sales — Europe', period: 'May 2021 – Jul 2022 · CEO', stat: '18 avg logos/month at $92K ARR. Managed 4 AEs. Scaled team 10 → 25 in 12 months.' },
+            { title: 'Mid-Market Sales - EMEA & APAC', period: 'Aug 2023 - Present - CRO', stat: '$750K ARR in 3 quarters (30 logos). Target USD 1.2mn. Closed largest-ever Israel deal (~$100K) and biggest AWS Marketplace deal ($40K ARR, 2-yr).', accent: true },
+            { title: 'SMB Sales Lead - Europe', period: 'May 2021 - Jul 2022 - CEO', stat: 'Scaled from 8 to 18 avg logos per month, delivering $92K ARR. Started learning the ropes of hiring and doubled the team from 10 to 20, working with other sales managers as a core part of the hiring process.' },
+            { title: 'Account Management and Expansion', period: 'Jul 2022 - Aug 2023 - CEO', stat: 'Took on the next big problem - account management and expansion. Scaled the fastest-growing quick commerce company in India from $10K to $150K ARR. Learned that building relationships, solving problems alongside solution engineers, and closing expansion deals gave me the real kick.' },
           ]}
         />
 
         <CompanyBlock
-          name="o9 Solutions" dates="Sep 2018 – May 2021"
+          name="o9 Solutions" dates="Sep 2018 - May 2021"
           tag={{ label: '1 Promotion', color: 'gray' }}
-          tagline="KKR-backed SaaS unicorn · Supply Chain Planning"
+          tagline="KKR-backed SaaS unicorn - Supply Chain Planning"
           roles={[
-            { title: 'Team Lead, Business Development', period: '2020 – 2021 · Global EVP', stat: 'SQLs 20 → 80+ per quarter. Built $2mn+ enterprise pipeline per quarter. Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG.', accent: true },
-            { title: 'Business Development Representative', period: '2018 – 2020', stat: 'Built outbound pipeline for enterprise supply chain SaaS. Promoted to Team Lead within 2 years.' },
+            { title: 'Team Lead, Business Development', period: '2020 - 2021 - Global EVP', stat: 'SQLs 20 to 80+ per quarter. Built $2mn+ enterprise pipeline per quarter. Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG.', accent: true },
+            { title: 'Business Development Representative', period: '2018 - 2020', stat: 'Built outbound pipeline for enterprise supply chain SaaS. Promoted to Team Lead within 2 years.' },
           ]}
         />
 
         <CompanyBlock
-          name="Wipro" dates="Jun 2015 – Sep 2018"
+          name="Wipro" dates="Jun 2015 - Sep 2018"
           tagline="Senior Executive, Demand Generation"
           roles={[
             { title: 'Demand Generation', period: 'Retail & Consumer vertical', stat: 'First demand gen hire. Generated $20mn enterprise pipeline via campaigns, B2B summits, and partner activity.' },
@@ -118,10 +118,10 @@ export default function About() {
       <SectionLabel>Notable wins</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 40 }}>
         {[
-          ['$100K', 'Largest deal in Israel', 'Fintech — premium support, first account at Hevo in Israel market.'],
-          ['$40K ARR', 'AWS Marketplace deal', 'Gaming company, 2-year contract. Largest-ever deal through Marketplace.'],
-          ['$7mn+', 'Book of business managed', 'Built and ran AM team at Hevo — 5 AMs + 3 ADs managing $7mn+ ARR.'],
-          ['$20mn', 'Pipeline at Wipro', 'Enterprise pipeline as first demand gen hire for Retail & Consumer vertical.'],
+          ['60+', 'Logos scaled at Signeasy', 'Grew customer base from scratch to 60+ logos in 2 quarters through outbound and inbound motions.'],
+          ['$10K to $150K', 'Account expansion at Hevo', "Scaled India's fastest-growing quick commerce company from $10K to $150K ARR working alongside solution engineers."],
+          ['$100K+', 'Multiple $100K+ deals', 'Closed multiple six-figure deals across US, Israel, and Middle East markets at Hevo.'],
+          ['10 to 25', 'Team scaled at Hevo', 'Doubled the sales team from 10 to 20 through in-house hiring, working alongside other sales managers in the hiring process.'],
         ].map(([num, title, desc]) => (
           <div key={title} style={{ background: '#fff', border: '1px solid #E2E0D8', borderRadius: 8, padding: 18 }}>
             <div style={{ fontSize: 26, fontWeight: 700, color: '#C2550A', letterSpacing: '-0.02em', marginBottom: 5 }}>{num}</div>
@@ -140,7 +140,7 @@ export default function About() {
           ['CRM & Pipeline', ['HubSpot', 'Salesforce']],
           ['Prospecting', ['Clay', 'Apollo', 'LinkedIn Sales Nav']],
           ['Analytics', ['Mixpanel', 'HubSpot Reports']],
-          ['AI Tools', ['Claude Projects', 'Loom', 'Notion']],
+          ['AI Tools', ['Claude', 'Notion']],
         ].map(([label, items]) => (
           <div key={String(label)} style={{ background: '#fff', border: '1px solid #E2E0D8', borderRadius: 6, padding: '14px 16px' }}>
             <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C2550A', marginBottom: 10 }}>{label}</div>
@@ -156,7 +156,7 @@ export default function About() {
       <div style={{ marginBottom: 40 }}>
         {[
           ['Sandler', 'Qualification first. I run every deal through pain, power, fit, and timeline before investing real time.'],
-          ['MEDDIC', 'Essential for enterprise — metrics, economic buyer, decision criteria, process, pain, champion.'],
+          ['MEDDIC', 'Essential for enterprise - metrics, economic buyer, decision criteria, process, pain, champion.'],
         ].map(([name, desc], i, arr) => (
           <div key={name} style={{ display: 'flex', gap: 14, padding: '13px 0', borderBottom: i < arr.length - 1 ? '1px solid #E2E0D8' : 'none' }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A1A', minWidth: 110, flexShrink: 0 }}>{name}</div>
@@ -171,7 +171,7 @@ export default function About() {
       <SectionLabel>Mistakes I've made</SectionLabel>
       <div style={{ marginBottom: 40 }}>
         {[
-          ['Hiring before the playbook was ready', 'Hired fast at Hevo before the process was solid. Reps had different definitions of qualified, different approaches, different discovery questions. Never again — process before headcount.'],
+          ['Hiring before the playbook was ready', 'Hired fast at Hevo before the process was solid. Reps had different definitions of qualified, different approaches, different discovery questions. Never again - process before headcount.'],
           ['Proposing before understanding the blocker', 'Sent a proposal in 24hrs because a CFO called our CEO. Felt like momentum. Was laziness. Total silence after. Should have done one more discovery call first.'],
         ].map(([title, body], i, arr) => (
           <div key={title} style={{ padding: '16px 0', borderBottom: i < arr.length - 1 ? '1px solid #E2E0D8' : 'none' }}>
@@ -199,13 +199,13 @@ export default function About() {
       {resumeOpen && (
         <div style={{ marginTop: 16, padding: 22, background: '#fff', border: '1px solid #E2E0D8', borderRadius: 8 }}>
           {[
-            { sec: 'Current', role: 'Head of Growth — Signeasy', co: '2023–Present · Bengaluru', points: ['Building sales org from scratch across India, US, UK, Israel', 'Pipeline strategy, hiring, and revenue execution'] },
-            { sec: 'Hevo Data · May 2021 – 2023 · 1 Promotion', role: 'Mid-Market Sales, EMEA & APAC', co: 'Aug 2023–Present · CRO', points: ['$750K ARR in 3 quarters (30 logos). USD 1.2mn target', 'Largest Israel deal ~$100K. Largest AWS Marketplace deal $40K ARR'] },
-            { role: 'Expansion & Account Management', co: 'Jul 2022–Aug 2023 · CEO', points: ['Built AM function — 5 AMs + 3 ADs. $7mn+ book. 1.8% → 2.4% expansion QoQ'] },
-            { role: 'SMB Sales, Europe', co: 'May 2021–Jul 2022 · CEO', points: ['18 logos/month at $92K ARR. Scaled team 10 → 25 in 12 months'] },
-            { sec: 'o9 Solutions · Sep 2018 – May 2021 · 1 Promotion', role: 'Team Lead, Business Development', co: 'Reporting to Global EVP', points: ['SQLs 20 → 80+ per quarter. $2mn+ pipeline per quarter', 'Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG'] },
-            { sec: 'Wipro · Jun 2015 – Sep 2018', role: 'Senior Executive, Demand Generation', co: 'Retail & Consumer vertical', points: ['First demand gen hire. Generated $20mn enterprise pipeline'] },
-            { sec: 'Education', points: ['MBA, Marketing — School of Inspired Leadership (SOIL), 2014–2015', 'B.Tech, Mechanical — Chitkara University, 2007–2011'] },
+            { sec: 'Current', role: 'Head of Sales and Success - Signeasy', co: '2023-Present - Bengaluru', points: ['Building sales org from scratch - 5-person team of AEs and BDRs focused on outbound', 'Scaling the Success team as the next chapter'] },
+            { sec: 'Hevo Data - May 2021 - 2023 - 1 Promotion', role: 'Mid-Market Sales, EMEA & APAC', co: 'Aug 2023-Present - CRO', points: ['$750K ARR in 3 quarters (30 logos). USD 1.2mn target', 'Largest Israel deal ~$100K. Largest AWS Marketplace deal $40K ARR'] },
+            { role: 'SMB Sales Lead - Europe', co: 'May 2021-Jul 2022 - CEO', points: ['Scaled from 8 to 18 avg logos per month, delivering $92K ARR', 'Doubled the team from 10 to 20, working with other sales managers in the hiring process'] },
+            { role: 'Account Management and Expansion', co: 'Jul 2022-Aug 2023 - CEO', points: ['Scaled the fastest-growing quick commerce company in India from $10K to $150K ARR', 'Built relationships, solved problems alongside solution engineers, closed expansion deals'] },
+            { sec: 'o9 Solutions - Sep 2018 - May 2021 - 1 Promotion', role: 'Team Lead, Business Development', co: 'Reporting to Global EVP', points: ['SQLs 20 to 80+ per quarter. $2mn+ pipeline per quarter', 'Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG'] },
+            { sec: 'Wipro - Jun 2015 - Sep 2018', role: 'Senior Executive, Demand Generation', co: 'Retail & Consumer vertical', points: ['First demand gen hire. Generated $20mn enterprise pipeline'] },
+            { sec: 'Education', points: ['MBA, Marketing - School of Inspired Leadership (SOIL), 2014-2015', 'B.Tech, Mechanical - Chitkara University, 2007-2011'] },
           ].map((item, i) => (
             <div key={i}>
               {item.sec && <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#AAAAAA', margin: i === 0 ? '0 0 8px' : '18px 0 8px' }}>{item.sec}</div>}
@@ -230,7 +230,7 @@ export default function About() {
 
 // ── Shared components ─────────────────────────────────────
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#AAAAAA', marginBottom: 18 }}>{children}</div>
+  return <h2 style={{ fontSize: 22, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: '2px solid #E2E0D8' }}>{children}</h2>
 }
 
 function Divider() {
