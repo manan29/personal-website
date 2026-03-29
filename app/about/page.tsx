@@ -13,9 +13,9 @@ export default function About() {
       </h1>
 
       {/* INTRO */}
-      <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        Sales leader with 9+ years building revenue functions across SaaS. I grew up in Delhi, hated losing, and never stopped.
-        I don't just run sales — I build the systems, hire the teams, and stay on the field with them.
+      <p style={{ fontSize: 17, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
+        Sales Manager with 9+ years building revenue functions across SaaS. I grew up in Delhi, loved competiting in Sports at highest and I hated losing. 
+        Now I hate losing deals now but don't hate losing — I learned to build the systems, hire top sales talent, and stay on the field with them.
       </p>
 
       {/* CONTACT */}
@@ -41,7 +41,7 @@ export default function About() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
           ['Role', 'Head of Sales & Success', 'Signeasy — AI contract management'],
-          ['Focus', '0 → 1 sales org', 'Pipeline, hiring, GTM systems'],
+          ['Focus', '0 → 1 sales', 'New Sales, hiring, building sales and outbound systems'],
           ['Markets', 'US · India · Middle East', 'Also South Africa'],
           ['Also', 'Writing here', 'Deals, hiring, sales systems'],
         ].map(([label, val, sub]) => (
