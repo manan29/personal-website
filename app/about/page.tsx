@@ -1,22 +1,36 @@
-'use client'
-import { useState } from 'react'
 import Link from 'next/link'
 
 export default function About() {
-  const [resumeOpen, setResumeOpen] = useState(false)
-
   return (
     <main style={{ maxWidth: 680, margin: '0 auto', padding: '52px 24px 100px' }}>
 
       <h1 style={{ fontSize: 28, fontWeight: 700, color: '#1A1A1A', letterSpacing: '-0.02em', marginBottom: 24 }}>
-        Hey, I'm Manan.
+        Hey, Manan here. Here&apos;s a little more about me.
       </h1>
 
       {/* INTRO */}
-      <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        Sales Manager with 9+ years building Sales and Account Management function. I grew up in Delhi, developed an instinct for winning by playing sports at national level.
-        Now, I am an operator at heart - I focus now on building the systems, building high quality teams, and love to go on the field with the team.
-      </p>
+      <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
+        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 20 }}>
+          I am currently growing the sales team at Signeasy - a lean 5-person crew with a sharp focus on adding $1mn in net revenue from a base of $150K. In total, I have spent around 9+ years in SaaS sales, building revenue functions that perform under pressure.
+        </p>
+        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 20 }}>
+          I grew up competing at the highest level in sports at school, where losing never sat well with me. Today, I see it differently. You won&apos;t win everything, but you should never lose what was within your control to win.
+        </p>
+        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 0 }}>
+          That belief drives how I build systems, hire A-players, and stay on the field with the team to get better, every day. I no longer carry a strong emotional weight around losing - instead, I focus on finding opportunities I can win, constantly seeking new talent to work with, and coaching teams to get sharper at sales every day.
+        </p>
+      </div>
+
+      {/* WHAT DRIVES ME */}
+      <SectionLabel>What Drives Me</SectionLabel>
+      <div style={{ marginBottom: 40 }}>
+        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 20 }}>
+          I came to Bangalore with nothing and no clarity on what I wanted to do. In the beginning, it was mostly about making money. But my manager at Wipro, Aparna, and working directly with the VP of Sales at o9 Solutions gave me something I hadn&apos;t expected - direction. I enjoyed working with them, and it gave me a sense of what high-quality execution and the right mindset actually look like.
+        </p>
+        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 0 }}>
+          To this day, I believe my hunger to learn, my ability to seek truth in difficult situations, and my commitment to mastering the art of building sales teams - and selling itself - is what drives me more than money ever could.
+        </p>
+      </div>
 
       {/* CONTACT */}
       <SectionLabel>Contact</SectionLabel>
@@ -37,7 +51,7 @@ export default function About() {
       </div>
 
       {/* NOW */}
-      <SectionLabel>What I'm doing now</SectionLabel>
+      <SectionLabel>What I&apos;m doing now</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
           ['Role', 'Head of Sales & Success', 'Signeasy - AI contract management'],
@@ -80,7 +94,17 @@ export default function About() {
           tag={{ label: 'Current', color: 'green' }}
           tagline="AI-powered contract management platform"
           roles={[
-            { title: 'Head of Sales and Success', period: '2023 - Present', stat: 'Building sales org from scratch - 5-person team of AEs and BDRs focused on outbound. Scaling the Success team as the next chapter.', accent: true },
+            {
+              title: 'Head of Sales and Success',
+              period: '2023 - Present',
+              accent: true,
+              bullets: [
+                'Grew logo acquisition from 15 per quarter to 64 in Q1 2025',
+                'Improved Lead to Opportunity conversion from 20% to 45% by defining clear sales processes and sharper deal qualification',
+                'Improved Opportunity to Close rate from 25% to 45% through better execution quality and applying Sandler for Mid-Market deals',
+                'Independently closed a $70K Banking API customer in the US - the largest landing logo to date',
+              ],
+            },
           ]}
         />
 
@@ -89,9 +113,34 @@ export default function About() {
           tags={[{ label: '3 Roles', color: 'amber' }, { label: '1 Promotion', color: 'gray' }]}
           tagline="Cloud ETL / Data Integration - $1M-$10M ARR journey"
           roles={[
-            { title: 'Mid-Market Sales - EMEA & APAC', period: 'Aug 2023 - Present - CRO', stat: '$750K ARR in 3 quarters (30 logos). Target USD 1.2mn. Closed largest-ever Israel deal (~$100K) and biggest AWS Marketplace deal ($40K ARR, 2-yr).', accent: true },
-            { title: 'SMB Sales Lead - Europe', period: 'May 2021 - Jul 2022 - CEO', stat: 'Scaled from 8 to 18 avg logos per month, delivering $92K ARR. Started learning the ropes of hiring and doubled the team from 10 to 20, working with other sales managers as a core part of the hiring process.' },
-            { title: 'Account Management and Expansion', period: 'Jul 2022 - Aug 2023 - CEO', stat: 'Took on the next big problem - account management and expansion. Scaled the fastest-growing quick commerce company in India from $10K to $150K ARR. Learned that building relationships, solving problems alongside solution engineers, and closing expansion deals gave me the real kick.' },
+            {
+              title: 'Mid-Market Sales - EMEA & APAC',
+              period: 'Aug 2023 - Present - CRO',
+              accent: true,
+              bullets: [
+                'Generated $750K ARR across 30 logos in 3 quarters against a $1.2mn target',
+                'Closed the largest-ever Israel deal at approximately $100K ARR',
+                'Closed the biggest AWS Marketplace deal at $40K ARR on a 2-year term',
+              ],
+            },
+            {
+              title: 'SMB Sales Lead - Europe',
+              period: 'May 2021 - Jul 2022 - CEO',
+              bullets: [
+                'Scaled average logos per month from 8 to 18, delivering $92K ARR',
+                'Learned the ropes of hiring and doubled the team from 10 to 20',
+                'Worked with other sales managers as a core part of the hiring process',
+              ],
+            },
+            {
+              title: 'Account Management and Expansion',
+              period: 'Jul 2022 - Aug 2023 - CEO',
+              bullets: [
+                'Took on account management and expansion as the next big problem',
+                'Scaled the fastest-growing quick commerce company in India from $10K to $150K ARR',
+                'Learned that building relationships, working alongside solution engineers, and closing expansion deals was where I found my real edge',
+              ],
+            },
           ]}
         />
 
@@ -100,8 +149,24 @@ export default function About() {
           tag={{ label: '1 Promotion', color: 'gray' }}
           tagline="KKR-backed SaaS unicorn - Supply Chain Planning"
           roles={[
-            { title: 'Team Lead, Business Development', period: '2020 - 2021 - Global EVP', stat: 'SQLs 20 to 80+ per quarter. Built $2mn+ enterprise pipeline per quarter. Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG.', accent: true },
-            { title: 'Business Development Representative', period: '2018 - 2020', stat: 'Built outbound pipeline for enterprise supply chain SaaS. Promoted to Team Lead within 2 years.' },
+            {
+              title: 'Team Lead, Business Development',
+              period: '2020 - 2021 - Global EVP',
+              accent: true,
+              bullets: [
+                'SQLs 20 to 80+ per quarter',
+                'Built $2mn+ enterprise pipeline per quarter',
+                'Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG',
+              ],
+            },
+            {
+              title: 'Business Development Manager',
+              period: '2018 - 2020',
+              bullets: [
+                'Built outbound pipeline for enterprise supply chain SaaS',
+                'Promoted to Team Lead within 2 years',
+              ],
+            },
           ]}
         />
 
@@ -168,7 +233,7 @@ export default function About() {
       <Divider />
 
       {/* MISTAKES */}
-      <SectionLabel>Mistakes I've made</SectionLabel>
+      <SectionLabel>Mistakes I&apos;ve made</SectionLabel>
       <div style={{ marginBottom: 40 }}>
         {[
           ['Hiring before the playbook was ready', 'Hired fast at Hevo before the process was solid. Reps had different definitions of qualified, different approaches, different discovery questions. Never again - process before headcount.'],
@@ -183,46 +248,6 @@ export default function About() {
           </div>
         ))}
       </div>
-
-      {/* RESUME */}
-      <SectionLabel>Resume</SectionLabel>
-      <button
-        onClick={() => setResumeOpen(!resumeOpen)}
-        style={{ width: '100%', background: 'none', border: '1px solid #E2E0D8', borderRadius: 6, padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', fontFamily: 'inherit', transition: 'border-color 0.15s' }}
-        onMouseEnter={e => (e.currentTarget.style.borderColor = '#C2550A')}
-        onMouseLeave={e => (e.currentTarget.style.borderColor = '#E2E0D8')}
-      >
-        <span style={{ fontSize: 14, fontWeight: 600, color: '#1A1A1A' }}>View full resume</span>
-        <span style={{ fontSize: 12, color: '#AAAAAA' }}>{resumeOpen ? 'Collapse ↑' : 'Expand ↓'}</span>
-      </button>
-
-      {resumeOpen && (
-        <div style={{ marginTop: 16, padding: 22, background: '#fff', border: '1px solid #E2E0D8', borderRadius: 8 }}>
-          {[
-            { sec: 'Current', role: 'Head of Sales and Success - Signeasy', co: '2023-Present - Bengaluru', points: ['Building sales org from scratch - 5-person team of AEs and BDRs focused on outbound', 'Scaling the Success team as the next chapter'] },
-            { sec: 'Hevo Data - May 2021 - 2023 - 1 Promotion', role: 'Mid-Market Sales, EMEA & APAC', co: 'Aug 2023-Present - CRO', points: ['$750K ARR in 3 quarters (30 logos). USD 1.2mn target', 'Largest Israel deal ~$100K. Largest AWS Marketplace deal $40K ARR'] },
-            { role: 'SMB Sales Lead - Europe', co: 'May 2021-Jul 2022 - CEO', points: ['Scaled from 8 to 18 avg logos per month, delivering $92K ARR', 'Doubled the team from 10 to 20, working with other sales managers in the hiring process'] },
-            { role: 'Account Management and Expansion', co: 'Jul 2022-Aug 2023 - CEO', points: ['Scaled the fastest-growing quick commerce company in India from $10K to $150K ARR', 'Built relationships, solved problems alongside solution engineers, closed expansion deals'] },
-            { sec: 'o9 Solutions - Sep 2018 - May 2021 - 1 Promotion', role: 'Team Lead, Business Development', co: 'Reporting to Global EVP', points: ['SQLs 20 to 80+ per quarter. $2mn+ pipeline per quarter', 'Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG'] },
-            { sec: 'Wipro - Jun 2015 - Sep 2018', role: 'Senior Executive, Demand Generation', co: 'Retail & Consumer vertical', points: ['First demand gen hire. Generated $20mn enterprise pipeline'] },
-            { sec: 'Education', points: ['MBA, Marketing - School of Inspired Leadership (SOIL), 2014-2015', 'B.Tech, Mechanical - Chitkara University, 2007-2011'] },
-          ].map((item, i) => (
-            <div key={i}>
-              {item.sec && <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#AAAAAA', margin: i === 0 ? '0 0 8px' : '18px 0 8px' }}>{item.sec}</div>}
-              {item.role && <div style={{ fontSize: 13.5, fontWeight: 700, color: '#1A1A1A' }}>{item.role}</div>}
-              {item.co && <div style={{ fontSize: 12.5, color: '#C2550A', fontWeight: 600, marginBottom: 6 }}>{item.co}</div>}
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: 10 }}>
-                {item.points.map(p => (
-                  <li key={p} style={{ fontSize: 12.5, color: '#4A4744', lineHeight: 1.7, paddingLeft: 14, position: 'relative', marginBottom: 2 }}>
-                    <span style={{ position: 'absolute', left: 4, color: '#C2550A', fontWeight: 700 }}>·</span>
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      )}
 
     </main>
   )
@@ -242,7 +267,7 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
   tag?: { label: string, color: string },
   tags?: { label: string, color: string }[],
   tagline?: string,
-  roles: { title: string, period: string, stat: string, accent?: boolean }[]
+  roles: { title: string, period: string, stat?: string, bullets?: string[], accent?: boolean }[]
 }) {
   const allTags = tags || (tag ? [tag] : [])
   const tagStyle = (color: string) => ({
@@ -270,7 +295,18 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A1A', marginBottom: 2 }}>{r.title}</div>
               <div style={{ fontSize: 11, color: '#AAAAAA', marginBottom: 5 }}>{r.period}</div>
-              <div style={{ fontSize: 12.5, color: '#4A4744', lineHeight: 1.6 }}>{r.stat}</div>
+              {r.bullets ? (
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {r.bullets.map((b, i) => (
+                    <li key={i} style={{ fontSize: 12.5, color: '#4A4744', lineHeight: 1.6, display: 'flex', gap: 8, marginBottom: 4 }}>
+                      <span style={{ color: '#C2550A', flexShrink: 0, marginTop: 1 }}>–</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div style={{ fontSize: 12.5, color: '#4A4744', lineHeight: 1.6 }}>{r.stat}</div>
+              )}
             </div>
           </div>
         ))}

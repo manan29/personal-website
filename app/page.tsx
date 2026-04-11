@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const complexDeals = getBlogPostsByCategory('large-deal-learnings').slice(0, 3);
   const hiringPosts = getBlogPostsByCategory('hiring-top-talent').slice(0, 2);
+  const buildingTalentPosts = getBlogPostsByCategory('building-top-talent').slice(0, 2);
   const books = getAllBooks().slice(0, 3);
 
   return (
@@ -24,7 +25,7 @@ export default function HomePage() {
           marginBottom: '20px',
         }}
       >
-        Hey, I'm Manan.
+        Hey, I&apos;m Manan.
       </h1>
 
       {/* Intro */}
@@ -38,7 +39,7 @@ export default function HomePage() {
             marginBottom: '20px',
           }}
         >
-          Welcome to my space for writing, sharing notes from life as a sales manager, deep dives on wins and losses, and anything else I want to put out there.
+          Welcome to my space. My name is Manan, and I use this space to write notes about my learnings in pursuing, failing, and sometimes succeeding in building a Technology Sales career in India.
         </p>
         <p
           style={{
@@ -49,7 +50,7 @@ export default function HomePage() {
             marginBottom: '20px',
           }}
         >
-          I am currently building the sales team at Signeasy, a lean 5-person crew with a sharp focus on outbound. 9+ years in SaaS sales, building revenue functions that perform under pressure.
+          A Sales Manager with 9+ years building Sales and Account Management functions in Zero to One, and One to Ten SaaS startups. I grew up in Delhi and developed an instinct for winning by playing sports at the national level.
         </p>
         <p
           style={{
@@ -60,7 +61,25 @@ export default function HomePage() {
             marginBottom: '20px',
           }}
         >
-          I grew up competing at the highest level in sports, where losing never sat well with me. Today, I see it differently. You won't win everything, but you should never lose what was within your control to win. That belief drives how I build systems, hire A-players, and stay on the field with the team to get better, every day.
+          If you&apos;d like to know more about me,{' '}
+          <Link
+            href="/about"
+            style={{ color: '#4A4744', textDecoration: 'underline', fontWeight: 600 }}
+          >
+            Start Here
+          </Link>
+          .
+        </p>
+        <p
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontSize: '18px',
+            lineHeight: '1.9',
+            color: '#2D2D2D',
+            marginBottom: '20px',
+          }}
+        >
+          Or explore areas you might find useful:
         </p>
       </div>
 
@@ -367,6 +386,102 @@ export default function HomePage() {
 
         <div>
           {hiringPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.category}/${post.slug}`}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '10px 0',
+                borderBottom: '1px solid #E2E0D8',
+                gap: '12px',
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'var(--font-lato)',
+                  fontSize: '15.5px',
+                  color: '#1A1A1A',
+                  fontWeight: '400',
+                }}
+              >
+                {post.title}
+              </span>
+              <div
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '11.5px',
+                  color: '#AAAAAA',
+                  flexShrink: 0,
+                  display: 'flex',
+                  gap: '8px',
+                  alignItems: 'center',
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-ui)',
+                    fontSize: '9.5px',
+                    fontWeight: '700',
+                    letterSpacing: '0.07em',
+                    textTransform: 'uppercase',
+                    color: '#C2550A',
+                    border: '1px solid #F5DDD0',
+                    background: '#FEF3E7',
+                    borderRadius: '3px',
+                    padding: '1px 6px',
+                  }}
+                >
+                  {post.tag}
+                </span>
+                <span>{post.date}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Building Top Talent Section */}
+      <section style={{ marginBottom: '52px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '14px',
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '11px',
+              fontWeight: '700',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: '#AAAAAA',
+            }}
+          >
+            Building Top Talent
+          </h2>
+          <Link
+            href="/blog/category/building-top-talent"
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '13px',
+              color: '#C2550A',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+          >
+            See all
+          </Link>
+        </div>
+
+        <div>
+          {buildingTalentPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.category}/${post.slug}`}
