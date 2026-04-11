@@ -14,8 +14,8 @@ export default function About() {
 
       {/* INTRO */}
       <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        Sales leader with 9+ years building revenue functions across SaaS. I grew up in Delhi, hated losing, and never stopped.
-        I don't just run sales - I build the systems, hire the teams, and stay on the field with them.
+        Sales Manager with 9+ years building Sales and Account Management function. I grew up in Delhi, developed an instinct for winning by playing sports at national level.
+        Now, I am an operator at heart - I focus now on building the systems, building high quality teams, and love to go on the field with the team.
       </p>
 
       {/* CONTACT */}
