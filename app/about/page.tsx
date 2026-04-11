@@ -5,30 +5,36 @@ export default function About() {
     <main style={{ maxWidth: 680, margin: '0 auto', padding: '52px 24px 100px' }}>
 
       <h1 style={{ fontSize: 28, fontWeight: 700, color: '#1A1A1A', letterSpacing: '-0.02em', marginBottom: 24 }}>
-        Hey, Manan here. Here&apos;s a little more about me.
+        Hey, Manan here.
       </h1>
 
       {/* INTRO */}
       <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 20 }}>
-          I am currently growing the sales team at Signeasy - a lean 5-person crew with a sharp focus on adding $1mn in net revenue from a base of $150K. In total, I have spent around 9+ years in SaaS sales, building revenue functions that perform under pressure.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
+          I am currently growing the sales team at Signeasy - a lean 5-person crew focused on adding $1mn in net revenue from a base of $150K.
         </p>
-        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 20 }}>
-          I grew up competing at the highest level in sports at school, where losing never sat well with me. Today, I see it differently. You won&apos;t win everything, but you should never lose what was within your control to win.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
+          9+ years in SaaS sales, building revenue functions across Zero to One and One to Ten startups.
         </p>
-        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 0 }}>
-          That belief drives how I build systems, hire A-players, and stay on the field with the team to get better, every day. I no longer carry a strong emotional weight around losing - instead, I focus on finding opportunities I can win, constantly seeking new talent to work with, and coaching teams to get sharper at sales every day.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
+          I grew up competing at the national level in sports. Losing never sat well with me - but I have learned you should never lose what was within your control to win.
+        </p>
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 0 }}>
+          Today I focus on finding opportunities I can win, building teams with the right people, and coaching them to get sharper every day.
         </p>
       </div>
 
       {/* WHAT DRIVES ME */}
       <SectionLabel>What Drives Me</SectionLabel>
       <div style={{ marginBottom: 40 }}>
-        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 20 }}>
-          I came to Bangalore with nothing and no clarity on what I wanted to do. In the beginning, it was mostly about making money. But my manager at Wipro, Aparna, and working directly with the VP of Sales at o9 Solutions gave me something I hadn&apos;t expected - direction. I enjoyed working with them, and it gave me a sense of what high-quality execution and the right mindset actually look like.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
+          I came to Bangalore with nothing and no real direction. In the beginning, it was mostly about making money.
         </p>
-        <p style={{ fontSize: 15.5, color: '#2D2D2D', lineHeight: 1.9, marginBottom: 0 }}>
-          To this day, I believe my hunger to learn, my ability to seek truth in difficult situations, and my commitment to mastering the art of building sales teams - and selling itself - is what drives me more than money ever could.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
+          My manager at Wipro, Aparna, and the VP of Sales at o9 Solutions changed that. Working with them showed me what high-quality execution and the right mindset actually look like.
+        </p>
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 0 }}>
+          To this day - my hunger to learn, my ability to seek truth in hard situations, and my commitment to mastering sales and team-building drives me more than money ever could.
         </p>
       </div>
 

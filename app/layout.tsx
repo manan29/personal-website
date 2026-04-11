@@ -11,10 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Manan Sachdeva",
+  title: "manan.me",
   description: "Sales leader writing about GTM, deals, hiring, and building revenue orgs.",
+  icons: { icon: '/favicon.svg' },
   openGraph: {
-    title: "Manan Sachdeva",
+    title: "manan.me",
     description: "Sales leader writing about GTM, deals, hiring, and building revenue orgs.",
     type: "website",
   },

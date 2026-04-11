@@ -540,6 +540,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Experiments with AI Section */}
+      <section style={{ marginBottom: '52px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '14px',
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '11px',
+              fontWeight: '700',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: '#AAAAAA',
+            }}
+          >
+            Experiments with AI
+          </h2>
+          <Link
+            href="/blog/category/experiments-with-ai"
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '13px',
+              color: '#C2550A',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+          >
+            See all
+          </Link>
+        </div>
+      </section>
+
       {/* Reading List Section */}
       <section style={{ marginBottom: '52px' }}>
         <div
