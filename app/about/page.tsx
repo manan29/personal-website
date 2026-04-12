@@ -11,30 +11,39 @@ export default function About() {
       {/* INTRO */}
       <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          I am currently growing the sales team at Signeasy - a lean 5-person crew focused on adding $1mn in net revenue from a base of $150K.
+          Hey there, thanks for coming here! I&apos;ve been in Sales for the last 10+ years, and I have enjoyed working with some of the smartest Salespeople and Leaders globally.
         </p>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          9+ years in SaaS sales, building revenue functions across Zero to One and One to Ten startups.
+          Currently, I am working at Signeasy through the 1 → 10 journey the company is taking to build AI Workflows and Use-Cases for Contract Management.
         </p>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          I grew up competing at the national level in sports. Losing never sat well with me - but I have learned you should never lose what was within your control to win.
+          I grew up playing multiple sports and competing in Football and Cricket at the school level. I was the Sports Prefect. I loved being on the field then - it was a flow state. I hated to lose.
         </p>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 0 }}>
-          Today I focus on finding opportunities I can win, building teams with the right people, and coaching them to get sharper every day.
+          I don&apos;t have a strong emotion towards losing today, but that drive to win stayed with me. In Sales, I bring my strategic mindset, calmness, and a strong ability to iterate to continuously perform better as a manager, and help my reps become better over time.
         </p>
       </div>
 
       {/* WHAT DRIVES ME */}
-      <SectionLabel>What Drives Me</SectionLabel>
+      <SectionLabel accent>What Drives Me</SectionLabel>
       <div style={{ marginBottom: 40 }}>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          I came to Bangalore with nothing and no real direction. In the beginning, it was mostly about making money.
+          I came to Bangalore with nothing and no real direction. At first, it was mostly about making money - just building a better life.
         </p>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          My manager at Wipro, Aparna, and the VP of Sales at o9 Solutions changed that. Working with them showed me what high-quality execution and the right mindset actually look like.
+          Over time, I started liking something more than the other. My manager at Wipro,{' '}
+          <a
+            href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#C2550A', textDecoration: 'underline', textUnderlineOffset: 3 }}
+          >
+            Aparna
+          </a>
+          , and the VP of Sales at o9 Solutions changed that. Working with them showed me what high-quality execution and the right mindset actually look like.
         </p>
         <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 0 }}>
-          To this day - my hunger to learn, my ability to seek truth in hard situations, and my commitment to mastering sales and team-building drives me more than money ever could.
+          To this day, I try to keep that attitude and choose roles that challenge me. The stint at Hevo was full of ups and downs, but probably the highest learning curve I&apos;ve had - directly working and reporting to the CEO.
         </p>
       </div>
 
@@ -260,8 +269,8 @@ export default function About() {
 }
 
 // ── Shared components ─────────────────────────────────────
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <h2 style={{ fontSize: 22, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: '2px solid #E2E0D8' }}>{children}</h2>
+function SectionLabel({ children, accent }: { children: React.ReactNode, accent?: boolean }) {
+  return <h2 style={{ fontSize: 22, fontWeight: 700, color: accent ? '#C2550A' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#C2550A' : '#E2E0D8'}` }}>{children}</h2>
 }
 
 function Divider() {
