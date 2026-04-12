@@ -245,24 +245,6 @@ export default function About() {
         ))}
       </div>
 
-      <Divider />
-
-      {/* MISTAKES */}
-      <SectionLabel>Mistakes I&apos;ve made</SectionLabel>
-      <div style={{ marginBottom: 40 }}>
-        {[
-          ['Hiring before the playbook was ready', 'Hired fast at Hevo before the process was solid. Reps had different definitions of qualified, different approaches, different discovery questions. Never again - process before headcount.'],
-          ['Proposing before understanding the blocker', 'Sent a proposal in 24hrs because a CFO called our CEO. Felt like momentum. Was laziness. Total silence after. Should have done one more discovery call first.'],
-        ].map(([title, body], i, arr) => (
-          <div key={title} style={{ padding: '16px 0', borderBottom: i < arr.length - 1 ? '1px solid #E2E0D8' : 'none' }}>
-            <div style={{ fontSize: 13.5, fontWeight: 700, color: '#1A1A1A', marginBottom: 5, display: 'flex', gap: 8, alignItems: 'center' }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#C2550A', flexShrink: 0, display: 'inline-block' }} />
-              {title}
-            </div>
-            <div style={{ fontSize: 13, color: '#4A4744', lineHeight: 1.75, paddingLeft: 14 }}>{body}</div>
-          </div>
-        ))}
-      </div>
 
     </main>
   )
