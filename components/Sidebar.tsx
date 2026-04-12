@@ -195,37 +195,6 @@ export function Sidebar() {
             marginBottom: '10px',
           }}
         >
-          Learn
-        </div>
-        <Link
-          href="/courses"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '14px',
-            fontWeight: isActive('/courses') ? '600' : '500',
-            color: isActive('/courses') ? '#C2550A' : '#1A1A1A',
-            display: 'block',
-            padding: '4px 0',
-            textDecoration: 'none',
-          }}
-          className="sidebar-link"
-        >
-          Courses
-        </Link>
-      </nav>
-
-      <nav style={{ marginBottom: '24px' }}>
-        <div
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '10px',
-            fontWeight: '700',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: '#AAAAAA',
-            marginBottom: '10px',
-          }}
-        >
           More
         </div>
         <Link
