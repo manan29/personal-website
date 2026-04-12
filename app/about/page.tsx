@@ -82,24 +82,6 @@ export default function About() {
         ))}
       </div>
 
-      <Divider />
-
-      {/* BY THE NUMBERS */}
-      <SectionLabel>By the numbers</SectionLabel>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
-        {[
-          ['9+', 'Years in SaaS Sales'],
-          ['$100K+', 'Closed multiple $100K+ deals in global markets at Hevo'],
-          ['60+', 'Logos scaled in 2 quarters at Signeasy'],
-          ['10 to 25', 'Team scaled at Hevo through in-house hiring'],
-        ].map(([num, label]) => (
-          <div key={label} style={{ background: '#F5F4EF', padding: '18px 14px' }}>
-            <div style={{ fontSize: 24, fontWeight: 700, color: '#C2550A', letterSpacing: '-0.02em', marginBottom: 5 }}>{num}</div>
-            <div style={{ fontSize: 11, color: '#6B6B6B', lineHeight: 1.4 }}>{label}</div>
-          </div>
-        ))}
-      </div>
-
       {/* EXPERIENCE */}
       <SectionLabel>Experience</SectionLabel>
       <div style={{ marginBottom: 40, display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -231,19 +213,6 @@ export default function About() {
         ))}
       </div>
 
-      {/* METHODOLOGIES */}
-      <SectionLabel>Sales methodologies</SectionLabel>
-      <div style={{ marginBottom: 40 }}>
-        {[
-          ['Sandler', 'Qualification first. I run every deal through pain, power, fit, and timeline before investing real time.'],
-          ['MEDDIC', 'Essential for enterprise - metrics, economic buyer, decision criteria, process, pain, champion.'],
-        ].map(([name, desc], i, arr) => (
-          <div key={name} style={{ display: 'flex', gap: 14, padding: '13px 0', borderBottom: i < arr.length - 1 ? '1px solid #E2E0D8' : 'none' }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A1A', minWidth: 110, flexShrink: 0 }}>{name}</div>
-            <div style={{ fontSize: 13, color: '#4A4744', lineHeight: 1.6 }}>{desc}</div>
-          </div>
-        ))}
-      </div>
 
 
     </main>
