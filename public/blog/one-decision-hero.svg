@@ -1,0 +1,42 @@
+<svg width="100%" viewBox="0 0 680 380" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Finding the Right Person by Chance</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="40" y="42" width="90" height="24" rx="12" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text font-size="12" font-family="system-ui" x="85" y="55" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">Hiring</text>
+  <text font-size="34" font-weight="500" font-family="system-ui" x="40" y="122" fill="#1A1A1A">Sometimes the right</text>
+  <text font-size="34" font-weight="500" font-family="system-ui" x="40" y="166" fill="#1A1A1A">person is already</text>
+  <text font-size="34" font-weight="500" font-family="system-ui" x="40" y="210" fill="#A32D2D">in the room.</text>
+  <text font-size="12" font-family="system-ui" x="40" y="252" fill="#5F5E5A">You just have to know what to look for.</text>
+  <line x1="40" y1="280" x2="200" y2="280" stroke="#D3D1C7" stroke-width="0.5"/>
+  <text font-size="12" font-family="system-ui" x="40" y="304" fill="#5F5E5A">Manan Sachdeva</text>
+  <circle cx="148" cy="304" r="2" fill="#5F5E5A"/>
+  <text font-size="12" font-family="system-ui" x="158" y="304" fill="#5F5E5A">Sales · Hiring</text>
+  <g opacity="0.2" fill="#1A1A1A">
+    <circle cx="430" cy="150" r="10"/>
+    <rect x="420" y="164" width="20" height="28" rx="4"/>
+    <circle cx="470" cy="155" r="10"/>
+    <rect x="460" y="169" width="20" height="28" rx="4"/>
+    <circle cx="550" cy="152" r="10"/>
+    <rect x="540" y="166" width="20" height="28" rx="4"/>
+    <circle cx="590" cy="148" r="10"/>
+    <rect x="580" y="162" width="20" height="28" rx="4"/>
+    <circle cx="630" cy="155" r="10"/>
+    <rect x="620" y="169" width="20" height="28" rx="4"/>
+    <circle cx="450" cy="230" r="10"/>
+    <rect x="440" y="244" width="20" height="28" rx="4"/>
+    <circle cx="570" cy="235" r="10"/>
+    <rect x="560" y="249" width="20" height="28" rx="4"/>
+    <circle cx="620" cy="228" r="10"/>
+    <rect x="610" y="242" width="20" height="28" rx="4"/>
+    <circle cx="640" cy="255" r="10"/>
+    <rect x="630" y="269" width="20" height="28" rx="4"/>
+  </g>
+  <circle cx="510" cy="192" r="14" fill="#A32D2D"/>
+  <rect x="497" y="210" width="26" height="36" rx="5" fill="#A32D2D"/>
+  <text font-size="12" font-family="system-ui" x="510" y="258" text-anchor="middle" fill="#A32D2D">the one</text>
+  <circle cx="510" cy="210" r="46" fill="none" stroke="#A32D2D" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.4"/>
+</svg>
