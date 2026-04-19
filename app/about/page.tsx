@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function About() {
   return (
-    <main style={{ maxWidth: 680, margin: '0 auto', padding: '52px 24px 100px' }}>
+    <main style={{ maxWidth: 680, margin: '0 auto' }} className="about-page-main">
 
       <h1 style={{ fontSize: 28, fontWeight: 700, color: '#1A1A1A', letterSpacing: '-0.02em', marginBottom: 24 }}>
         Hey, Manan here.
@@ -58,7 +58,7 @@ export default function About() {
           <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0', borderBottom: '1px solid #E2E0D8' }}>
             <span style={{ fontSize: 11.5, color: '#AAAAAA', minWidth: 80 }}>{label}</span>
             {href
-              ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} style={{ fontSize: 14, color: '#C2550A', fontWeight: 500, textDecoration: 'none' }}>{value}</a>
+              ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} className="contact-email" style={{ fontSize: 14, color: '#C2550A', fontWeight: 500, textDecoration: 'none' }}>{value}</a>
               : <span style={{ fontSize: 14, color: '#1A1A1A', fontWeight: 500 }}>{value}</span>
             }
           </div>
@@ -67,7 +67,7 @@ export default function About() {
 
       {/* NOW */}
       <SectionLabel>What I&apos;m doing now</SectionLabel>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
+      <div className="grid-2col" style={{ gap: 1, background: '#E2E0D8', border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', marginBottom: 40 }}>
         {[
           ['Role', 'Head of Sales & Success', 'Signeasy - AI contract management'],
           ['Focus', '0 to 1 sales org', 'Pipeline, hiring, GTM systems'],
@@ -178,7 +178,7 @@ export default function About() {
 
       {/* NOTABLE WINS */}
       <SectionLabel>Notable wins</SectionLabel>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 40 }}>
+      <div className="grid-2col" style={{ gap: 10, marginBottom: 40 }}>
         {[
           ['60+', 'Logos scaled at Signeasy', 'Grew customer base from scratch to 60+ logos in 2 quarters through outbound and inbound motions.'],
           ['$10K to $150K', 'Account expansion at Hevo', "Scaled India's fastest-growing quick commerce company from $10K to $150K ARR working alongside solution engineers."],
@@ -197,7 +197,7 @@ export default function About() {
 
       {/* TOOLS */}
       <SectionLabel>Tools</SectionLabel>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 40 }}>
+      <div className="grid-2col" style={{ gap: 10, marginBottom: 40 }}>
         {[
           ['CRM & Pipeline', ['HubSpot', 'Salesforce']],
           ['Prospecting', ['Clay', 'Apollo', 'LinkedIn Sales Nav']],

@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main>
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+      <div className="blog-post-inner" style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
         {/* Title */}
         <h1
           style={{

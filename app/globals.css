@@ -124,3 +124,50 @@ p {
     padding: 24px 20px !important;
   }
 }
+
+/* ── Responsive grid utility ───────────────────────── */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* About page inner padding — reset on mobile so .main-content padding is enough */
+.about-page-main {
+  padding: 52px 24px 100px;
+}
+
+@media (max-width: 640px) {
+  /* 2-column grids collapse to 1 column */
+  .grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About page: remove duplicate padding, .main-content already handles it */
+  .about-page-main {
+    padding: 16px 0 60px !important;
+  }
+
+  /* Blog post inner wrapper */
+  .blog-post-inner {
+    padding-top: 28px !important;
+    padding-bottom: 60px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Tighten CompanyBlock header on small screens */
+  .company-header {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  /* Section label font tweak */
+  .section-label-responsive {
+    margin-top: 32px !important;
+  }
+
+  /* Reading list / notable wins text wrapping */
+  .contact-email {
+    word-break: break-all;
+  }
+}
