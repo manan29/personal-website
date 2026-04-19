@@ -92,7 +92,7 @@ export function Sidebar() {
           marginBottom: '18px',
         }}
       >
-        Building sales orgs from 0 to 1. Previously o9 Solutions, Hevo Data. Now Signeasy.
+        Scaling Signeasy&apos;s CLM Product. Prev - Hevo Data, o9 Solutions
       </p>
 
       {/* About Me Button */}
