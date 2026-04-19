@@ -181,37 +181,6 @@ export function Sidebar() {
         >
           Sales Systems
         </Link>
-      </nav>
-
-      <nav style={{ marginBottom: '24px' }}>
-        <div
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '10px',
-            fontWeight: '700',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: '#AAAAAA',
-            marginBottom: '10px',
-          }}
-        >
-          More
-        </div>
-        <Link
-          href="/notes"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '14px',
-            fontWeight: isActive('/notes') ? '600' : '500',
-            color: isActive('/notes') ? '#C2550A' : '#1A1A1A',
-            display: 'block',
-            padding: '4px 0',
-            textDecoration: 'none',
-          }}
-          className="sidebar-link"
-        >
-          Notes
-        </Link>
         <Link
           href="/reading-list"
           style={{

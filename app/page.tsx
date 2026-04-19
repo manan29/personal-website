@@ -30,226 +30,28 @@ export default function HomePage() {
 
       {/* Intro */}
       <div style={{ marginBottom: '48px', paddingBottom: '36px', borderBottom: '1px solid #E2E0D8' }}>
-        <p
-          style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: '18px',
-            lineHeight: '1.9',
-            color: '#2D2D2D',
-            marginBottom: '20px',
-          }}
-        >
-          Welcome to my space. My name is Manan, and I use this space to write notes about my learnings in pursuing, failing, and sometimes succeeding in building a Technology Sales career in India.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: '18px', lineHeight: '1.9', color: '#2D2D2D', marginBottom: '20px' }}>
+          I use this space to write mostly about various aspects of sales, right from thinking about a{' '}
+          <span style={{ color: '#A32D2D', fontWeight: 500 }}>complex deal cycle</span>
+          {' '}to identifying and{' '}
+          <span style={{ color: '#A32D2D', fontWeight: 500 }}>coaching sales talent</span>.
         </p>
-        <p
-          style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: '18px',
-            lineHeight: '1.9',
-            color: '#2D2D2D',
-            marginBottom: '20px',
-          }}
-        >
-          A Sales Manager with 9+ years building Sales and Account Management functions in Zero to One, and One to Ten SaaS startups. I grew up in Delhi and developed an instinct for winning by playing sports at the national level.
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: '18px', lineHeight: '1.9', color: '#2D2D2D', marginBottom: '20px' }}>
+          I am an{' '}
+          <span style={{ color: '#A32D2D', fontWeight: 500 }}>operator</span>
+          {' '}at heart, who found my place by taking on challenging roles at early-stage SaaS startups.
         </p>
-        <p
-          style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: '18px',
-            lineHeight: '1.9',
-            color: '#2D2D2D',
-            marginBottom: '20px',
-          }}
-        >
-          If you&apos;d like to know more about me,{' '}
-          <Link
-            href="/about"
-            style={{ color: '#4A4744', textDecoration: 'underline', fontWeight: 600 }}
-          >
-            Start Here
-          </Link>
-          .
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: '18px', lineHeight: '1.9', color: '#2D2D2D', marginBottom: '20px' }}>
+          Personally, I like following{' '}
+          <span style={{ color: '#A32D2D', fontWeight: 500 }}>F1</span>
+          {' '}and{' '}
+          <span style={{ color: '#A32D2D', fontWeight: 500 }}>Test Cricket</span>
+          {' '}as the only competitive sports.
         </p>
-        <p
-          style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: '18px',
-            lineHeight: '1.9',
-            color: '#2D2D2D',
-            marginBottom: '20px',
-          }}
-        >
-          Or explore areas you might find useful:
+        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: '18px', lineHeight: '1.9', color: '#2D2D2D', marginBottom: '20px' }}>
+          Know more about me,{' '}
+          <Link href="/about" style={{ color: '#A32D2D', fontWeight: 600, textDecoration: 'underline' }}>HERE</Link>
         </p>
-      </div>
-
-      {/* Credentials Strip */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '1px',
-          background: '#E2E0D8',
-          border: '1px solid #E2E0D8',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          marginBottom: '52px',
-        }}
-      >
-        {/* Column 1 - Trained on */}
-        <div style={{ background: '#F5F4EF', padding: '18px 16px' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: '9px',
-              fontWeight: '700',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: '#C2550A',
-              marginBottom: '10px',
-            }}
-          >
-            Trained on
-          </div>
-          {['Sandler', 'MEDDIC', 'Challenger Sale', 'SPIN'].map((method) => (
-            <div
-              key={method}
-              style={{
-                display: 'flex',
-                gap: '8px',
-                alignItems: 'center',
-                marginBottom: '6px',
-              }}
-            >
-              <div
-                style={{
-                  width: '3px',
-                  height: '3px',
-                  borderRadius: '50%',
-                  background: '#C2550A',
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
-                  fontWeight: '500',
-                  color: '#1A1A1A',
-                }}
-              >
-                {method}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Column 2 - Markets */}
-        <div style={{ background: '#F5F4EF', padding: '18px 16px' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: '9px',
-              fontWeight: '700',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: '#C2550A',
-              marginBottom: '10px',
-            }}
-          >
-            Markets
-          </div>
-          {['US', 'Middle East', 'UK', 'South Africa'].map((market) => (
-            <div
-              key={market}
-              style={{
-                display: 'flex',
-                gap: '8px',
-                alignItems: 'center',
-                marginBottom: '6px',
-              }}
-            >
-              <div
-                style={{
-                  width: '3px',
-                  height: '3px',
-                  borderRadius: '50%',
-                  background: '#C4BFBA',
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
-                  fontWeight: '500',
-                  color: '#1A1A1A',
-                }}
-              >
-                {market}
-              </span>
-            </div>
-          ))}
-          <div
-            style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: '10px',
-              color: '#AAAAAA',
-              marginTop: '8px',
-              lineHeight: '1.5',
-            }}
-          >
-            Cultural nuances across enterprise buying
-          </div>
-        </div>
-
-        {/* Column 3 - Tools */}
-        <div style={{ background: '#F5F4EF', padding: '18px 16px' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: '9px',
-              fontWeight: '700',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: '#C2550A',
-              marginBottom: '10px',
-            }}
-          >
-            Tools
-          </div>
-          {['HubSpot', 'Clay', 'Apollo', 'Salesforce'].map((tool) => (
-            <div
-              key={tool}
-              style={{
-                display: 'flex',
-                gap: '8px',
-                alignItems: 'center',
-                marginBottom: '6px',
-              }}
-            >
-              <div
-                style={{
-                  width: '3px',
-                  height: '3px',
-                  borderRadius: '50%',
-                  background: '#C4BFBA',
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
-                  fontWeight: '500',
-                  color: '#1A1A1A',
-                }}
-              >
-                {tool}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Complex Deals Section */}
