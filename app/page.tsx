@@ -87,11 +87,10 @@ export default function HomePage() {
       <h1
         style={{
           fontFamily: 'var(--font-body)',
-          fontSize: '28px',
-          fontWeight: '700',
+          fontSize: '32px',
+          fontWeight: '500',
           color: '#1A1A1A',
-          letterSpacing: '-0.02em',
-          marginBottom: '12px',
+          marginBottom: '1.5rem',
         }}
       >
         Hey, I&apos;m Manan.
@@ -99,26 +98,34 @@ export default function HomePage() {
 
       {/* Intro */}
       <div style={{ marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid #E2E0D8' }}>
-        <p style={pStyle}>
-          I write about sales - right from thinking through a{' '}
-          <span style={{ color: '#A32D2D', fontWeight: 500 }}>complex deal cycle</span>
-          {' '}to identifying and{' '}
-          <span style={{ color: '#A32D2D', fontWeight: 500 }}>coaching sales talent</span>.
+        <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
+          I am an operator at heart, working closely with CEOs and Founders to scale revenue functions like Sales, Account Management, and Outbound.
         </p>
-        <p style={pStyle}>
-          An{' '}
-          <span style={{ color: '#A32D2D', fontWeight: 500 }}>operator</span>
-          {' '}at heart. Early-stage SaaS is where I do my best work.
+        <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
+          Adaptable and resilient. I have been part of 0 to 1 and 1 to 10 journeys and developed an ability to operate in uncertainty, with an innate ability to solve problems and execute faster than others.
         </p>
-        <p style={pStyle}>
-          Off the field, I follow{' '}
-          <span style={{ color: '#A32D2D', fontWeight: 500 }}>F1</span>
-          {' '}and{' '}
-          <span style={{ color: '#A32D2D', fontWeight: 500 }}>Test Cricket</span>.
+
+        <p style={{ fontSize: '16px', fontWeight: '500', color: '#6B6B6B', marginBottom: '0.75rem', letterSpacing: '0.01em', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          I am at my best when I am:
+        </p>
+
+        {[
+          { title: 'In the field', sub: 'Executing complex deals from first call to close.' },
+          { title: 'Building hiring strategies', sub: 'Finding and developing top sales talent.' },
+          { title: 'Building sales systems', sub: 'Structured processes that enable teams to succeed.' },
+        ].map(({ title, sub }) => (
+          <div key={title} style={{ borderLeft: '3px solid #3730A3', paddingLeft: '1.25rem', marginBottom: '0.75rem' }}>
+            <div style={{ fontSize: '16px', fontWeight: '500', color: '#3730A3', marginBottom: '2px' }}>{title}</div>
+            <p style={{ fontSize: '15px', color: '#6B6B6B', lineHeight: '1.6', margin: 0 }}>{sub}</p>
+          </div>
+        ))}
+
+        <p style={{ ...pStyle, color: '#6B6B6B', marginBottom: '1.25rem' }}>
+          Off the field, I follow F1 and Test Cricket.
         </p>
         <p style={{ ...pStyle, marginBottom: 0 }}>
           Know more about me,{' '}
-          <Link href="/about" style={{ color: '#A32D2D', fontWeight: 600, textDecoration: 'underline' }}>HERE</Link>
+          <Link href="/about" style={{ color: '#3730A3', fontWeight: 600, textDecoration: 'underline' }}>HERE</Link>
         </p>
       </div>
 
