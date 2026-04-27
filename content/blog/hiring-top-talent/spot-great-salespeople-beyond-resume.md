@@ -66,3 +66,5 @@ Not more knowledge - but constantly refining what good looks like. They like win
 - Which person influenced them the most throughout their career?
 - Which aspect of the sales cycle do they practise?
 - What are the deals they have lost that hurt them the most?
+
+These questions are seemingly more important today than what their experience and achievement numbers suggest. Sure, check them, evaluate them, but past success or experience should only be a baseline.
