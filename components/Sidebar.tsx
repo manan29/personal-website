@@ -24,7 +24,7 @@ export function Sidebar() {
               width: '96px',
               height: '96px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #C2550A, #F97316)',
+              background: 'linear-gradient(135deg, #3730A3, #4F46E5)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -52,7 +52,7 @@ export function Sidebar() {
           fontFamily: 'var(--font-ui)',
           fontSize: '16px',
           fontWeight: '700',
-          color: '#C2550A',
+          color: '#3730A3',
           marginBottom: '4px',
           textDecoration: 'none',
           display: 'block',
@@ -73,7 +73,7 @@ export function Sidebar() {
         style={{
           fontFamily: 'var(--font-ui)',
           fontSize: '11px',
-          color: '#C2550A',
+          color: '#3730A3',
           fontWeight: '600',
           letterSpacing: '0.08em',
           marginBottom: '14px',
@@ -103,7 +103,7 @@ export function Sidebar() {
           fontFamily: 'var(--font-ui)',
           fontSize: '13px',
           fontWeight: '600',
-          color: '#C2550A',
+          color: '#3730A3',
           border: '1px solid #E2E0D8',
           padding: '6px 14px',
           borderRadius: '4px',
@@ -112,7 +112,7 @@ export function Sidebar() {
           transition: 'border-color 0.2s ease',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.borderColor = '#C2550A';
+          e.currentTarget.style.borderColor = '#3730A3';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.borderColor = '#E2E0D8';
@@ -142,7 +142,7 @@ export function Sidebar() {
             fontFamily: 'var(--font-ui)',
             fontSize: '14px',
             fontWeight: isActive('/blog/large-deal-learnings') ? '600' : '500',
-            color: isActive('/blog/large-deal-learnings') ? '#C2550A' : '#1A1A1A',
+            color: isActive('/blog/large-deal-learnings') ? '#3730A3' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
             textDecoration: 'none',
@@ -157,7 +157,7 @@ export function Sidebar() {
             fontFamily: 'var(--font-ui)',
             fontSize: '14px',
             fontWeight: isActive('/blog/hiring-top-talent') ? '600' : '500',
-            color: isActive('/blog/hiring-top-talent') ? '#C2550A' : '#1A1A1A',
+            color: isActive('/blog/hiring-top-talent') ? '#3730A3' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
             textDecoration: 'none',
@@ -172,7 +172,7 @@ export function Sidebar() {
             fontFamily: 'var(--font-ui)',
             fontSize: '14px',
             fontWeight: isActive('/blog/sales-systems') ? '600' : '500',
-            color: isActive('/blog/sales-systems') ? '#C2550A' : '#1A1A1A',
+            color: isActive('/blog/sales-systems') ? '#3730A3' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
             textDecoration: 'none',
@@ -187,7 +187,7 @@ export function Sidebar() {
             fontFamily: 'var(--font-ui)',
             fontSize: '14px',
             fontWeight: isActive('/reading-list') ? '600' : '500',
-            color: isActive('/reading-list') ? '#C2550A' : '#1A1A1A',
+            color: isActive('/reading-list') ? '#3730A3' : '#1A1A1A',
             display: 'block',
             padding: '4px 0',
             textDecoration: 'none',
@@ -325,7 +325,7 @@ export function Sidebar() {
 
       <style jsx global>{`
         .sidebar-link:hover {
-          color: #C2550A !important;
+          color: #3730A3 !important;
         }
 
         @media (max-width: 768px) {

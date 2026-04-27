@@ -3,7 +3,7 @@
 :root {
   /* Design Tokens */
   --background: #F5F4EF;
-  --accent: #C2550A;
+  --accent: #3730A3;
   --text: #1A1A1A;
   --muted: #6B6B6B;
   --border: #E2E0D8;
@@ -54,11 +54,11 @@ body {
 
 /* Blog post list markers */
 .custom-bullet-list li::marker {
-  color: #C2550A;
+  color: #3730A3;
 }
 
 .custom-numbered-list li::marker {
-  color: #C2550A;
+  color: #3730A3;
   font-weight: 600;
 }
 
@@ -115,7 +115,7 @@ p {
 
 /* Footer */
 .footer-link:hover {
-  color: #C2550A !important;
+  color: #3730A3 !important;
 }
 
 @media (max-width: 768px) {

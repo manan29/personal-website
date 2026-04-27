@@ -26,7 +26,7 @@ const sectionHeadingStyle: React.CSSProperties = {
 const seeAllStyle: React.CSSProperties = {
   fontFamily: 'var(--font-ui)',
   fontSize: '12px',
-  color: '#C2550A',
+  color: '#3730A3',
   textDecoration: 'underline',
   textUnderlineOffset: '3px',
 };
@@ -62,9 +62,9 @@ const tagPillStyle: React.CSSProperties = {
   fontWeight: '700',
   letterSpacing: '0.07em',
   textTransform: 'uppercase',
-  color: '#C2550A',
-  border: '1px solid #F5DDD0',
-  background: '#FEF3E7',
+  color: '#3730A3',
+  border: '1px solid #C7D2FE',
+  background: '#EEF2FF',
   borderRadius: '3px',
   padding: '2px 8px',
 };

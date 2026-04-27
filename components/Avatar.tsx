@@ -14,7 +14,7 @@ export function Avatar() {
           width: '96px',
           height: '96px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #C2550A, #F97316)',
+          background: 'linear-gradient(135deg, #3730A3, #4F46E5)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

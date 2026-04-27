@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         fontSize: '17px',
                         fontWeight: '700',
                         color: '#1A1A1A',
-                        background: '#FEF3E7',
+                        background: '#EEF2FF',
                         padding: '16px 20px',
                         borderRadius: '6px',
                         margin: '32px 0',
@@ -172,7 +172,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       style={{
                         fontStyle: 'italic',
                         color: '#4A4744',
-                        borderLeft: '3px solid #C2550A',
+                        borderLeft: '3px solid #3730A3',
                         paddingLeft: '20px',
                         margin: '32px 0',
                         marginBottom: '22px',

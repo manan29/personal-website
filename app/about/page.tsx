@@ -36,7 +36,7 @@ export default function About() {
             href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: '#C2550A', textDecoration: 'underline', textUnderlineOffset: 3 }}
+            style={{ color: '#3730A3', textDecoration: 'underline', textUnderlineOffset: 3 }}
           >
             Aparna
           </a>
@@ -58,7 +58,7 @@ export default function About() {
           <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0', borderBottom: '1px solid #E2E0D8' }}>
             <span style={{ fontSize: 11.5, color: '#AAAAAA', minWidth: 80 }}>{label}</span>
             {href
-              ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} className="contact-email" style={{ fontSize: 14, color: '#C2550A', fontWeight: 500, textDecoration: 'none' }}>{value}</a>
+              ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} className="contact-email" style={{ fontSize: 14, color: '#3730A3', fontWeight: 500, textDecoration: 'none' }}>{value}</a>
               : <span style={{ fontSize: 14, color: '#1A1A1A', fontWeight: 500 }}>{value}</span>
             }
           </div>
@@ -186,7 +186,7 @@ export default function About() {
           ['10 to 25', 'Team scaled at Hevo', 'Doubled the sales team from 10 to 20 through in-house hiring, working alongside other sales managers in the hiring process.'],
         ].map(([num, title, desc]) => (
           <div key={title} style={{ background: '#fff', border: '1px solid #E2E0D8', borderRadius: 8, padding: 18 }}>
-            <div style={{ fontSize: 26, fontWeight: 700, color: '#C2550A', letterSpacing: '-0.02em', marginBottom: 5 }}>{num}</div>
+            <div style={{ fontSize: 26, fontWeight: 700, color: '#3730A3', letterSpacing: '-0.02em', marginBottom: 5 }}>{num}</div>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A1A', marginBottom: 5, lineHeight: 1.3 }}>{title}</div>
             <div style={{ fontSize: 12, color: '#6B6B6B', lineHeight: 1.6 }}>{desc}</div>
           </div>
@@ -205,7 +205,7 @@ export default function About() {
           ['AI Tools', ['Claude', 'Notion']],
         ].map(([label, items]) => (
           <div key={String(label)} style={{ background: '#fff', border: '1px solid #E2E0D8', borderRadius: 6, padding: '14px 16px' }}>
-            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C2550A', marginBottom: 10 }}>{label}</div>
+            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3730A3', marginBottom: 10 }}>{label}</div>
             {(items as string[]).map((item, i, arr) => (
               <div key={item} style={{ fontSize: 13, color: '#1A1A1A', fontWeight: 500, padding: '4px 0', borderBottom: i < arr.length - 1 ? '1px solid #F3F4F6' : 'none' }}>{item}</div>
             ))}
@@ -221,7 +221,7 @@ export default function About() {
 
 // ── Shared components ─────────────────────────────────────
 function SectionLabel({ children, accent }: { children: React.ReactNode, accent?: boolean }) {
-  return <h2 style={{ fontSize: 22, fontWeight: 700, color: accent ? '#C2550A' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#C2550A' : '#E2E0D8'}` }}>{children}</h2>
+  return <h2 style={{ fontSize: 22, fontWeight: 700, color: accent ? '#3730A3' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#3730A3' : '#E2E0D8'}` }}>{children}</h2>
 }
 
 function Divider() {
@@ -240,7 +240,7 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
     fontSize: 9, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase' as const,
     borderRadius: 3, padding: '2px 7px',
     ...(color === 'green' ? { background: '#F0FDF4', color: '#166534', border: '1px solid #BBF7D0' }
-      : color === 'amber' ? { background: '#FEF3E7', color: '#C2550A', border: '1px solid #F5DDD0' }
+      : color === 'amber' ? { background: '#EEF2FF', color: '#3730A3', border: '1px solid #C7D2FE' }
       : { background: '#F3F4F6', color: '#4B5563', border: '1px solid #E5E7EB' })
   })
 
@@ -257,7 +257,7 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
         {tagline && <div style={{ fontSize: 12.5, color: '#6B6B6B', fontStyle: 'italic', marginBottom: 4 }}>{tagline}</div>}
         {roles.map(r => (
           <div key={r.title} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: r.accent ? '#C2550A' : '#C4BFBA', flexShrink: 0, marginTop: 5 }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: r.accent ? '#3730A3' : '#C4BFBA', flexShrink: 0, marginTop: 5 }} />
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A1A', marginBottom: 2 }}>{r.title}</div>
               <div style={{ fontSize: 11, color: '#AAAAAA', marginBottom: 5 }}>{r.period}</div>
@@ -265,7 +265,7 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {r.bullets.map((b, i) => (
                     <li key={i} style={{ fontSize: 12.5, color: '#4A4744', lineHeight: 1.6, display: 'flex', gap: 8, marginBottom: 4 }}>
-                      <span style={{ color: '#C2550A', flexShrink: 0, marginTop: 1 }}>–</span>
+                      <span style={{ color: '#3730A3', flexShrink: 0, marginTop: 1 }}>–</span>
                       {b}
                     </li>
                   ))}

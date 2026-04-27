@@ -124,7 +124,7 @@ export default function CoursesPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '22px',
                 fontWeight: '700',
-                color: '#C2550A',
+                color: '#3730A3',
                 marginBottom: '16px',
               }}
             >
@@ -135,7 +135,7 @@ export default function CoursesPage() {
             <button
               disabled={!course.available}
               style={{
-                background: course.available ? '#C2550A' : '#E2E0D8',
+                background: course.available ? '#3730A3' : '#E2E0D8',
                 color: course.available ? '#fff' : '#AAAAAA',
                 padding: '10px 24px',
                 borderRadius: '4px',
@@ -168,7 +168,7 @@ export default function CoursesPage() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: '#C2550A',
+            color: '#3730A3',
             textDecoration: 'underline',
           }}
         >
