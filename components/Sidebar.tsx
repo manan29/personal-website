@@ -34,7 +34,7 @@ export function Sidebar() {
           </div>
         ) : (
           <Image
-            src="/photo.jpg"
+            src="/photo.png"
             alt="Manan Sachdeva"
             width={96}
             height={96}

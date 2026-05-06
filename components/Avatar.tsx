@@ -29,7 +29,7 @@ export function Avatar() {
   return (
     <div style={{ marginBottom: '16px' }}>
       <Image
-        src="/photo.jpg"
+        src="/photo.png"
         alt="Manan Sachdeva"
         width={96}
         height={96}
