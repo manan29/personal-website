@@ -93,16 +93,19 @@ export default function HomePage() {
           marginBottom: '1.5rem',
         }}
       >
-        Hey, I&apos;m Manan.
+        Hey, I&apos;m Manan - Welcome.
       </h1>
 
       {/* Intro */}
       <div style={{ marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid #E2E0D8' }}>
         <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-          I am an operator at heart, working closely with CEOs and Founders to scale revenue functions like Sales, Account Management, and Outbound.
+          I am an operator for 10+ years, working closely with CEOs and Founders to build revenue functions at growing SaaS companies.
         </p>
         <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-          Adaptable and resilient. I have been part of 0 to 1 and 1 to 10 journeys and developed an ability to operate in uncertainty, with an innate ability to solve problems and execute faster than others.
+          I enjoy being at the intersection of technology and selling. From selling Supply Chain Planning solutions to Fortune 500 companies, to building and hiring sales teams at early-stage SaaS startups in India - I thrive on the challenge to create something.
+        </p>
+        <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
+          The range of experience has given me a unique ability to connect the dots - making me adaptable and resilient, solving problems creatively and executing faster than others.
         </p>
 
         <p style={{ fontSize: '16px', fontWeight: '500', color: '#6B6B6B', marginBottom: '0.75rem', letterSpacing: '0.01em', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
