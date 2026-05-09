@@ -1,0 +1,44 @@
+<svg width="100%" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<rect x="40" y="30" width="120" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" x="100" y="41" text-anchor="middle" dominant-baseline="central" fill="#4338CA">Complex Deals</text>
+<text font-size="26" font-weight="500" font-family="system-ui" x="40" y="95" fill="#1A1A1A">How we replaced a top</text>
+<text font-size="26" font-weight="500" font-family="system-ui" x="40" y="126" fill="#1A1A1A">data platform at an</text>
+<text font-size="26" font-weight="500" font-family="system-ui" x="40" y="157" fill="#3730A3">Israeli fintech Unicorn.</text>
+<text font-size="11" font-family="system-ui" x="40" y="185" fill="#6B7280">5-month cycle</text>
+<circle cx="115" cy="185" r="2" fill="#C7D2FE"/>
+<text font-size="11" font-family="system-ui" x="123" y="185" fill="#6B7280">Sandler</text>
+<circle cx="170" cy="185" r="2" fill="#C7D2FE"/>
+<text font-size="11" font-family="system-ui" x="178" y="185" fill="#6B7280">$70K</text>
+<circle cx="208" cy="185" r="2" fill="#C7D2FE"/>
+<text font-size="11" font-family="system-ui" x="216" y="185" fill="#6B7280">Largest Israeli logo</text>
+<line x1="40" y1="390" x2="220" y2="390" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" x="40" y="408" fill="#9CA3AF">Manan Sachdeva</text>
+<line x1="355" y1="20" x2="355" y2="380" stroke="#E5E3DC" stroke-width="1"/>
+<rect x="368" y="24" width="296" height="50" rx="6" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="40" text-anchor="middle" dominant-baseline="central" fill="#3730A3">Identifying Pain</text>
+<text font-size="10" font-family="system-ui" x="516" y="58" text-anchor="middle" dominant-baseline="central" fill="#6B7280">Price transparency · Real-time replication · SLAs</text>
+<polygon points="512,76 520,76 516,82" fill="#C7D2FE"/>
+<rect x="368" y="84" width="296" height="50" rx="6" fill="#F5F5FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="100" text-anchor="middle" dominant-baseline="central" fill="#3730A3">Building Trust</text>
+<text font-size="10" font-family="system-ui" x="516" y="118" text-anchor="middle" dominant-baseline="central" fill="#6B7280">WhatsApp · 100+ messages · Informal channels</text>
+<polygon points="512,136 520,136 516,142" fill="#C7D2FE"/>
+<rect x="368" y="144" width="296" height="50" rx="6" fill="#F5F5FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="160" text-anchor="middle" dominant-baseline="central" fill="#3730A3">Buying Process</text>
+<text font-size="10" font-family="system-ui" x="516" y="178" text-anchor="middle" dominant-baseline="central" fill="#6B7280">Joint action plan · Shared ownership</text>
+<polygon points="512,196 520,196 516,202" fill="#C7D2FE"/>
+<rect x="368" y="204" width="296" height="50" rx="6" fill="#F5F5FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="220" text-anchor="middle" dominant-baseline="central" fill="#3730A3">Exec Connect</text>
+<text font-size="10" font-family="system-ui" x="516" y="238" text-anchor="middle" dominant-baseline="central" fill="#6B7280">CRO to CEO · Right moment · Right message</text>
+<polygon points="512,256 520,256 516,262" fill="#C7D2FE"/>
+<rect x="368" y="264" width="296" height="50" rx="6" fill="#F5F5FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="280" text-anchor="middle" dominant-baseline="central" fill="#3730A3">POC + Technical Alignment</text>
+<text font-size="10" font-family="system-ui" x="516" y="298" text-anchor="middle" dominant-baseline="central" fill="#6B7280">QA and PROD · US and EU · Platinum Support</text>
+<polygon points="512,316 520,316 516,322" fill="#C7D2FE"/>
+<rect x="368" y="324" width="296" height="50" rx="6" fill="#F5F5FF" stroke="#C7D2FE" stroke-width="0.5"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="340" text-anchor="middle" dominant-baseline="central" fill="#3730A3">Pricing</text>
+<text font-size="10" font-family="system-ui" x="516" y="358" text-anchor="middle" dominant-baseline="central" fill="#6B7280">Cost savings anchor · Support as value driver</text>
+<polygon points="512,376 520,376 516,382" fill="#C7D2FE"/>
+<rect x="368" y="384" width="296" height="50" rx="6" fill="#3730A3"/>
+<text font-size="11" font-family="system-ui" font-weight="600" x="516" y="400" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">Solving the Anxiety</text>
+<text font-size="10" font-family="system-ui" x="516" y="418" text-anchor="middle" dominant-baseline="central" fill="#C7D2FE">Vendor-size fear addressed · Closed Nov 2023</text>
+</svg>
