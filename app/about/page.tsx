@@ -1,6 +1,14 @@
 import Link from 'next/link'
 
 export default function About() {
+  const sectionHeading: React.CSSProperties = {
+    fontSize: 22, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em',
+    marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: '2px solid #E2E0D8',
+  }
+  const pStyle: React.CSSProperties = {
+    fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D',
+    lineHeight: 1.8, marginBottom: 16,
+  }
   return (
     <main style={{ maxWidth: 680, margin: '0 auto' }} className="about-page-main">
 
@@ -10,59 +18,51 @@ export default function About() {
 
       {/* INTRO */}
       <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          Hey there, thanks for coming here! I&apos;ve been in Sales for the last 10+ years, and I have enjoyed working with some of the smartest Salespeople and Leaders globally.
-        </p>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          Currently, I am working at Signeasy through the 1 → 10 journey the company is taking to build AI Workflows and Use-Cases for Contract Management.
-        </p>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          I grew up playing multiple sports and competing in Football and Cricket at the school level. I was the Sports Prefect. I loved being on the field then - it was a flow state. I hated to lose.
-        </p>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 0 }}>
-          I don&apos;t have a strong emotion towards losing today, but that drive to win stayed with me. In Sales, I bring my strategic mindset, calmness, and a strong ability to iterate to continuously perform better as a manager, and help my reps become better over time.
-        </p>
+        <p style={pStyle}>Thanks for coming here! Here&apos;s something more about me 🙂</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>Started my Sales career in 2016. I got placed on the first day of MBA college, but in an Ops role. I was miserable for a year at{' '}
+          <a href="https://www.wipro.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Wipro</a> doing this. So I wrote a cold email to{' '}
+          <a href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Aparna Krishnamurthy</a>, Head of Demand Generation, who was building a small team out of Bangalore. That was it.</p>
+      </div>
+
+      <p style={pStyle}>Moved to Bangalore in 2016. Been here since. It has been an amazing city, and I have met some of the most driven people of my life here.</p>
+
+      {/* BUILDING SALES */}
+      <h2 style={sectionHeading}>Building Sales, Hiring, and What it Takes to Scale Revenue Functions</h2>
+      <div style={{ marginBottom: 40 }}>
+        <p style={pStyle}>An important pivot in my life came when I joined{' '}
+          <a href="https://www.o9solutions.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>o9 Solutions</a>, a SaaS platform company selling an Enterprise Planning Solution to global companies.</p>
+        <p style={pStyle}>This was the most intense Business Development role I had taken on. I had the opportunity to work with Dutch and Southeast Asian talent. The talent density at o9 was - and still is - amazing.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>This was also where I led my first team. After 18 months as an individual contributor, I led the Business Development team focused on Enterprise across APAC. I also gained exposure working with consulting partners like{' '}
+          <a href="https://www.bcg.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>BCG India</a>,{' '}
+          <a href="https://www2.deloitte.com/au" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Deloitte Australia</a>, and a few others.</p>
+      </div>
+
+      {/* INDIAN SAAS STORY */}
+      <h2 style={sectionHeading}>Becoming Part of the Indian SaaS Story</h2>
+      <div style={{ marginBottom: 40 }}>
+        <p style={pStyle}>The motivation to move to{' '}
+          <a href="https://www.hevodata.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Hevo Data</a> was to build something closer to home. SaaS was growing, and I got the opportunity to be part of the 0 to 1 story there.</p>
+        <p style={pStyle}>One of the most challenging roles of my career - and the one where I did the most. We were building as a company with big ambitions, taking on{' '}
+          <a href="https://www.fivetran.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Fivetran</a>. At one point I was doing 8 interviews a day to find a good AE, building sales ops simultaneously, and spending time in front of customers.</p>
+        <p style={pStyle}>I worked closely with{' '}
+          <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a>, CEO at Hevo, and picked up a structured way to think about Hiring, Onboarding, and Sales Ops. The most memorable stint. The sales floor at Hevo buzzed when I was there.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>I scaled the SMB function with 4 AEs, then built the Account Management team for expanding the existing book of business with 6 AMs. The Mid Market and Enterprise role is where I got into strategic selling - it tied back to my time at o9 and my ambition to close big deals. Closing 4 to 5 deals at $50K at Hevo made me sharper at enterprise selling and managing a complex cycle.</p>
+      </div>
+
+      <p style={pStyle}>I also learned the ropes of hiring - through a few good decisions and more bad ones.</p>
+
+      {/* SIGNEASY */}
+      <h2 style={sectionHeading}>Signeasy</h2>
+      <div style={{ marginBottom: 40 }}>
+        <p style={{ ...pStyle, marginBottom: 0 }}><a href="https://www.signeasy.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Signeasy</a> has been different. No playbook. No big team. I joined a 4-member Sales and 3-member Account Management team. Signeasy had not sold to Mid Market before - and with us building an Enterprise product, I built and hired a team with the initial success of closing a Banking customer at $60K ARR.</p>
       </div>
 
       {/* WHAT DRIVES ME */}
-      <SectionLabel accent>What Drives Me</SectionLabel>
+      <h2 style={sectionHeading}>What Drives Me Professionally</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          I came to Bangalore with nothing and no real direction. At first, it was mostly about making money - just building a better life.
-        </p>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 16 }}>
-          Over time, I started liking something more than the other. My manager at Wipro,{' '}
-          <a
-            href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#3730A3', textDecoration: 'underline', textUnderlineOffset: 3 }}
-          >
-            Aparna
-          </a>
-          , and the VP of Sales at o9 Solutions changed that. Working with them showed me what high-quality execution and the right mindset actually look like.
-        </p>
-        <p style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D', lineHeight: 1.8, marginBottom: 0 }}>
-          To this day, I try to keep that attitude and choose roles that challenge me. The stint at Hevo was full of ups and downs, but probably the highest learning curve I&apos;ve had - directly working and reporting to the CEO.
-        </p>
-      </div>
-
-      {/* CONTACT */}
-      <SectionLabel>Contact</SectionLabel>
-      <div style={{ marginBottom: 40 }}>
-        {[
-          ['Email', 'manan.sachdeva89@gmail.com', 'mailto:manan.sachdeva89@gmail.com'],
-          ['LinkedIn', 'linkedin.com/in/manansachdeva ↗', 'https://www.linkedin.com/in/manansachdeva/'],
-          ['Based in', 'Bengaluru, India', null],
-        ].map(([label, value, href]) => (
-          <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0', borderBottom: '1px solid #E2E0D8' }}>
-            <span style={{ fontSize: 11.5, color: '#AAAAAA', minWidth: 80 }}>{label}</span>
-            {href
-              ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} className="contact-email" style={{ fontSize: 14, color: '#3730A3', fontWeight: 500, textDecoration: 'none' }}>{value}</a>
-              : <span style={{ fontSize: 14, color: '#1A1A1A', fontWeight: 500 }}>{value}</span>
-            }
-          </div>
-        ))}
+        <p style={pStyle}>Being part of a smart and driven team. More than the idea, I like to be part of a team where I can learn.</p>
+        <p style={pStyle}>I picked up Sandler and MEDDPICC and find that I can lead and coach other AEs in Mid Market and Enterprise deals. I love going deep into the technical aspects to get a deal done, while bringing the strategic expertise to move it in the right direction.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>I also believe I can spot the right talent and build an initial team - one I can work with, grow with, and scale with.</p>
       </div>
 
       {/* NOW */}
