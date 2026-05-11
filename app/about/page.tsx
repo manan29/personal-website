@@ -87,55 +87,61 @@ export default function About() {
       <div style={{ marginBottom: 40, display: 'flex', flexDirection: 'column', gap: 10 }}>
 
         <CompanyBlock
-          name="Signeasy" dates="2023 - Present"
+          name="Signeasy" dates="May 2025 - Present"
           tag={{ label: 'Current', color: 'green' }}
           tagline="AI-powered contract management platform"
           roles={[
             {
               title: 'Head of Sales and Success',
-              period: '2023 - Present',
+              period: 'May 2025 - Present',
               accent: true,
               bullets: [
-                'Grew logo acquisition from 15 per quarter to 64 in Q1 2025',
+                'Grew logo acquisition from 15 per quarter to 64 in Q1 2026',
                 'Improved Lead to Opportunity conversion from 20% to 45% by defining clear sales processes and sharper deal qualification',
                 'Improved Opportunity to Close rate from 25% to 45% through better execution quality and applying Sandler for Mid-Market deals',
-                'Independently closed a $70K Banking API customer in the US - the largest landing logo to date',
+                'Independently closed a $70K Banking customer in the US through a 6-month sales cycle',
+                'Built sales processes around SMB Sales Assist and Mid Market deals through Sandler implementation',
+                'Hired Founding BDR and set up initial process around Outbound. Impact: created $50K outbound pipeline in Q1 2026 and closed $10K of that pipeline',
               ],
             },
           ]}
         />
 
         <CompanyBlock
-          name="Hevo Data" dates="May 2021 - 2023"
-          tags={[{ label: '3 Roles', color: 'amber' }, { label: '1 Promotion', color: 'gray' }]}
+          name="Hevo Data" dates="May 2021 - Dec 2024"
+          tag={{ label: '1 Promotion', color: 'gray' }}
           tagline="Cloud ETL / Data Integration - $1M-$10M ARR journey"
           roles={[
             {
-              title: 'Mid-Market Sales - EMEA & APAC',
-              period: 'Aug 2023 - Present - CRO',
+              title: 'Mid-Market Sales - EMEA and APAC',
+              period: <>Aug 2023 - Dec 2024 · <a href="https://www.linkedin.com/in/daniel-niemann-6b20621/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Daniel Niemann</a> (CRO)</>,
               accent: true,
               bullets: [
-                'Generated $750K ARR across 30 logos in 3 quarters against a $1.2mn target',
-                'Closed the largest-ever Israel deal at approximately $100K ARR',
-                'Closed the biggest AWS Marketplace deal at $40K ARR on a 2-year term',
-              ],
-            },
-            {
-              title: 'SMB Sales Lead - Europe',
-              period: 'May 2021 - Jul 2022 - CEO',
-              bullets: [
-                'Scaled average logos per month from 8 to 18, delivering $92K ARR',
-                'Learned the ropes of hiring and doubled the team from 10 to 20',
-                'Worked with other sales managers as a core part of the hiring process',
+                'Led a team of 4 AEs closing $750K ARR across 30 logos in 3 quarters against a $1.2mn target',
+                'Closed the largest-ever deal in the non-US region at approximately $80K ARR',
+                'Closed the first AWS Marketplace deal at $40K ARR on a 2-year term',
+                'Constantly improved deal execution through tighter qualification, role-plays, and building a Sandler playbook',
               ],
             },
             {
               title: 'Account Management and Expansion',
-              period: 'Jul 2022 - Aug 2023 - CEO',
+              period: <>Jul 2022 - Aug 2023 · <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a> (CEO)</>,
               bullets: [
-                'Took on account management and expansion as the next big problem',
-                'Scaled the fastest-growing quick commerce company in India from $10K to $150K ARR',
-                'Learned that building relationships, working alongside solution engineers, and closing expansion deals was where I found my real edge',
+                'Took on account management and expansion as the next big problem after scaling SMB Sales Motion',
+                'Biggest ARR expansion: scaled the fastest-growing quick commerce company in India from $10K to $150K ARR through account planning, executive relationships, and identifying whitespaces',
+                'Started with 1 AM, hired 6 AMs to handle a total account book of $5mn+',
+                'Built playbook from scratch including account segmentation, geo alignment, QBRs, and adoption',
+              ],
+            },
+            {
+              title: 'SMB Sales Lead - Europe',
+              period: <>May 2021 - Jul 2022 · <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a> (CEO)</>,
+              bullets: [
+                'Scaled average logos per month from 8 to 18, delivering $92K ARR in EMEA',
+                'Learned the ropes of hiring and doubled the team from 10 to 20 across all regions',
+                'Scaled Sales Ops on Inbound. Defined segmentation based on trial and product signals',
+                'Built high velocity sales system to measure Trial → Pipeline Activation → Conversation Established → Deal → Close',
+                'Measured each step of the funnel',
               ],
             },
           ]}
@@ -148,20 +154,20 @@ export default function About() {
           roles={[
             {
               title: 'Team Lead, Business Development',
-              period: '2020 - 2021 - Global EVP',
+              period: <>2020 - 2021 · <a href="https://www.linkedin.com/in/stephandebarse-driving-digital-transformation/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Stephan De Barse</a> (Global EVP)</>,
               accent: true,
               bullets: [
-                'SQLs 20 to 80+ per quarter',
-                'Built $2mn+ enterprise pipeline per quarter',
-                'Partner ecosystems: GCP, TCS, McKinsey, Deloitte, BCG',
+                'Increased team SQLs from 20 to 80+ per quarter for enterprise companies with revenue above $1bn',
+                'Built $2mn+ enterprise pipeline per quarter through those SQLs (avg ACV $100K-$300K)',
+                'Activated partner ecosystems in APAC: GCP, TCS, McKinsey, Deloitte, BCG',
               ],
             },
             {
               title: 'Business Development Manager',
               period: '2018 - 2020',
               bullets: [
-                'Built outbound pipeline for enterprise supply chain SaaS',
-                'Promoted to Team Lead within 2 years',
+                'Started as an individual contributor. Built outbound pipeline for enterprise supply chain SaaS in EMEA and India',
+                '8 SQLs per quarter as starting target for first year - achieved 100%+',
               ],
             },
           ]}
@@ -169,9 +175,16 @@ export default function About() {
 
         <CompanyBlock
           name="Wipro" dates="Jun 2015 - Sep 2018"
-          tagline="Senior Executive, Demand Generation"
+          tagline="Retail and Consumer vertical"
           roles={[
-            { title: 'Demand Generation', period: 'Retail & Consumer vertical', stat: 'First demand gen hire. Generated $20mn enterprise pipeline via campaigns, B2B summits, and partner activity.' },
+            {
+              title: 'Senior Executive, Demand Generation',
+              period: <>Jun 2015 - Sep 2018 · <a href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Aparna Krishnamurthy</a> (Head of Demand Generation)</>,
+              bullets: [
+                'First demand gen hire. Generated $20mn enterprise pipeline via campaigns, B2B summits, and partner activity',
+                'Identified and recruited cold calling agencies including Revvpro and Beyond Codes',
+              ],
+            },
           ]}
         />
       </div>
@@ -233,7 +246,7 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
   tag?: { label: string, color: string },
   tags?: { label: string, color: string }[],
   tagline?: string,
-  roles: { title: string, period: string, stat?: string, bullets?: string[], accent?: boolean }[]
+  roles: { title: string, period: React.ReactNode, stat?: string, bullets?: string[], accent?: boolean }[]
 }) {
   const allTags = tags || (tag ? [tag] : [])
   const tagStyle = (color: string) => ({
