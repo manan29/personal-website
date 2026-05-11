@@ -215,7 +215,7 @@ export default function About() {
           ['CRM & Pipeline', ['HubSpot', 'Salesforce']],
           ['Prospecting', ['Clay', 'Apollo', 'LinkedIn Sales Nav']],
           ['Analytics', ['Mixpanel', 'HubSpot Reports']],
-          ['AI Tools', ['Claude', 'Notion']],
+          ['AI Tools', ['Claude for Sales Projects', 'Whisprflow']],
         ].map(([label, items]) => (
           <div key={String(label)} style={{ background: '#fff', border: '1px solid #E2E0D8', borderRadius: 6, padding: '14px 16px' }}>
             <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3730A3', marginBottom: 10 }}>{label}</div>
