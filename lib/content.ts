@@ -163,7 +163,7 @@ export function getBlogPostsByCategory(category: string): BlogPost[] {
       };
     });
 
-  return posts;
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getBlogPostBySlug(category: string, slug: string): BlogPost | null {
@@ -180,7 +180,7 @@ export function getAllBlogPosts(): BlogPost[] {
     allPosts.push(...posts);
   });
 
-  return allPosts;
+  return allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getAllNotes(): Note[] {
