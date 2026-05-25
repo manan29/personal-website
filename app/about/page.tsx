@@ -83,7 +83,7 @@ export default function About() {
       </div>
 
       {/* EXPERIENCE */}
-      <SectionLabel>Experience</SectionLabel>
+      <SectionLabel id="experience">Experience</SectionLabel>
       <div style={{ marginBottom: 40, display: 'flex', flexDirection: 'column', gap: 10 }}>
 
         <CompanyBlock
@@ -233,8 +233,8 @@ export default function About() {
 }
 
 // ── Shared components ─────────────────────────────────────
-function SectionLabel({ children, accent }: { children: React.ReactNode, accent?: boolean }) {
-  return <h2 style={{ fontSize: 22, fontWeight: 700, color: accent ? '#3730A3' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#3730A3' : '#E2E0D8'}` }}>{children}</h2>
+function SectionLabel({ children, accent, id }: { children: React.ReactNode, accent?: boolean, id?: string }) {
+  return <h2 id={id} style={{ fontSize: 22, fontWeight: 700, color: accent ? '#3730A3' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#3730A3' : '#E2E0D8'}` }}>{children}</h2>
 }
 
 function Divider() {

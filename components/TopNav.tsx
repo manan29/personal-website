@@ -26,9 +26,6 @@ export function TopNav() {
     setInsightsOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) => pathname === href;
-  const isInsightsActive = pathname?.startsWith('/blog');
-
   return (
     <>
       <style>{`
@@ -51,10 +48,9 @@ export function TopNav() {
         }
         .topnav-logo {
           font-size: 15px;
-          font-weight: 700;
-          color: #1A1A1A;
+          font-weight: 600;
+          color: #3730A3;
           text-decoration: none;
-          letter-spacing: -0.01em;
         }
         .topnav-links {
           display: flex;
@@ -71,12 +67,8 @@ export function TopNav() {
           border-radius: 4px;
           transition: color 0.15s ease;
         }
-        .topnav-link:hover,
-        .topnav-link.active {
+        .topnav-link:hover {
           color: #1A1A1A;
-        }
-        .topnav-link.active {
-          color: #3730A3;
         }
         .insights-wrapper {
           position: relative;
@@ -209,29 +201,28 @@ export function TopNav() {
 
       <nav className="topnav">
         <div className="topnav-inner">
-          <Link href="/" className="topnav-logo">manan.me</Link>
+          <Link href="/" className="topnav-logo">Manan Sachdeva</Link>
 
           {/* Desktop links */}
           <ul className="topnav-links">
             <li>
-              <Link
-                href="/"
-                className={`topnav-link${isActive('/') ? ' active' : ''}`}
-              >
+              <Link href="/" className="topnav-link">
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                href="/about"
-                className={`topnav-link${isActive('/about') ? ' active' : ''}`}
-              >
-                About
+              <Link href="/about" className="topnav-link">
+                About Me
+              </Link>
+            </li>
+            <li>
+              <Link href="/about#experience" className="topnav-link">
+                Experience
               </Link>
             </li>
             <li className="insights-wrapper" ref={dropdownRef}>
               <button
-                className={`insights-btn${isInsightsActive ? ' active' : ''}`}
+                className="insights-btn"
                 onClick={() => setInsightsOpen(o => !o)}
                 aria-expanded={insightsOpen}
               >
@@ -257,14 +248,6 @@ export function TopNav() {
                 </div>
               )}
             </li>
-            <li>
-              <Link
-                href="/notes"
-                className={`topnav-link${isActive('/notes') ? ' active' : ''}`}
-              >
-                Notes
-              </Link>
-            </li>
           </ul>
 
           {/* Mobile hamburger */}
@@ -282,13 +265,13 @@ export function TopNav() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
-        <Link href="/" className={`mobile-link${isActive('/') ? ' active' : ''}`}>Home</Link>
-        <Link href="/about" className={`mobile-link${isActive('/about') ? ' active' : ''}`}>About</Link>
+        <Link href="/" className="mobile-link">Home</Link>
+        <Link href="/about" className="mobile-link">About Me</Link>
+        <Link href="/about#experience" className="mobile-link">Experience</Link>
         <div className="mobile-submenu-label">Insights</div>
         <Link href="/blog/large-deal-learnings" className="mobile-link">Complex Deals</Link>
         <Link href="/blog/hiring-top-talent" className="mobile-link">Hiring &amp; Talent</Link>
         <Link href="/blog/sales-systems" className="mobile-link">Sales Systems</Link>
-        <Link href="/notes" className={`mobile-link${isActive('/notes') ? ' active' : ''}`}>Notes</Link>
       </div>
     </>
   );

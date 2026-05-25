@@ -85,7 +85,7 @@ export default function HomePage() {
     <main>
       {/* Two-column intro */}
       <div className="home-intro">
-        {/* Left: profile photo */}
+        {/* Left: profile photo + info */}
         <div className="home-profile-col">
           <Image
             src="/photo.png"
@@ -95,6 +95,31 @@ export default function HomePage() {
             style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
             priority
           />
+          <span style={{ fontSize: '16px', fontWeight: 600, color: '#3730A3', marginTop: '12px', display: 'block' }}>
+            Manan Sachdeva
+          </span>
+          <span style={{ fontSize: '12px', color: '#3730A3', marginTop: '4px', display: 'block' }}>
+            Sales · GTM · Talent Building
+          </span>
+          <span style={{ fontSize: '12px', color: '#6B7280', marginTop: '8px', lineHeight: '1.6', display: 'block' }}>
+            Scaling Signeasy&apos;s CLM Product. Prev - Hevo Data, o9 Solutions
+          </span>
+          <Link
+            href="/about"
+            style={{
+              display: 'inline-block',
+              marginTop: '16px',
+              border: '1px solid #3730A3',
+              color: '#3730A3',
+              padding: '6px 14px',
+              borderRadius: '6px',
+              fontSize: '12px',
+              background: 'transparent',
+              textDecoration: 'none',
+            }}
+          >
+            About me →
+          </Link>
         </div>
 
         {/* Right: intro text */}
