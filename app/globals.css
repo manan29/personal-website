@@ -101,15 +101,14 @@ p {
 
 /* Layout */
 .main-content {
-  margin-left: 220px;
-  padding: 52px 52px 100px;
-  max-width: 940px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 2rem 100px;
 }
 
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 0;
-    padding: 24px 20px;
+    padding: 24px 20px 80px;
   }
 }
 
@@ -118,10 +117,30 @@ p {
   color: #3730A3 !important;
 }
 
-@media (max-width: 768px) {
-  footer {
-    margin-left: 0 !important;
-    padding: 24px 20px !important;
+/* Two-column home intro */
+.home-intro {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E2E0D8;
+}
+
+.home-profile-col img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .home-intro {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .home-profile-col img {
+    width: 120px;
   }
 }
 

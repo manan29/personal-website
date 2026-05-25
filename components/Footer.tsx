@@ -4,12 +4,13 @@ export function Footer() {
   return (
     <footer
       style={{
-        marginLeft: '220px',
-        padding: '24px 52px',
+        padding: '24px 2rem',
         borderTop: '1px solid #E2E0D8',
         fontFamily: 'var(--font-ui)',
         fontSize: '12px',
         color: '#AAAAAA',
+        maxWidth: '860px',
+        margin: '0 auto',
       }}
     >
       <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -29,14 +30,6 @@ export function Footer() {
           className="footer-link"
         >
           Notes
-        </Link>
-        <span>·</span>
-        <Link
-          href="/reading-list"
-          style={{ color: '#AAAAAA', textDecoration: 'none' }}
-          className="footer-link"
-        >
-          Reading List
         </Link>
         <span>·</span>
         <Link

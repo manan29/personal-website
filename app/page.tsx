@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { getBlogPostsByCategory, getAllBooks } from '@/lib/content';
+import Image from 'next/image';
+import { getBlogPostsByCategory } from '@/lib/content';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -79,57 +80,71 @@ export default function HomePage() {
   const complexDeals = getBlogPostsByCategory('large-deal-learnings').slice(0, 3);
   const hiringPosts = getBlogPostsByCategory('hiring-top-talent').slice(0, 2);
   const buildingTalentPosts = getBlogPostsByCategory('building-top-talent').slice(0, 2);
-  const books = getAllBooks().slice(0, 3);
 
   return (
-    <main style={{ maxWidth: '680px' }}>
-      {/* Greeting */}
-      <h1
-        style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '32px',
-          fontWeight: '500',
-          color: '#1A1A1A',
-          marginBottom: '1.5rem',
-        }}
-      >
-        Hey, I&apos;m Manan - Welcome.
-      </h1>
+    <main>
+      {/* Two-column intro */}
+      <div className="home-intro">
+        {/* Left: profile photo */}
+        <div className="home-profile-col">
+          <Image
+            src="/photo.png"
+            alt="Manan Sachdeva"
+            width={160}
+            height={200}
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            priority
+          />
+        </div>
 
-      {/* Intro */}
-      <div style={{ marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid #E2E0D8' }}>
-        <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-          I am an operator for 10+ years, working closely with CEOs and Founders to build revenue functions at growing SaaS companies.
-        </p>
-        <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-          I enjoy being at the intersection of technology and selling. From selling Supply Chain Planning solutions to Fortune 500 companies, to building and hiring sales teams at early-stage SaaS startups in India - I thrive on the challenge to create something.
-        </p>
-        <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-          The range of experience has given me a unique ability to connect the dots - making me adaptable and resilient, solving problems creatively and executing faster than others.
-        </p>
+        {/* Right: intro text */}
+        <div className="home-intro-col">
+          <h1
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '28px',
+              fontWeight: '600',
+              color: '#1A1A1A',
+              marginBottom: '1rem',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            Hey, I&apos;m Manan - Welcome.
+          </h1>
 
-        <p style={{ fontSize: '16px', fontWeight: '500', color: '#6B6B6B', marginBottom: '0.75rem', letterSpacing: '0.01em', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-          I am at my best when I am:
-        </p>
+          <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
+            I am an operator for 10+ years, working closely with CEOs and Founders to build revenue functions at growing SaaS companies.
+          </p>
+          <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
+            I enjoy being at the intersection of technology and selling. From selling Supply Chain Planning solutions to Fortune 500 companies, to building and hiring sales teams at early-stage SaaS startups in India - I thrive on the challenge to create something.
+          </p>
+          <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
+            The range of experience has given me a unique ability to connect the dots - making me adaptable and resilient, solving problems creatively and executing faster than others.
+          </p>
 
-        {[
-          { title: 'In the field', sub: 'Executing complex deals from first call to close.' },
-          { title: 'Building hiring strategies', sub: 'Finding and developing top sales talent.' },
-          { title: 'Building sales systems', sub: 'Structured processes that enable teams to succeed.' },
-        ].map(({ title, sub }) => (
-          <div key={title} style={{ borderLeft: '3px solid #3730A3', paddingLeft: '1.25rem', marginBottom: '0.75rem' }}>
-            <div style={{ fontSize: '16px', fontWeight: '500', color: '#3730A3', marginBottom: '2px' }}>{title}</div>
-            <p style={{ fontSize: '15px', color: '#6B6B6B', lineHeight: '1.6', margin: 0 }}>{sub}</p>
-          </div>
-        ))}
+          <p style={{ fontSize: '15px', fontWeight: '500', color: '#6B6B6B', marginBottom: '0.75rem', letterSpacing: '0.01em', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            I am at my best when I am:
+          </p>
 
-        <p style={{ ...pStyle, color: '#6B6B6B', marginBottom: '1.25rem' }}>
-          Off the field, I follow F1 and Test Cricket.
-        </p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>
-          Know more about me,{' '}
-          <Link href="/about" style={{ color: '#3730A3', fontWeight: 600, textDecoration: 'underline' }}>HERE</Link>
-        </p>
+          {[
+            { title: 'In the field', sub: 'Executing complex deals from first call to close.' },
+            { title: 'Building hiring strategies', sub: 'Finding and developing top sales talent.' },
+            { title: 'Building sales systems', sub: 'Structured processes that enable teams to succeed.' },
+          ].map(({ title, sub }) => (
+            <div key={title} style={{ borderLeft: '3px solid #3730A3', paddingLeft: '1.25rem', marginBottom: '0.75rem' }}>
+              <div style={{ fontSize: '15px', fontWeight: '500', color: '#3730A3', marginBottom: '2px' }}>{title}</div>
+              <p style={{ fontSize: '14px', color: '#6B6B6B', lineHeight: '1.6', margin: 0 }}>{sub}</p>
+            </div>
+          ))}
+
+          <p style={{ ...pStyle, color: '#6B6B6B', marginBottom: '0.75rem' }}>
+            Off the field, I follow F1 and Test Cricket.
+          </p>
+          <p style={{ ...pStyle, marginBottom: 0 }}>
+            Know more about me,{' '}
+            <Link href="/about" style={{ color: '#3730A3', fontWeight: 600, textDecoration: 'underline' }}>HERE</Link>
+          </p>
+        </div>
       </div>
 
       {/* Complex Deals Section */}
@@ -197,26 +212,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reading List Section */}
-      <section style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-          <h2 style={sectionHeadingStyle}>Reading List</h2>
-          <Link href="/reading-list" style={seeAllStyle}>See all</Link>
-        </div>
-        <div>
-          {books.map((book) => (
-            <div key={book.slug} style={postRowStyle}>
-              <span style={postTitleStyle}>
-                {book.title}{' '}
-                <span style={{ color: '#AAAAAA', fontWeight: 400 }}>— {book.author}</span>
-              </span>
-              <div style={postMetaStyle}>
-                <span style={tagPillStyle}>{book.tag}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }
