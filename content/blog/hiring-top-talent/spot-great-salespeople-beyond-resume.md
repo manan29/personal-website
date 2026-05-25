@@ -1,6 +1,6 @@
 ---
 title: "How to Spot Great Salespeople Beyond the Resume"
-date: "Apr 2026"
+date: "2026-04-27"
 tag: "Hiring"
 summary: "Five traits the best sales hires share - that they would not even know themselves."
 hero: "/blog/spot-great-salespeople-hero.svg"

@@ -1,6 +1,6 @@
 ---
 title: "One Decision That Turned Around the Next 2 Quarters"
-date: "Apr 2026"
+date: "2026-04-19"
 tag: "Hiring"
 summary: "Sometimes the right person is already in the room. You just have to know what to look for."
 hero: "/blog/one-decision-hero.svg"
