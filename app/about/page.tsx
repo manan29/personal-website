@@ -18,51 +18,47 @@ export default function About() {
 
       {/* INTRO */}
       <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
-        <p style={pStyle}>Thanks for coming here! Here&apos;s something more about me 🙂</p>
-        <p style={pStyle}>Started my Sales career accidentally in 2016. I got placed on the first day of MBA college, but in an Ops role. I was miserable for a year at{' '}
-          <a href="https://www.wipro.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Wipro</a> doing this - so I wrote a cold email to{' '}
-          <a href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Aparna Krishnamurthy</a>, Head of Demand Generation, who was building a small team out of Bangalore.</p>
-        <p style={pStyle}>There was one problem. Employees at Wipro were not allowed to move before serving 2 years in a role, and I was only 10 months in. The JD I had received was a forward from someone. I had to convince the VP of Ops - a pretty big title if you know Wipro. This was where I first saw my ability to reason and get what I want.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>Got the exception. Moved to Bangalore in 2016 and have been here since. It has been an amazing city and I have met some of the most driven people of my life here.</p>
+        <p style={pStyle}>Here&apos;s something more about me 🙂</p>
+        <p style={pStyle}>I started my Sales career accidentally in 2016. I got placed on the first day of MBA college in an Ops role at{' '}
+          <a href="https://www.wipro.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Wipro</a>, miserable for a year, before I wrote a cold email to{' '}
+          <a href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Aparna Krishnamurthy</a>, Head of Demand Generation, who was building a small Outbound team in Bangalore for proactive demand generation.</p>
+        <p style={pStyle}>But there was a problem: employees were not allowed to move before completing 2 years in a role, and I was only 10 months in. I convinced the VP of Ops at a meeting that was hard to get. I explained my case and he made an exception in the end. First CXO buy-in 🙂</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>Moved to Bangalore at the end of 2016 and have been here since.</p>
       </div>
 
       {/* STARTUPS */}
       <h2 style={sectionHeading}>Exposure to Startups, High Velocity Execution, and High Talent Density</h2>
       <div style={{ marginBottom: 40 }}>
         <p style={pStyle}>An important pivot came when I joined{' '}
-          <a href="https://www.o9solutions.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>o9 Solutions</a>, a technology platform company selling Enterprise Planning Solutions to global enterprises - Nike, Asian Paints, T-Mobile, Philips, Pirelli, and many more.</p>
-        <p style={pStyle}>The most intense Business Development role I had taken on. I worked with Dutch and Southeast Asian talent, and the talent density at o9 was - and still is - amazing.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>After 18 months as an individual contributor - building lists manually, cold calling, and building campaigns with partners - I led the Business Development team focused on Enterprise across APAC. I gained exposure working with consulting partners like{' '}
+          <a href="https://www.o9solutions.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>o9 Solutions</a>, selling Enterprise Planning Solutions to global enterprises such as Nike, Asian Paints, T-Mobile, Philips, Pirelli, and many more. The most intense BD role I had taken on - working with Dutch and Southeast Asian talent was my first cross-cultural experience.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>After 18 months as an individual contributor - building lists manually, cold calling, and running campaigns with partners - I was asked to lead the BD team focused on Enterprise across APAC. I gained exposure working with{' '}
           <a href="https://www.bcg.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>BCG India</a> and{' '}
-          <a href="https://www2.deloitte.com/au" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Deloitte Australia</a>. A hands-on role at high velocity.</p>
+          <a href="https://www2.deloitte.com/au" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Deloitte Australia</a>.</p>
       </div>
 
       {/* INDIAN SAAS STORY */}
       <h2 style={sectionHeading}>Becoming Part of the Indian SaaS Story</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={pStyle}>The motivation to move to{' '}
-          <a href="https://www.hevodata.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Hevo Data</a> was to build something closer to home. SaaS was growing and I got the opportunity to be part of the 0 to 1 story there.</p>
-        <p style={pStyle}>One of the most challenging roles of my career - and the one where I saw the pendulum of successes and failures the most. We were building with big ambitions, taking on{' '}
-          <a href="https://www.fivetran.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Fivetran</a>. At one point I was doing 8 interviews a day to find a good AE, building sales ops simultaneously, and spending the rest of the time in front of customers.</p>
-        <p style={pStyle}>I worked closely with{' '}
-          <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a>, CEO of Hevo, and picked up a structured way of thinking about Hiring, Onboarding, and Sales Ops. The most memorable stint. The sales floor at Hevo buzzed throughout my time there.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>I scaled the SMB function with 4 AEs, then built the Account Management team with 6 AMs. The Mid Market and Enterprise role is where I got into strategic selling - closing 4 to 5 deals at $50K made me sharper at enterprise selling and managing a complex cycle. I also learned the ropes of hiring through a few good decisions and more bad ones.</p>
+        <p style={pStyle}>I moved to{' '}
+          <a href="https://www.hevodata.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Hevo Data</a> to build something closer to home, joining the 0 to 1 story at a company taking on{' '}
+          <a href="https://www.fivetran.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Fivetran</a>. At one point I was doing 8 interviews a day, building sales ops, and spending the rest of the time in front of customers.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>Working closely with{' '}
+          <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a>, CEO of Hevo, I picked up a structured way of thinking about Hiring, Onboarding, and Sales Ops. I scaled SMB with 4 AEs, built the AM team with 6 AMs, and got into strategic selling through Mid Market and Enterprise - closing 4 to 5 deals at $50K+ sharpened my ability to think about complex deals and sales cycles.</p>
       </div>
 
       {/* SIGNEASY */}
       <h2 style={sectionHeading}>Signeasy</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={pStyle}><a href="https://www.signeasy.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Signeasy</a> has been different. No playbook. No big team. I joined a 4-member Sales team and was interim heading a 3-member Account Management team.</p>
-        <p style={pStyle}>Signeasy had not sold to Mid Market before. With us building an Enterprise product, I built and hired a team with the initial success of closing multiple mid-market deals - the largest being a Banking customer at $60K ARR, potentially at $300K ARR TCV next year.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>As of April 2026, I was promoted to Head of Sales and Account Management from Senior Manager - Sales.</p>
+        <p style={pStyle}><a href="https://www.signeasy.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Signeasy</a> has been different - no playbook, no big team, just a 4-member Sales team and an AM function I was heading in the interim. With us building an Enterprise product, I built and hired a team that closed multiple mid-market deals, the largest being a Banking customer at $60K ARR in the first year.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>As of April 2026, I was promoted to Head of Sales and Account Management.</p>
       </div>
 
       {/* WHAT DRIVES ME */}
-      <h2 style={sectionHeading}>What Drives Me Professionally</h2>
+      <h2 style={sectionHeading}>What Drives Me</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={pStyle}>Being part of a smart and driven team. I like working with talented people - the environment they create is what pushes me.</p>
-        <p style={pStyle}>I have worked with some of the best salespeople and picked up the strategic aspects of running a deal. Trained on Sandler and MEDDPICC - my real edge is coaching sales reps on complex situations, thinking through deal strategy, and going deep across business and technical use-cases to get a deal done, no matter what it takes.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>Through my failures, one thing I have learned is that the right hiring solves most problems salespeople deal with. Spotting the right talent and building an initial team - one I can work with, grow with, and scale with - is what I am best at.</p>
+        <p style={pStyle}>Being part of a smart, driven team is what pushes me to go beyond the status quo and take on the challenging aspects of GTM.</p>
+        <p style={pStyle}>I am more of a player-coach. Trained on Sandler and MEDDPICC, my real edge is coaching reps on complex situations and going deep across business and technical use-cases to get deals done.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>Through my failures, I have learned that the right hiring solves most problems a sales org faces. Spotting the right talent and building an initial team is the most important piece of the puzzle.</p>
       </div>
 
       {/* NOW */}
@@ -90,16 +86,22 @@ export default function About() {
           name="Signeasy" dates="May 2025 - Present"
           tag={{ label: 'CURRENT', color: 'green' }}
           tagline="AI-powered contract management platform"
-          logoSrc="https://www.signeasy.com/favicon.ico"
+          logoSrc="https://www.google.com/s2/favicons?domain=signeasy.com&sz=32"
           logoAlt="Signeasy"
           roles={[
             {
               title: 'Head - Sales and Customer Success',
-              period: 'May 2025 - Present',
+              period: 'April 2026 - Present',
               accent: true,
               bullets: [
                 'Promoted to Head of Sales and Customer Success in April 2026, now leading both Sales and CS functions',
                 'Focusing on expansion, improving retention, and building Outbound alongside Sales',
+              ],
+            },
+            {
+              title: 'Senior Manager - Sales',
+              period: 'May 2025 - April 2026',
+              bullets: [
                 'Grew logo acquisition from 15 per quarter to 64 in Q1 2026',
                 'Improved Lead to Opportunity conversion from 20% to 45% by defining clear sales processes and sharper deal qualification',
                 'Improved Opportunity to Close rate from 25% to 45% through better execution quality and applying Sandler for Mid-Market deals',
@@ -115,7 +117,7 @@ export default function About() {
           name="Hevo Data" dates="May 2021 - Dec 2024"
           tag={{ label: '1 Promotion', color: 'gray' }}
           tagline="Cloud ETL / Data Integration - $1M-$10M ARR journey"
-          logoSrc="https://hevodata.com/favicon.ico"
+          logoSrc="https://www.google.com/s2/favicons?domain=hevodata.com&sz=32"
           logoAlt="Hevo Data"
           roles={[
             {
@@ -157,7 +159,7 @@ export default function About() {
           name="o9 Solutions" dates="Sep 2018 - May 2021"
           tag={{ label: '1 Promotion', color: 'gray' }}
           tagline="KKR-backed SaaS unicorn - Supply Chain Planning"
-          logoSrc="https://www.o9solutions.com/favicon.ico"
+          logoSrc="https://www.google.com/s2/favicons?domain=o9solutions.com&sz=32"
           logoAlt="o9 Solutions"
           roles={[
             {
@@ -184,7 +186,7 @@ export default function About() {
         <CompanyBlock
           name="Wipro" dates="Jun 2015 - Sep 2018"
           tagline="Retail and Consumer vertical"
-          logoSrc="https://www.wipro.com/favicon.ico"
+          logoSrc="https://www.google.com/s2/favicons?domain=wipro.com&sz=32"
           logoAlt="Wipro"
           roles={[
             {
