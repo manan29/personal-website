@@ -90,9 +90,9 @@ export default function HomePage() {
           <Image
             src="/photo.png"
             alt="Manan Sachdeva"
-            width={160}
-            height={200}
-            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            width={120}
+            height={120}
+            style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover' }}
             priority
           />
           <span style={{ fontSize: '16px', fontWeight: 600, color: '#3730A3', marginTop: '12px', display: 'block' }}>
@@ -127,24 +127,24 @@ export default function HomePage() {
           <h1
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '28px',
-              fontWeight: '600',
+              fontSize: '32px',
+              fontWeight: '500',
               color: '#1A1A1A',
               marginBottom: '1rem',
               letterSpacing: '-0.01em',
             }}
           >
-            Hey, I&apos;m Manan - Welcome.
+            Seller, Coach.
           </h1>
 
           <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-            I am an operator for 10+ years, working closely with CEOs and Founders to build revenue functions at growing SaaS companies.
+            Operator with 10+ years in multiple GTM roles, working closely with CEOs and Founders to build revenue functions at growing tech companies.
           </p>
           <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-            I enjoy being at the intersection of technology and selling. From selling Supply Chain Planning solutions to Fortune 500 companies, to building and hiring sales teams at early-stage SaaS startups in India - I thrive on the challenge to create something.
+            I enjoy being at the intersection of technology and selling. From selling Supply Chain Planning solutions to Fortune 500 companies, to building and hiring sales teams at early-stage SaaS startups in India - I thrive on the challenge to master the craft of technology selling.
           </p>
           <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-            The range of experience has given me a unique ability to connect the dots - making me adaptable and resilient, solving problems creatively and executing faster than others.
+            The range of experience has given me a unique ability to connect the dots, bring unique insights, solve problems creatively and execute faster than others.
           </p>
 
           <p style={{ fontSize: '15px', fontWeight: '500', color: '#6B6B6B', marginBottom: '0.75rem', letterSpacing: '0.01em', fontFamily: 'system-ui, -apple-system, sans-serif' }}>

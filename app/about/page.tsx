@@ -19,50 +19,50 @@ export default function About() {
       {/* INTRO */}
       <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E2E0D8' }}>
         <p style={pStyle}>Thanks for coming here! Here&apos;s something more about me 🙂</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>Started my Sales career in 2016. I got placed on the first day of MBA college, but in an Ops role. I was miserable for a year at{' '}
-          <a href="https://www.wipro.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Wipro</a> doing this. So I wrote a cold email to{' '}
-          <a href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Aparna Krishnamurthy</a>, Head of Demand Generation, who was building a small team out of Bangalore. That was it.</p>
+        <p style={pStyle}>Started my Sales career accidentally in 2016. I got placed on the first day of MBA college, but in an Ops role. I was miserable for a year at{' '}
+          <a href="https://www.wipro.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Wipro</a> doing this - so I wrote a cold email to{' '}
+          <a href="https://www.linkedin.com/in/aparna-krishnamurthy-3182516/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Aparna Krishnamurthy</a>, Head of Demand Generation, who was building a small team out of Bangalore.</p>
+        <p style={pStyle}>There was one problem. Employees at Wipro were not allowed to move before serving 2 years in a role, and I was only 10 months in. The JD I had received was a forward from someone. I had to convince the VP of Ops - a pretty big title if you know Wipro. This was where I first saw my ability to reason and get what I want.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>Got the exception. Moved to Bangalore in 2016 and have been here since. It has been an amazing city and I have met some of the most driven people of my life here.</p>
       </div>
 
-      <p style={pStyle}>Moved to Bangalore in 2016. Been here since. It has been an amazing city, and I have met some of the most driven people of my life here.</p>
-
-      {/* BUILDING SALES */}
-      <h2 style={sectionHeading}>Building Sales, Hiring, and What it Takes to Scale Revenue Functions</h2>
+      {/* STARTUPS */}
+      <h2 style={sectionHeading}>Exposure to Startups, High Velocity Execution, and High Talent Density</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={pStyle}>An important pivot in my life came when I joined{' '}
-          <a href="https://www.o9solutions.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>o9 Solutions</a>, a SaaS platform company selling an Enterprise Planning Solution to global companies.</p>
-        <p style={pStyle}>This was the most intense Business Development role I had taken on. I had the opportunity to work with Dutch and Southeast Asian talent. The talent density at o9 was - and still is - amazing.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>This was also where I led my first team. After 18 months as an individual contributor, I led the Business Development team focused on Enterprise across APAC. I also gained exposure working with consulting partners like{' '}
-          <a href="https://www.bcg.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>BCG India</a>,{' '}
-          <a href="https://www2.deloitte.com/au" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Deloitte Australia</a>, and a few others.</p>
+        <p style={pStyle}>An important pivot came when I joined{' '}
+          <a href="https://www.o9solutions.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>o9 Solutions</a>, a technology platform company selling Enterprise Planning Solutions to global enterprises - Nike, Asian Paints, T-Mobile, Philips, Pirelli, and many more.</p>
+        <p style={pStyle}>The most intense Business Development role I had taken on. I worked with Dutch and Southeast Asian talent, and the talent density at o9 was - and still is - amazing.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>After 18 months as an individual contributor - building lists manually, cold calling, and building campaigns with partners - I led the Business Development team focused on Enterprise across APAC. I gained exposure working with consulting partners like{' '}
+          <a href="https://www.bcg.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>BCG India</a> and{' '}
+          <a href="https://www2.deloitte.com/au" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Deloitte Australia</a>. A hands-on role at high velocity.</p>
       </div>
 
       {/* INDIAN SAAS STORY */}
       <h2 style={sectionHeading}>Becoming Part of the Indian SaaS Story</h2>
       <div style={{ marginBottom: 40 }}>
         <p style={pStyle}>The motivation to move to{' '}
-          <a href="https://www.hevodata.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Hevo Data</a> was to build something closer to home. SaaS was growing, and I got the opportunity to be part of the 0 to 1 story there.</p>
-        <p style={pStyle}>One of the most challenging roles of my career - and the one where I did the most. We were building as a company with big ambitions, taking on{' '}
-          <a href="https://www.fivetran.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Fivetran</a>. At one point I was doing 8 interviews a day to find a good AE, building sales ops simultaneously, and spending time in front of customers.</p>
+          <a href="https://www.hevodata.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Hevo Data</a> was to build something closer to home. SaaS was growing and I got the opportunity to be part of the 0 to 1 story there.</p>
+        <p style={pStyle}>One of the most challenging roles of my career - and the one where I saw the pendulum of successes and failures the most. We were building with big ambitions, taking on{' '}
+          <a href="https://www.fivetran.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Fivetran</a>. At one point I was doing 8 interviews a day to find a good AE, building sales ops simultaneously, and spending the rest of the time in front of customers.</p>
         <p style={pStyle}>I worked closely with{' '}
-          <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a>, CEO at Hevo, and picked up a structured way to think about Hiring, Onboarding, and Sales Ops. The most memorable stint. The sales floor at Hevo buzzed when I was there.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>I scaled the SMB function with 4 AEs, then built the Account Management team for expanding the existing book of business with 6 AMs. The Mid Market and Enterprise role is where I got into strategic selling - it tied back to my time at o9 and my ambition to close big deals. Closing 4 to 5 deals at $50K at Hevo made me sharper at enterprise selling and managing a complex cycle.</p>
+          <a href="https://www.linkedin.com/in/manishjethani/" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Manish Jethani</a>, CEO of Hevo, and picked up a structured way of thinking about Hiring, Onboarding, and Sales Ops. The most memorable stint. The sales floor at Hevo buzzed throughout my time there.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>I scaled the SMB function with 4 AEs, then built the Account Management team with 6 AMs. The Mid Market and Enterprise role is where I got into strategic selling - closing 4 to 5 deals at $50K made me sharper at enterprise selling and managing a complex cycle. I also learned the ropes of hiring through a few good decisions and more bad ones.</p>
       </div>
-
-      <p style={pStyle}>I also learned the ropes of hiring - through a few good decisions and more bad ones.</p>
 
       {/* SIGNEASY */}
       <h2 style={sectionHeading}>Signeasy</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={{ ...pStyle, marginBottom: 0 }}><a href="https://www.signeasy.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Signeasy</a> has been different. No playbook. No big team. I joined a 4-member Sales and 3-member Account Management team. Signeasy had not sold to Mid Market before - and with us building an Enterprise product, I built and hired a team with the initial success of closing a Banking customer at $60K ARR.</p>
+        <p style={pStyle}><a href="https://www.signeasy.com" target="_blank" rel="noopener" style={{color:'#3730A3',textDecoration:'underline'}}>Signeasy</a> has been different. No playbook. No big team. I joined a 4-member Sales team and was interim heading a 3-member Account Management team.</p>
+        <p style={pStyle}>Signeasy had not sold to Mid Market before. With us building an Enterprise product, I built and hired a team with the initial success of closing multiple mid-market deals - the largest being a Banking customer at $60K ARR, potentially at $300K ARR TCV next year.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>As of April 2026, I was promoted to Head of Sales and Account Management from Senior Manager - Sales.</p>
       </div>
 
       {/* WHAT DRIVES ME */}
       <h2 style={sectionHeading}>What Drives Me Professionally</h2>
       <div style={{ marginBottom: 40 }}>
-        <p style={pStyle}>Being part of a smart and driven team. More than the idea, I like to be part of a team where I can learn.</p>
-        <p style={pStyle}>I picked up Sandler and MEDDPICC and find that I can lead and coach other AEs in Mid Market and Enterprise deals. I love going deep into the technical aspects to get a deal done, while bringing the strategic expertise to move it in the right direction.</p>
-        <p style={{ ...pStyle, marginBottom: 0 }}>I also believe I can spot the right talent and build an initial team - one I can work with, grow with, and scale with.</p>
+        <p style={pStyle}>Being part of a smart and driven team. I like working with talented people - the environment they create is what pushes me.</p>
+        <p style={pStyle}>I have worked with some of the best salespeople and picked up the strategic aspects of running a deal. Trained on Sandler and MEDDPICC - my real edge is coaching sales reps on complex situations, thinking through deal strategy, and going deep across business and technical use-cases to get a deal done, no matter what it takes.</p>
+        <p style={{ ...pStyle, marginBottom: 0 }}>Through my failures, one thing I have learned is that the right hiring solves most problems salespeople deal with. Spotting the right talent and building an initial team - one I can work with, grow with, and scale with - is what I am best at.</p>
       </div>
 
       {/* NOW */}
@@ -74,7 +74,7 @@ export default function About() {
           ['Markets', 'US - India - Middle East', 'Also South Africa'],
           ['Also', 'Writing here', 'Deals, hiring, sales systems'],
         ].map(([label, val, sub]) => (
-          <div key={label} style={{ background: '#F5F4EF', padding: '18px 16px' }}>
+          <div key={label} style={{ background: '#FFFFFF', padding: '18px 16px' }}>
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#AAAAAA', marginBottom: 5 }}>{label}</div>
             <div style={{ fontSize: 14, fontWeight: 700, color: '#1A1A1A', marginBottom: 3 }}>{val}</div>
             <div style={{ fontSize: 12, color: '#6B6B6B', lineHeight: 1.5 }}>{sub}</div>
@@ -88,20 +88,24 @@ export default function About() {
 
         <CompanyBlock
           name="Signeasy" dates="May 2025 - Present"
-          tag={{ label: 'Current', color: 'green' }}
+          tag={{ label: 'CURRENT', color: 'green' }}
           tagline="AI-powered contract management platform"
+          logoSrc="https://www.signeasy.com/favicon.ico"
+          logoAlt="Signeasy"
           roles={[
             {
-              title: 'Head of Sales and Success',
+              title: 'Head - Sales and Customer Success',
               period: 'May 2025 - Present',
               accent: true,
               bullets: [
+                'Promoted to Head of Sales and Customer Success in April 2026, now leading both Sales and CS functions',
+                'Focusing on expansion, improving retention, and building Outbound alongside Sales',
                 'Grew logo acquisition from 15 per quarter to 64 in Q1 2026',
                 'Improved Lead to Opportunity conversion from 20% to 45% by defining clear sales processes and sharper deal qualification',
                 'Improved Opportunity to Close rate from 25% to 45% through better execution quality and applying Sandler for Mid-Market deals',
                 'Independently closed a $70K Banking customer in the US through a 6-month sales cycle',
                 'Built sales processes around SMB Sales Assist and Mid Market deals through Sandler implementation',
-                'Hired Founding BDR and set up initial process around Outbound. Impact: created $50K outbound pipeline in Q1 2026 and closed $10K of that pipeline',
+                'Hired Founding BDR and set up initial Outbound process. Impact: created $50K outbound pipeline in Q1 2026 and closed $10K of that pipeline',
               ],
             },
           ]}
@@ -111,6 +115,8 @@ export default function About() {
           name="Hevo Data" dates="May 2021 - Dec 2024"
           tag={{ label: '1 Promotion', color: 'gray' }}
           tagline="Cloud ETL / Data Integration - $1M-$10M ARR journey"
+          logoSrc="https://hevodata.com/favicon.ico"
+          logoAlt="Hevo Data"
           roles={[
             {
               title: 'Mid-Market Sales - EMEA and APAC',
@@ -151,6 +157,8 @@ export default function About() {
           name="o9 Solutions" dates="Sep 2018 - May 2021"
           tag={{ label: '1 Promotion', color: 'gray' }}
           tagline="KKR-backed SaaS unicorn - Supply Chain Planning"
+          logoSrc="https://www.o9solutions.com/favicon.ico"
+          logoAlt="o9 Solutions"
           roles={[
             {
               title: 'Team Lead, Business Development',
@@ -176,6 +184,8 @@ export default function About() {
         <CompanyBlock
           name="Wipro" dates="Jun 2015 - Sep 2018"
           tagline="Retail and Consumer vertical"
+          logoSrc="https://www.wipro.com/favicon.ico"
+          logoAlt="Wipro"
           roles={[
             {
               title: 'Senior Executive, Demand Generation',
@@ -226,8 +236,6 @@ export default function About() {
         ))}
       </div>
 
-
-
     </main>
   )
 }
@@ -241,11 +249,13 @@ function Divider() {
   return <hr style={{ border: 'none', borderTop: '1px solid #E2E0D8', margin: '40px 0' }} />
 }
 
-function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
+function CompanyBlock({ name, dates, tag, tags, tagline, logoSrc, logoAlt, roles }: {
   name: string, dates: string,
   tag?: { label: string, color: string },
   tags?: { label: string, color: string }[],
   tagline?: string,
+  logoSrc?: string,
+  logoAlt?: string,
   roles: { title: string, period: React.ReactNode, stat?: string, bullets?: string[], accent?: boolean }[]
 }) {
   const allTags = tags || (tag ? [tag] : [])
@@ -259,12 +269,22 @@ function CompanyBlock({ name, dates, tag, tags, tagline, roles }: {
 
   return (
     <div style={{ border: '1px solid #E2E0D8', borderRadius: 8, overflow: 'hidden', background: '#fff' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 18px', background: '#F5F4EF', borderBottom: '1px solid #E2E0D8' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-          <span style={{ fontSize: 15, fontWeight: 700, color: '#1A1A1A' }}>{name}</span>
-          {allTags.map(t => <span key={t.label} style={tagStyle(t.color)}>{t.label}</span>)}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '14px 18px', background: '#FFFFFF', borderBottom: '1px solid #E2E0D8' }}>
+        <div>
+          {logoSrc && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={logoSrc}
+              alt={logoAlt || name}
+              style={{ width: 28, height: 28, objectFit: 'contain', borderRadius: 4, display: 'block', marginBottom: 8 }}
+            />
+          )}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: 15, fontWeight: 700, color: '#1A1A1A' }}>{name}</span>
+            {allTags.map(t => <span key={t.label} style={tagStyle(t.color)}>{t.label}</span>)}
+          </div>
         </div>
-        <span style={{ fontSize: 11.5, color: '#AAAAAA', flexShrink: 0 }}>{dates}</span>
+        <span style={{ fontSize: 11.5, color: '#AAAAAA', flexShrink: 0, paddingTop: logoSrc ? 36 : 0 }}>{dates}</span>
       </div>
       <div style={{ padding: '14px 18px', display: 'flex', flexDirection: 'column', gap: 12 }}>
         {tagline && <div style={{ fontSize: 12.5, color: '#6B6B6B', fontStyle: 'italic', marginBottom: 4 }}>{tagline}</div>}

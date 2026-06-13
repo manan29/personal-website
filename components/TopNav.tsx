@@ -33,8 +33,8 @@ export function TopNav() {
           position: sticky;
           top: 0;
           z-index: 100;
-          background: #F5F4EF;
-          border-bottom: 1px solid #E2E0D8;
+          background: #FFFFFF;
+          border-bottom: 1px solid #E5E3DC;
           font-family: var(--font-ui);
         }
         .topnav-inner {
@@ -158,8 +158,8 @@ export function TopNav() {
         }
         .mobile-menu {
           display: none;
-          background: #F5F4EF;
-          border-bottom: 1px solid #E2E0D8;
+          background: #FFFFFF;
+          border-bottom: 1px solid #E5E3DC;
           padding: 12px 2rem 16px;
           flex-direction: column;
           gap: 2px;
