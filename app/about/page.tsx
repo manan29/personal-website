@@ -126,7 +126,7 @@ export default function About() {
               ),
               accent: role.accent,
               bullets: role.bullets,
-              extra: (company.name === 'Signeasy' && role.title === 'Senior Manager - Sales') ? <LogoGrowthChart /> : undefined,
+              extra: undefined,
             }))}
           />
         ))}
@@ -172,35 +172,6 @@ function Divider() {
   return <hr style={{ border: 'none', borderTop: '1px solid #E2E0D8', margin: '40px 0' }} />
 }
 
-function LogoGrowthChart() {
-  return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '16px',
-      marginTop: '16px',
-      padding: '12px 16px',
-      background: '#F9F8FF',
-      border: '1px solid #E5E3DC',
-      borderRadius: '8px',
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '20px', fontWeight: 700, color: '#9CA3AF' }}>15</div>
-        <div style={{ fontSize: '10px', color: '#9CA3AF', marginTop: '2px' }}>Q2 2025</div>
-      </div>
-      <div style={{ flex: 1, height: '2px', background: 'linear-gradient(to right, #C7D2FE, #3730A3)', position: 'relative' }}>
-        <span style={{ position: 'absolute', right: '-4px', top: '-4px', width: '10px', height: '10px', borderRadius: '50%', background: '#3730A3', display: 'block' }} />
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '20px', fontWeight: 700, color: '#3730A3' }}>64</div>
-        <div style={{ fontSize: '10px', color: '#9CA3AF', marginTop: '2px' }}>Q1 2026</div>
-      </div>
-      <div style={{ fontSize: '11px', color: '#6B7280', marginLeft: '8px', lineHeight: 1.4 }}>
-        Logo acquisition<br />per quarter
-      </div>
-    </div>
-  )
-}
 
 function CompanyBlock({ name, dates, companyDuration, tag, tagline, logoSrc, logoAlt, roles }: {
   name: string, dates: string,

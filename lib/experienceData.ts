@@ -50,7 +50,7 @@ export const experience: Company[] = [
         endDate: '2026-04',
         periodLabel: 'May 2025 - April 2026',
         bullets: [
-          'Grew logo acquisition from 15 per quarter to 64 in Q1 2026',
+          'Grew logo acquisition from 15 per quarter in Q2 2025 to 64 per quarter in Q1 2026',
           'Improved Lead to Opportunity conversion from 20% to 45% by defining clear sales processes and sharper deal qualification',
           'Improved Opportunity to Close rate from 25% to 45% through better execution quality and applying Sandler for Mid-Market deals',
           'Independently closed a $70K Banking customer in the US through a 6-month sales cycle',
