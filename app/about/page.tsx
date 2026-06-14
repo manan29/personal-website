@@ -172,33 +172,31 @@ function Divider() {
   return <hr style={{ border: 'none', borderTop: '1px solid #E2E0D8', margin: '40px 0' }} />
 }
 
-const logoGrowthData = [
-  { label: 'Q2 2025', value: 15 },
-  { label: 'Q3 2025', value: 28 },
-  { label: 'Q4 2025', value: 45 },
-  { label: 'Q1 2026', value: 64 },
-]
-const maxLogoValue = 64
-
 function LogoGrowthChart() {
   return (
-    <div style={{ marginTop: 12 }}>
-      <p style={{ fontSize: 11, color: '#6B7280', fontWeight: 600, margin: '0 0 4px 0' }}>
-        Logo acquisition growth (per quarter)
-      </p>
-      <div style={{ display: 'flex', alignItems: 'flex-end', gap: 12, height: 80 }}>
-        {logoGrowthData.map((q) => (
-          <div key={q.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
-            <span style={{ fontSize: 11, fontWeight: 600, color: '#3730A3', marginBottom: 4 }}>{q.value}</span>
-            <div style={{
-              width: '100%',
-              background: q.value === maxLogoValue ? '#3730A3' : '#C7D2FE',
-              height: `${(q.value / maxLogoValue) * 100}%`,
-              borderRadius: '4px 4px 0 0',
-            }} />
-            <span style={{ fontSize: 10, color: '#9CA3AF', marginTop: 4 }}>{q.label}</span>
-          </div>
-        ))}
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '16px',
+      marginTop: '16px',
+      padding: '12px 16px',
+      background: '#F9F8FF',
+      border: '1px solid #E5E3DC',
+      borderRadius: '8px',
+    }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '20px', fontWeight: 700, color: '#9CA3AF' }}>15</div>
+        <div style={{ fontSize: '10px', color: '#9CA3AF', marginTop: '2px' }}>Q2 2025</div>
+      </div>
+      <div style={{ flex: 1, height: '2px', background: 'linear-gradient(to right, #C7D2FE, #3730A3)', position: 'relative' }}>
+        <span style={{ position: 'absolute', right: '-4px', top: '-4px', width: '10px', height: '10px', borderRadius: '50%', background: '#3730A3', display: 'block' }} />
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '20px', fontWeight: 700, color: '#3730A3' }}>64</div>
+        <div style={{ fontSize: '10px', color: '#9CA3AF', marginTop: '2px' }}>Q1 2026</div>
+      </div>
+      <div style={{ fontSize: '11px', color: '#6B7280', marginLeft: '8px', lineHeight: 1.4 }}>
+        Logo acquisition<br />per quarter
       </div>
     </div>
   )

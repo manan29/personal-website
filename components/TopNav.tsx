@@ -4,12 +4,15 @@ import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+const NAV_HEIGHT = 56;
+
 export function TopNav() {
   const [insightsOpen, setInsightsOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const pathname = usePathname();
 
+  // Close desktop dropdown on outside click
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -20,272 +23,117 @@ export function TopNav() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close mobile menu on navigation
+  // Close all menus on navigation
   useEffect(() => {
-    setMobileOpen(false);
+    setIsMenuOpen(false);
     setInsightsOpen(false);
   }, [pathname]);
+
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <>
       <style>{`
-        .topnav {
-          position: sticky;
-          top: 0;
-          z-index: 100;
-          background: #FFFFFF;
-          border-bottom: 1px solid #E5E3DC;
-          font-family: var(--font-ui);
-          will-change: transform;
-          transform: translateZ(0);
-        }
-        .topnav-inner {
-          max-width: 860px;
-          margin: 0 auto;
-          padding: 0 2rem;
-          height: 52px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-        .topnav-logo {
-          font-size: 15px;
-          font-weight: 600;
-          color: #3730A3;
-          text-decoration: none;
-        }
-        .topnav-links {
-          display: flex;
-          align-items: center;
-          gap: 0;
-          list-style: none;
-        }
-        .topnav-link {
-          font-size: 13px;
-          font-weight: 500;
-          color: #6B6B6B;
-          text-decoration: none;
-          padding: 6px 12px;
-          border-radius: 4px;
-          transition: color 0.15s ease;
-        }
-        .topnav-link:hover {
-          color: #1A1A1A;
-        }
-        .insights-wrapper {
-          position: relative;
-        }
-        .insights-btn {
-          font-size: 13px;
-          font-weight: 500;
-          color: #6B6B6B;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 6px 12px;
-          border-radius: 4px;
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          transition: color 0.15s ease;
-          font-family: var(--font-ui);
-        }
-        .insights-btn:hover,
-        .insights-btn.active {
-          color: #1A1A1A;
-        }
-        .insights-btn.active {
-          color: #3730A3;
-        }
-        .insights-chevron {
-          transition: transform 0.15s ease;
-          width: 12px;
-          height: 12px;
-          opacity: 0.6;
-        }
-        .insights-chevron.open {
-          transform: rotate(180deg);
-        }
-        .insights-dropdown {
-          position: absolute;
-          top: calc(100% + 8px);
-          right: 0;
-          background: #FFFFFF;
-          border: 1px solid #E2E0D8;
-          border-radius: 6px;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-          min-width: 200px;
-          padding: 6px;
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-        }
-        .insights-item {
-          font-size: 13px;
-          font-weight: 500;
-          color: #2D2D2D;
-          text-decoration: none;
-          padding: 8px 12px;
-          border-radius: 4px;
-          display: block;
-          transition: background 0.1s ease;
-        }
-        .insights-item:hover {
-          background: #F5F4EF;
-          color: #3730A3;
-        }
-        .insights-item-sub {
-          font-size: 11px;
-          color: #AAAAAA;
-          display: block;
-          margin-top: 1px;
-        }
-        /* Mobile hamburger */
-        .topnav-hamburger {
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 4px;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 10px;
-          min-height: 44px;
-          min-width: 44px;
-          touch-action: manipulation;
-          -webkit-tap-highlight-color: transparent;
-        }
-        .topnav-hamburger span {
-          display: block;
-          width: 20px;
-          height: 2px;
-          background: #2D2D2D;
-          border-radius: 1px;
-          transition: all 0.2s ease;
-        }
-        .mobile-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          z-index: 101;
-          background: #FFFFFF;
-          border-bottom: 1px solid #E5E3DC;
-          padding: 4px 0 8px;
-          flex-direction: column;
-          gap: 0;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-          pointer-events: auto;
-        }
-        .mobile-menu.open {
-          display: flex;
-        }
-        .mobile-link {
-          font-size: 16px;
-          font-weight: 500;
-          color: #2D2D2D;
-          text-decoration: none;
-          padding: 14px 20px;
-          border-bottom: 1px solid rgba(226, 224, 216, 0.4);
-          display: block;
-          min-height: 44px;
-          touch-action: manipulation;
-          -webkit-tap-highlight-color: transparent;
-        }
-        .mobile-link:last-child {
-          border-bottom: none;
-        }
-        .mobile-link.active {
-          color: #3730A3;
-        }
-        .mobile-link-experience {
-          font-size: 16px;
-          font-weight: 600;
-          color: #3730A3;
-          text-decoration: none;
-          padding: 14px 20px;
-          border-bottom: 1px solid #E5E3DC;
-          display: block;
-          min-height: 44px;
-          touch-action: manipulation;
-          -webkit-tap-highlight-color: transparent;
-        }
-        .mobile-submenu-label {
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: #AAAAAA;
-          padding: 10px 20px 4px;
-        }
-        .mobile-link-external {
-          font-size: 16px;
-          font-weight: 500;
-          color: #2D2D2D;
-          text-decoration: none;
-          padding: 14px 20px;
-          display: block;
-          min-height: 44px;
-          touch-action: manipulation;
-          -webkit-tap-highlight-color: transparent;
-        }
+        .topnav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+        .topnav-hamburger { display: none; }
         @media (max-width: 640px) {
-          .topnav-links {
-            display: none;
-          }
-          .topnav-hamburger {
-            display: flex;
-          }
+          .topnav-links { display: none; }
+          .topnav-hamburger { display: flex; }
         }
       `}</style>
 
-      <nav className="topnav">
-        <div className="topnav-inner">
-          <Link href="/" className="topnav-logo">Manan Sachdeva</Link>
+      {/* Backdrop — captures taps outside menu to close it */}
+      {isMenuOpen && (
+        <div
+          onClick={closeMenu}
+          style={{
+            position: 'fixed',
+            top: NAV_HEIGHT,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0,0,0,0.2)',
+            zIndex: 48,
+          }}
+        />
+      )}
+
+      <nav style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        background: '#FFFFFF',
+        borderBottom: '1px solid #E5E3DC',
+        fontFamily: 'var(--font-ui)',
+      }}>
+        <div style={{
+          maxWidth: 860,
+          margin: '0 auto',
+          padding: '0 2rem',
+          height: NAV_HEIGHT,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+          <Link href="/" style={{ fontSize: 15, fontWeight: 600, color: '#3730A3', textDecoration: 'none' }}>
+            Manan Sachdeva
+          </Link>
 
           {/* Desktop links */}
           <ul className="topnav-links">
             <li>
-              <Link href="/" className="topnav-link">
+              <Link href="/" style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', textDecoration: 'none', padding: '6px 12px', borderRadius: 4, display: 'block' }}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="topnav-link">
+              <Link href="/about" style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', textDecoration: 'none', padding: '6px 12px', borderRadius: 4, display: 'block' }}>
                 About Me
               </Link>
             </li>
             <li>
-              <Link href="/about#experience" className="topnav-link">
+              <Link href="/about#experience" style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', textDecoration: 'none', padding: '6px 12px', borderRadius: 4, display: 'block' }}>
                 Experience
               </Link>
             </li>
-            <li className="insights-wrapper" ref={dropdownRef}>
+            <li style={{ position: 'relative' }} ref={dropdownRef}>
               <button
-                className="insights-btn"
                 onClick={() => setInsightsOpen(o => !o)}
                 aria-expanded={insightsOpen}
+                style={{
+                  fontSize: 13, fontWeight: 500, color: '#6B6B6B',
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  padding: '6px 12px', borderRadius: 4,
+                  display: 'flex', alignItems: 'center', gap: 4,
+                  fontFamily: 'var(--font-ui)',
+                }}
               >
                 Insights
-                <svg className={`insights-chevron${insightsOpen ? ' open' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <svg
+                  viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8"
+                  style={{ width: 12, height: 12, opacity: 0.6, transition: 'transform 0.15s', transform: insightsOpen ? 'rotate(180deg)' : 'none' }}
+                >
                   <path d="M2 4l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               {insightsOpen && (
-                <div className="insights-dropdown">
-                  <Link href="/blog/large-deal-learnings" className="insights-item">
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 8px)', right: 0,
+                  background: '#FFFFFF', border: '1px solid #E2E0D8', borderRadius: 6,
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)', minWidth: 200, padding: 6,
+                  display: 'flex', flexDirection: 'column', gap: 2, zIndex: 51,
+                }}>
+                  <Link href="/blog/large-deal-learnings" style={{ fontSize: 13, fontWeight: 500, color: '#2D2D2D', textDecoration: 'none', padding: '8px 12px', borderRadius: 4, display: 'block' }}>
                     Complex Deals
-                    <span className="insights-item-sub">Large deal stories &amp; learnings</span>
+                    <span style={{ fontSize: 11, color: '#AAAAAA', display: 'block', marginTop: 1 }}>Large deal stories &amp; learnings</span>
                   </Link>
-                  <Link href="/blog/hiring-top-talent" className="insights-item">
+                  <Link href="/blog/hiring-top-talent" style={{ fontSize: 13, fontWeight: 500, color: '#2D2D2D', textDecoration: 'none', padding: '8px 12px', borderRadius: 4, display: 'block' }}>
                     Hiring &amp; Talent
-                    <span className="insights-item-sub">How to find and develop top talent</span>
+                    <span style={{ fontSize: 11, color: '#AAAAAA', display: 'block', marginTop: 1 }}>How to find and develop top talent</span>
                   </Link>
-                  <Link href="/blog/sales-systems" className="insights-item">
+                  <Link href="/blog/sales-systems" style={{ fontSize: 13, fontWeight: 500, color: '#2D2D2D', textDecoration: 'none', padding: '8px 12px', borderRadius: 4, display: 'block' }}>
                     Sales Systems
-                    <span className="insights-item-sub">Processes that enable teams to win</span>
+                    <span style={{ fontSize: 11, color: '#AAAAAA', display: 'block', marginTop: 1 }}>Processes that enable teams to win</span>
                   </Link>
                 </div>
               )}
@@ -295,26 +143,116 @@ export function TopNav() {
           {/* Mobile hamburger */}
           <button
             className="topnav-hamburger"
-            onClick={() => setMobileOpen(o => !o)}
+            onClick={() => setIsMenuOpen(o => !o)}
             aria-label="Toggle menu"
+            style={{
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 4,
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 10,
+              minHeight: 44,
+              minWidth: 44,
+              touchAction: 'manipulation',
+              WebkitTapHighlightColor: 'transparent',
+            }}
           >
-            <span style={mobileOpen ? { transform: 'rotate(45deg) translate(4px, 4px)' } : {}} />
-            <span style={mobileOpen ? { opacity: 0 } : {}} />
-            <span style={mobileOpen ? { transform: 'rotate(-45deg) translate(4px, -4px)' } : {}} />
+            <span style={{ display: 'block', width: 20, height: 2, background: '#2D2D2D', borderRadius: 1, transition: 'all 0.2s', transform: isMenuOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none' }} />
+            <span style={{ display: 'block', width: 20, height: 2, background: '#2D2D2D', borderRadius: 1, transition: 'all 0.2s', opacity: isMenuOpen ? 0 : 1 }} />
+            <span style={{ display: 'block', width: 20, height: 2, background: '#2D2D2D', borderRadius: 1, transition: 'all 0.2s', transform: isMenuOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none' }} />
           </button>
         </div>
 
-        {/* Mobile menu — inside nav so absolute positioning is relative to sticky bar */}
-        <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
-          <Link href="/" className="mobile-link">Home</Link>
-          <Link href="/about#experience" className="mobile-link-experience">Experience</Link>
-          <Link href="/about" className="mobile-link">About Me</Link>
-          <div className="mobile-submenu-label">Insights</div>
-          <Link href="/blog/large-deal-learnings" className="mobile-link">Complex Deals</Link>
-          <Link href="/blog/hiring-top-talent" className="mobile-link">Hiring &amp; Talent</Link>
-          <Link href="/blog/sales-systems" className="mobile-link">Sales Systems</Link>
-          <a href="https://www.linkedin.com/in/manansachdeva/" target="_blank" rel="noopener" className="mobile-link-external">LinkedIn ↗</a>
-        </div>
+        {/* Mobile dropdown — position fixed so scroll doesn't affect it */}
+        {isMenuOpen && (
+          <div style={{
+            position: 'fixed',
+            top: NAV_HEIGHT,
+            left: 0,
+            right: 0,
+            background: '#FFFFFF',
+            zIndex: 49,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+            maxHeight: `calc(100vh - ${NAV_HEIGHT}px)`,
+            overflowY: 'auto',
+          }}>
+            {([
+              { href: '/', label: 'Home' },
+              { href: '/about#experience', label: 'Experience', accent: true },
+              { href: '/about', label: 'About Me' },
+            ] as { href: string; label: string; accent?: boolean }[]).map(({ href, label, accent }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={closeMenu}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '14px 20px',
+                  fontSize: 16,
+                  fontWeight: accent ? 600 : 500,
+                  color: accent ? '#3730A3' : '#2D2D2D',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid #F3F2EE',
+                  touchAction: 'manipulation',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#AAAAAA', padding: '10px 20px 4px' }}>
+              Insights
+            </div>
+            {([
+              { href: '/blog/large-deal-learnings', label: 'Complex Deals' },
+              { href: '/blog/hiring-top-talent', label: 'Hiring & Talent' },
+              { href: '/blog/sales-systems', label: 'Sales Systems' },
+            ]).map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={closeMenu}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '14px 20px',
+                  fontSize: 16,
+                  fontWeight: 500,
+                  color: '#2D2D2D',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid #F3F2EE',
+                  touchAction: 'manipulation',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+            <a
+              href="https://www.linkedin.com/in/manansachdeva/"
+              target="_blank"
+              rel="noopener"
+              onClick={closeMenu}
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '14px 20px',
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#2D2D2D',
+                textDecoration: 'none',
+                touchAction: 'manipulation',
+                WebkitTapHighlightColor: 'transparent',
+              }}
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        )}
       </nav>
     </>
   );
