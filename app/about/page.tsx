@@ -70,7 +70,7 @@ export default function About() {
         {[
           ['Role', 'Head of Sales & Success', 'Signeasy - AI contract management'],
           ['Focus', '0 to 1 sales org', 'Pipeline, hiring, GTM systems'],
-          ['Markets', 'US - India - Middle East', 'Also South Africa'],
+          ['Markets', 'India, Europe, UK, Middle East, and US', ''],
           ['Also', 'Writing here', 'Deals, hiring, sales systems'],
         ].map(([label, val, sub]) => (
           <div key={label} style={{ background: '#FFFFFF', padding: '18px 16px' }}>
@@ -132,8 +132,8 @@ export default function About() {
         ))}
       </div>
 
-      {/* NOTABLE WINS */}
-      <SectionLabel>Notable wins</SectionLabel>
+      {/* TRACK RECORD */}
+      <SectionLabel>Track Record</SectionLabel>
       <div className="grid-2col" style={{ gap: 10, marginBottom: 40 }}>
         {notableWins.map(({ number, label, sub }) => (
           <div key={label} style={{ background: '#fff', border: '1px solid #E2E0D8', borderRadius: 8, padding: 18 }}>

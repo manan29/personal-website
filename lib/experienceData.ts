@@ -189,23 +189,23 @@ export const experience: Company[] = [
 export const notableWins = [
   {
     number: '60+',
-    label: 'Logos scaled at Signeasy',
-    sub: 'Grew customer base from scratch to 60+ logos in 2 quarters through outbound and inbound motions.',
+    label: 'Logo Acquisition Systems',
+    sub: 'Built systems for logo acquisition at Signeasy, scaling to 60+ logos in one quarter through SMB high-velocity sales.',
+  },
+  {
+    number: '$25K-$75K',
+    label: 'Complex Deal Strategy',
+    sub: 'Closed multiple logos in this range at Hevo and Signeasy across US, UK, Israel, Germany, Dubai, and India through strategic application of MEDDPICC and Sandler, sharper judgement, and strong internal collaboration.',
   },
   {
     number: '$10K to $150K',
-    label: 'Account expansion at Hevo',
-    sub: "Scaled India's fastest-growing quick commerce company from $10K to $150K ARR working alongside solution engineers.",
-  },
-  {
-    number: '$100K+',
-    label: 'Multiple $100K+ deals',
-    sub: 'Closed multiple six-figure deals across US, Israel, and Middle East markets at Hevo.',
+    label: 'Strategic Account Expansion',
+    sub: "Scaled India's fastest-growing quick commerce company by identifying whitespace and partnering closely with their CTO.",
   },
   {
     number: '10 to 25',
-    label: 'Team scaled at Hevo',
-    sub: 'Doubled the sales team from 10 to 20 through in-house hiring, working alongside other sales managers in the hiring process.',
+    label: 'Team Scaling',
+    sub: 'Doubled the sales team through in-house hiring, working alongside other sales managers in the hiring process.',
   },
 ];
 

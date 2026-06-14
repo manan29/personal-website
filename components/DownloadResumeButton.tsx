@@ -26,7 +26,7 @@ export default function DownloadResumeButton() {
             whiteSpace: 'nowrap',
           }}
         >
-          {loading ? 'Generating...' : '↓ Download Resume'}
+          {loading ? 'Generating...' : '↓ Download Experience'}
         </span>
       )}
     </PDFDownloadLink>

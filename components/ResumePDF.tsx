@@ -293,8 +293,8 @@ export default function ResumePDF() {
           );
         })}
 
-        {/* ── Notable Wins ── */}
-        <Text style={styles.sectionHeading}>Notable Wins</Text>
+        {/* ── Track Record ── */}
+        <Text style={styles.sectionHeading}>Track Record</Text>
         <View style={styles.twoColGrid} wrap={false}>
           <View style={[styles.gridCol, styles.gridColLeft]}>
             {winsLeft.map((win) => (
