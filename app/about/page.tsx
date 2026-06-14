@@ -126,6 +126,7 @@ export default function About() {
               ),
               accent: role.accent,
               bullets: role.bullets,
+              extra: (company.name === 'Signeasy' && role.title === 'Senior Manager - Sales') ? <LogoGrowthChart /> : undefined,
             }))}
           />
         ))}
@@ -171,6 +172,38 @@ function Divider() {
   return <hr style={{ border: 'none', borderTop: '1px solid #E2E0D8', margin: '40px 0' }} />
 }
 
+const logoGrowthData = [
+  { label: 'Q2 2025', value: 15 },
+  { label: 'Q3 2025', value: 28 },
+  { label: 'Q4 2025', value: 45 },
+  { label: 'Q1 2026', value: 64 },
+]
+const maxLogoValue = 64
+
+function LogoGrowthChart() {
+  return (
+    <div style={{ marginTop: 12 }}>
+      <p style={{ fontSize: 11, color: '#6B7280', fontWeight: 600, margin: '0 0 4px 0' }}>
+        Logo acquisition growth (per quarter)
+      </p>
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: 12, height: 80 }}>
+        {logoGrowthData.map((q) => (
+          <div key={q.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
+            <span style={{ fontSize: 11, fontWeight: 600, color: '#3730A3', marginBottom: 4 }}>{q.value}</span>
+            <div style={{
+              width: '100%',
+              background: q.value === maxLogoValue ? '#3730A3' : '#C7D2FE',
+              height: `${(q.value / maxLogoValue) * 100}%`,
+              borderRadius: '4px 4px 0 0',
+            }} />
+            <span style={{ fontSize: 10, color: '#9CA3AF', marginTop: 4 }}>{q.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function CompanyBlock({ name, dates, companyDuration, tag, tagline, logoSrc, logoAlt, roles }: {
   name: string, dates: string,
   companyDuration?: string,
@@ -178,7 +211,7 @@ function CompanyBlock({ name, dates, companyDuration, tag, tagline, logoSrc, log
   tagline?: string,
   logoSrc?: string,
   logoAlt?: string,
-  roles: { title: string, period: React.ReactNode, stat?: string, bullets?: string[], accent?: boolean }[]
+  roles: { title: string, period: React.ReactNode, stat?: string, bullets?: string[], accent?: boolean, extra?: React.ReactNode }[]
 }) {
   const allTags = tag ? [tag] : []
   const tagStyle = (color: string) => ({
@@ -235,6 +268,7 @@ function CompanyBlock({ name, dates, companyDuration, tag, tagline, logoSrc, log
               ) : (
                 <div style={{ fontSize: 12.5, color: '#4A4744', lineHeight: 1.6 }}>{r.stat}</div>
               )}
+              {r.extra}
             </div>
           </div>
         ))}

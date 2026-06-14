@@ -36,6 +36,8 @@ export function TopNav() {
           background: #FFFFFF;
           border-bottom: 1px solid #E5E3DC;
           font-family: var(--font-ui);
+          will-change: transform;
+          transform: translateZ(0);
         }
         .topnav-inner {
           max-width: 860px;
@@ -142,11 +144,17 @@ export function TopNav() {
         .topnav-hamburger {
           display: none;
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
           gap: 4px;
           background: none;
           border: none;
           cursor: pointer;
-          padding: 6px;
+          padding: 10px;
+          min-height: 44px;
+          min-width: 44px;
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
         }
         .topnav-hamburger span {
           display: block;
@@ -162,13 +170,14 @@ export function TopNav() {
           top: 100%;
           left: 0;
           right: 0;
-          z-index: 99;
+          z-index: 101;
           background: #FFFFFF;
           border-bottom: 1px solid #E5E3DC;
           padding: 4px 0 8px;
           flex-direction: column;
           gap: 0;
           box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+          pointer-events: auto;
         }
         .mobile-menu.open {
           display: flex;
@@ -181,6 +190,9 @@ export function TopNav() {
           padding: 14px 20px;
           border-bottom: 1px solid rgba(226, 224, 216, 0.4);
           display: block;
+          min-height: 44px;
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
         }
         .mobile-link:last-child {
           border-bottom: none;
@@ -196,6 +208,9 @@ export function TopNav() {
           padding: 14px 20px;
           border-bottom: 1px solid #E5E3DC;
           display: block;
+          min-height: 44px;
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
         }
         .mobile-submenu-label {
           font-size: 11px;
@@ -212,6 +227,9 @@ export function TopNav() {
           text-decoration: none;
           padding: 14px 20px;
           display: block;
+          min-height: 44px;
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
         }
         @media (max-width: 640px) {
           .topnav-links {
