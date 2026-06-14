@@ -158,11 +158,17 @@ export function TopNav() {
         }
         .mobile-menu {
           display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 99;
           background: #FFFFFF;
           border-bottom: 1px solid #E5E3DC;
           padding: 4px 0 8px;
           flex-direction: column;
           gap: 0;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
         .mobile-menu.open {
           display: flex;
@@ -279,19 +285,19 @@ export function TopNav() {
             <span style={mobileOpen ? { transform: 'rotate(-45deg) translate(4px, -4px)' } : {}} />
           </button>
         </div>
-      </nav>
 
-      {/* Mobile menu */}
-      <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
-        <Link href="/" className="mobile-link">Home</Link>
-        <Link href="/about#experience" className="mobile-link-experience">Experience</Link>
-        <Link href="/about" className="mobile-link">About Me</Link>
-        <div className="mobile-submenu-label">Insights</div>
-        <Link href="/blog/large-deal-learnings" className="mobile-link">Complex Deals</Link>
-        <Link href="/blog/hiring-top-talent" className="mobile-link">Hiring &amp; Talent</Link>
-        <Link href="/blog/sales-systems" className="mobile-link">Sales Systems</Link>
-        <a href="https://www.linkedin.com/in/manansachdeva/" target="_blank" rel="noopener" className="mobile-link-external">LinkedIn ↗</a>
-      </div>
+        {/* Mobile menu — inside nav so absolute positioning is relative to sticky bar */}
+        <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
+          <Link href="/" className="mobile-link">Home</Link>
+          <Link href="/about#experience" className="mobile-link-experience">Experience</Link>
+          <Link href="/about" className="mobile-link">About Me</Link>
+          <div className="mobile-submenu-label">Insights</div>
+          <Link href="/blog/large-deal-learnings" className="mobile-link">Complex Deals</Link>
+          <Link href="/blog/hiring-top-talent" className="mobile-link">Hiring &amp; Talent</Link>
+          <Link href="/blog/sales-systems" className="mobile-link">Sales Systems</Link>
+          <a href="https://www.linkedin.com/in/manansachdeva/" target="_blank" rel="noopener" className="mobile-link-external">LinkedIn ↗</a>
+        </div>
+      </nav>
     </>
   );
 }

@@ -172,6 +172,16 @@ export default function HomePage() {
         </div>
       </div>
 
+      <h2 style={{
+        fontSize: '14px',
+        fontWeight: 600,
+        color: '#3730A3',
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        marginTop: '2rem',
+        marginBottom: '1rem',
+      }}>Writings</h2>
+
       {/* Complex Deals Section */}
       <section style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
