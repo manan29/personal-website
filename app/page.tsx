@@ -134,7 +134,7 @@ export default function HomePage() {
               letterSpacing: '-0.01em',
             }}
           >
-            Seller, Coach.
+            Student of Sales, In Pursuit of Mastery.
           </h1>
 
           <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
