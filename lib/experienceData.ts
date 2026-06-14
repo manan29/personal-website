@@ -117,7 +117,7 @@ export const experience: Company[] = [
           'Scaled average logos per month from 8 to 18, delivering $92K ARR in EMEA',
           'Learned the ropes of hiring and doubled the team from 10 to 20 across all regions',
           'Scaled Sales Ops on Inbound. Defined segmentation based on trial and product signals',
-          'Built high velocity sales system to measure Trial → Pipeline Activation → Conversation Established → Deal → Close',
+          'Built high velocity sales system to measure Trial -> Pipeline Activation -> Conversation Established -> Deal -> Close',
           'Measured each step of the funnel',
         ],
       },

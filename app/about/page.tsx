@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { experience, notableWins, tools } from '@/lib/experienceData'
-import { calculateDuration } from '@/lib/calculateDuration'
+import { calculateCompanyDuration } from '@/lib/calculateDuration'
 import DownloadResumeButton from '@/components/DownloadResumeButtonWrapper'
 
 export default function About() {
@@ -109,6 +109,7 @@ export default function About() {
             key={company.name}
             name={company.name}
             dates={company.dates}
+            companyDuration={calculateCompanyDuration(company.roles)}
             tag={company.tag}
             tagline={company.tagline}
             logoSrc={company.logoSrc}
@@ -121,9 +122,6 @@ export default function About() {
                   {role.manager && (
                     <> · <a href={role.manager.linkedIn} target="_blank" rel="noopener" style={{ color: '#3730A3', textDecoration: 'underline' }}>{role.manager.name}</a> ({role.manager.title})</>
                   )}
-                  <span style={{ fontSize: '11px', fontWeight: 600, color: '#3730A3', background: '#EEF2FF', padding: '2px 8px', borderRadius: '4px', marginLeft: '8px' }}>
-                    {calculateDuration(role.startDate, role.endDate)}
-                  </span>
                 </>
               ),
               accent: role.accent,
@@ -173,8 +171,9 @@ function Divider() {
   return <hr style={{ border: 'none', borderTop: '1px solid #E2E0D8', margin: '40px 0' }} />
 }
 
-function CompanyBlock({ name, dates, tag, tagline, logoSrc, logoAlt, roles }: {
+function CompanyBlock({ name, dates, companyDuration, tag, tagline, logoSrc, logoAlt, roles }: {
   name: string, dates: string,
+  companyDuration?: string,
   tag?: { label: string, color: string },
   tagline?: string,
   logoSrc?: string,
@@ -207,7 +206,14 @@ function CompanyBlock({ name, dates, tag, tagline, logoSrc, logoAlt, roles }: {
             {allTags.map(t => <span key={t.label} style={tagStyle(t.color)}>{t.label}</span>)}
           </div>
         </div>
-        <span style={{ fontSize: 11.5, color: '#AAAAAA', flexShrink: 0, paddingTop: logoSrc ? 36 : 0 }}>{dates}</span>
+        <span style={{ fontSize: 11.5, color: '#AAAAAA', flexShrink: 0, paddingTop: logoSrc ? 36 : 0, display: 'flex', alignItems: 'center', gap: 6 }}>
+          {dates}
+          {companyDuration && (
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#3730A3', background: '#EEF2FF', padding: '2px 8px', borderRadius: '4px' }}>
+              {companyDuration}
+            </span>
+          )}
+        </span>
       </div>
       <div style={{ padding: '14px 18px', display: 'flex', flexDirection: 'column', gap: 12 }}>
         {tagline && <div style={{ fontSize: 12.5, color: '#6B6B6B', fontStyle: 'italic', marginBottom: 4 }}>{tagline}</div>}
