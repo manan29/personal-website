@@ -160,20 +160,21 @@ export function TopNav() {
           display: none;
           background: #FFFFFF;
           border-bottom: 1px solid #E5E3DC;
-          padding: 12px 2rem 16px;
+          padding: 4px 0 8px;
           flex-direction: column;
-          gap: 2px;
+          gap: 0;
         }
         .mobile-menu.open {
           display: flex;
         }
         .mobile-link {
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
           color: #2D2D2D;
           text-decoration: none;
-          padding: 10px 0;
+          padding: 14px 20px;
           border-bottom: 1px solid rgba(226, 224, 216, 0.4);
+          display: block;
         }
         .mobile-link:last-child {
           border-bottom: none;
@@ -181,13 +182,30 @@ export function TopNav() {
         .mobile-link.active {
           color: #3730A3;
         }
+        .mobile-link-experience {
+          font-size: 16px;
+          font-weight: 600;
+          color: #3730A3;
+          text-decoration: none;
+          padding: 14px 20px;
+          border-bottom: 1px solid #E5E3DC;
+          display: block;
+        }
         .mobile-submenu-label {
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.08em;
           text-transform: uppercase;
           color: #AAAAAA;
-          padding: 8px 0 4px;
+          padding: 10px 20px 4px;
+        }
+        .mobile-link-external {
+          font-size: 16px;
+          font-weight: 500;
+          color: #2D2D2D;
+          text-decoration: none;
+          padding: 14px 20px;
+          display: block;
         }
         @media (max-width: 640px) {
           .topnav-links {
@@ -266,12 +284,13 @@ export function TopNav() {
       {/* Mobile menu */}
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
         <Link href="/" className="mobile-link">Home</Link>
+        <Link href="/about#experience" className="mobile-link-experience">Experience</Link>
         <Link href="/about" className="mobile-link">About Me</Link>
-        <Link href="/about#experience" className="mobile-link">Experience</Link>
         <div className="mobile-submenu-label">Insights</div>
         <Link href="/blog/large-deal-learnings" className="mobile-link">Complex Deals</Link>
         <Link href="/blog/hiring-top-talent" className="mobile-link">Hiring &amp; Talent</Link>
         <Link href="/blog/sales-systems" className="mobile-link">Sales Systems</Link>
+        <a href="https://www.linkedin.com/in/manansachdeva/" target="_blank" rel="noopener" className="mobile-link-external">LinkedIn ↗</a>
       </div>
     </>
   );

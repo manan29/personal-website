@@ -14,9 +14,8 @@ export const metadata: Metadata = {
   title: "manan.me",
   description: "Sales leader writing about GTM, deals, hiring, and building revenue orgs.",
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
+    icon: '/favicon-32.png',
+    apple: '/apple-icon.png',
   },
   openGraph: {
     title: "manan.me",
