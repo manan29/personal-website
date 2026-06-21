@@ -125,7 +125,12 @@ export default function About() {
                 </>
               ),
               accent: role.accent,
-              bullets: role.bullets,
+              // For the Head role, only show the 2 narrative bullets on the about page.
+              // The quarterly data is displayed via the ResultsTable (extra) below.
+              // The full 9 bullets (including quarterly) are used by the PDF via experienceData.ts.
+              bullets: (company.name === 'Signeasy' && role.title === 'Head - Sales and Customer Success')
+                ? role.bullets.slice(0, 2)
+                : role.bullets,
               extra: (company.name === 'Signeasy' && role.title === 'Head - Sales and Customer Success') ? <ResultsTable /> : undefined,
             }))}
           />
