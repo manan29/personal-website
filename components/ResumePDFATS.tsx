@@ -187,8 +187,8 @@ export default function ResumePDFATS() {
               <Text style={styles.companyTagline}>{company.tagline}</Text>
             )}
 
-            {company.roles.map((role) => (
-              <View key={role.title} style={styles.roleBlock}>
+            {company.roles.map((role, ri) => (
+              <View key={role.title} style={[styles.roleBlock, ri === 0 && company.tagline ? { marginTop: 10 } : {}]}>
                 <View style={styles.roleHeader}>
                   <Text style={styles.roleTitle}>{role.title}</Text>
                   <Text style={styles.roleDates}>{role.periodLabel}</Text>
