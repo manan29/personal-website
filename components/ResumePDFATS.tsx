@@ -7,13 +7,13 @@ import { calculateTotalExperience } from '@/lib/calculateDuration';
 const styles = StyleSheet.create({
   page: {
     fontFamily: 'Helvetica',
-    fontSize: 9.5,
-    paddingTop: 36,
-    paddingBottom: 36,
-    paddingLeft: 40,
-    paddingRight: 40,
+    fontSize: 9,
+    paddingTop: 32,
+    paddingBottom: 32,
+    paddingLeft: 36,
+    paddingRight: 36,
     color: '#2D2D2D',
-    lineHeight: 1.45,
+    lineHeight: 1.35,
   },
 
   // ── Header ──
@@ -47,25 +47,25 @@ const styles = StyleSheet.create({
     color: '#1A1A1A',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
-    marginTop: 14,
-    marginBottom: 4,
+    marginTop: 11,
+    marginBottom: 2,
   },
   sectionRule: {
     height: 0.5,
     backgroundColor: '#CCCCCC',
-    marginBottom: 8,
+    marginBottom: 6,
   },
 
   // ── Summary ──
   summary: {
-    fontSize: 9.5,
+    fontSize: 9,
     color: '#2D2D2D',
-    lineHeight: 1.45,
+    lineHeight: 1.35,
   },
 
   // ── Company ──
   companyBlock: {
-    marginBottom: 12,
+    marginBottom: 9,
   },
   companyHeader: {
     flexDirection: 'row',
@@ -88,13 +88,13 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: '#6B6960',
     marginTop: 2,
-    marginBottom: 6,
+    marginBottom: 5,
   },
 
   // ── Role ──
   roleBlock: {
-    marginTop: 6,
-    marginBottom: 3,
+    marginTop: 4,
+    marginBottom: 2,
   },
   roleHeader: {
     flexDirection: 'row',
@@ -116,39 +116,39 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica-Bold',
     color: '#4A4744',
     marginTop: 2,
-    marginBottom: 4,
+    marginBottom: 3,
   },
 
   // ── Bullets ──
   bullet: {
-    fontSize: 9.5,
+    fontSize: 9,
     color: '#2D2D2D',
-    lineHeight: 1.45,
-    marginBottom: 2.5,
+    lineHeight: 1.35,
+    marginBottom: 1.5,
     marginLeft: 10,
   },
 
   // ── Results ──
   resultsHeading: {
-    fontSize: 9.5,
+    fontSize: 9,
     fontFamily: 'Helvetica-Bold',
     color: '#1A1A1A',
-    marginTop: 4,
+    marginTop: 3,
     marginBottom: 2,
   },
   resultsNote: {
-    fontSize: 9.5,
+    fontSize: 9,
     color: '#2D2D2D',
-    lineHeight: 1.45,
+    lineHeight: 1.35,
     marginTop: 2,
   },
 
   // ── Skills ──
   skillLine: {
-    fontSize: 9.5,
+    fontSize: 9,
     color: '#2D2D2D',
-    lineHeight: 1.45,
-    marginBottom: 5,
+    lineHeight: 1.35,
+    marginBottom: 4,
   },
 });
 
@@ -188,7 +188,7 @@ export default function ResumePDFATS() {
             )}
 
             {company.roles.map((role, ri) => (
-              <View key={role.title} style={[styles.roleBlock, ri === 0 && company.tagline ? { marginTop: 10 } : {}]}>
+              <View key={role.title} style={[styles.roleBlock, ri === 0 && company.tagline ? { marginTop: 8 } : {}]}>
                 <View style={styles.roleHeader}>
                   <Text style={styles.roleTitle}>{role.title}</Text>
                   <Text style={styles.roleDates}>{role.periodLabel}</Text>
@@ -202,7 +202,7 @@ export default function ResumePDFATS() {
                   <Text key={i} style={styles.bullet}>{`-  ${bullet}`}</Text>
                 ))}
                 {role.results && (
-                  <View style={{ marginTop: 4 }}>
+                  <View style={{ marginTop: 3 }}>
                     <Text style={styles.resultsHeading}>{role.results.heading}</Text>
                     {role.results.items.map((item, i) => (
                       <Text key={i} style={styles.bullet}>{`-  ${item}`}</Text>
@@ -228,11 +228,11 @@ export default function ResumePDFATS() {
         <Text style={styles.sectionHeading}>Skills</Text>
         <View style={styles.sectionRule} />
         {tools.map((tool) => (
-          <View key={tool.category} style={{ flexDirection: 'row', marginBottom: 5 }}>
-            <Text style={{ fontSize: 9.5, fontFamily: 'Helvetica-Bold', color: '#2D2D2D' }}>
+          <View key={tool.category} style={{ flexDirection: 'row', marginBottom: 4 }}>
+            <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: '#2D2D2D' }}>
               {`${tool.category}: `}
             </Text>
-            <Text style={{ fontSize: 9.5, color: '#2D2D2D', flex: 1 }}>
+            <Text style={{ fontSize: 9, color: '#2D2D2D', flex: 1 }}>
               {tool.items.join(', ')}
             </Text>
           </View>
