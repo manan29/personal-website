@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: 'Helvetica',
     fontSize: 10,
-    paddingTop: 24,
-    paddingBottom: 24,
-    paddingLeft: 24,
-    paddingRight: 24,
+    paddingTop: 30,
+    paddingBottom: 30,
+    paddingLeft: 30,
+    paddingRight: 30,
     color: '#1A1A1A',
   },
 
@@ -48,13 +48,13 @@ const styles = StyleSheet.create({
 
   // ── Section headings ────────────────────────────────
   sectionHeading: {
-    fontSize: 12,
+    fontSize: 12.5,
     fontFamily: 'Helvetica-Bold',
     color: '#3730A3',
     textTransform: 'uppercase',
     letterSpacing: 1,
     paddingBottom: 3,
-    marginTop: 8,
+    marginTop: 12,
     marginBottom: 4,
     borderBottomWidth: 1.5,
     borderBottomColor: '#C7D2FE',
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
   // ── Company ─────────────────────────────────────────
   companyBlock: {
-    marginBottom: 5,
+    marginBottom: 8,
   },
   companySeparator: {
     height: 0.5,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   companyName: {
-    fontSize: 11,
+    fontSize: 11.5,
     fontFamily: 'Helvetica-Bold',
     color: '#1A1A1A',
     marginRight: 6,
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     marginBottom: 1,
   },
   roleTitle: {
-    fontSize: 9.5,
+    fontSize: 10,
     fontFamily: 'Helvetica-Bold',
     color: '#1A1A1A',
     flex: 1,
@@ -150,10 +150,10 @@ const styles = StyleSheet.create({
     flexShrink: 0,
   },
   bullet: {
-    fontSize: 8.5,
+    fontSize: 9.5,
     color: '#4A4744',
-    lineHeight: 1.3,
-    marginBottom: 0.5,
+    lineHeight: 1.4,
+    marginBottom: 1.5,
     marginLeft: 10,
   },
 
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     borderColor: '#E5E3DC',
     borderStyle: 'solid',
     borderRadius: 4,
-    padding: 6,
+    padding: 8,
     marginBottom: 6,
   },
   winNumber: {
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     borderColor: '#E5E3DC',
     borderStyle: 'solid',
     borderRadius: 4,
-    padding: 6,
+    padding: 8,
     marginBottom: 6,
   },
   toolCategory: {
@@ -287,13 +287,13 @@ export default function ResumePDF() {
                     ))}
                     {role.results && (
                       <View style={{ marginTop: 3, marginBottom: 2 }}>
-                        <Text style={{ fontSize: 8.5, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 1, marginBottom: 2 }}>
+                        <Text style={{ fontSize: 9.5, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 1, marginBottom: 2 }}>
                           {role.results.heading}
                         </Text>
                         {role.results.items.map((item, i) => (
                           <Text key={i} style={styles.bullet}>{`\u2022  ${item}`}</Text>
                         ))}
-                        <Text style={{ fontSize: 8.5, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.3, marginTop: 2 }}>
+                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.4, marginTop: 2 }}>
                           {role.results.closingNote}
                         </Text>
                       </View>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getBlogPostsByCategory } from '@/lib/content';
+import { getAllBlogPosts } from '@/lib/content';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -77,9 +77,7 @@ const dateStyle: React.CSSProperties = {
 };
 
 export default function HomePage() {
-  const complexDeals = getBlogPostsByCategory('large-deal-learnings').slice(0, 3);
-  const hiringPosts = getBlogPostsByCategory('hiring-top-talent').slice(0, 2);
-  const buildingTalentPosts = getBlogPostsByCategory('building-top-talent').slice(0, 2);
+  const allPosts = getAllBlogPosts();
 
   return (
     <main>
@@ -182,15 +180,10 @@ export default function HomePage() {
         marginBottom: '1rem',
       }}>Writings</h2>
 
-      {/* Complex Deals Section */}
       <section style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-          <h2 style={sectionHeadingStyle}>Complex Deals</h2>
-          <Link href="/blog/large-deal-learnings" style={seeAllStyle}>See all</Link>
-        </div>
         <div>
-          {complexDeals.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.category}/${post.slug}`} style={postRowStyle}>
+          {allPosts.map((post) => (
+            <Link key={`${post.category}/${post.slug}`} href={`/blog/${post.category}/${post.slug}`} style={postRowStyle}>
               <span style={postTitleStyle}>{post.title}</span>
               <div style={postMetaStyle}>
                 <span style={tagPillStyle}>{post.tag}</span>
@@ -199,51 +192,8 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
-
-      {/* Hiring & Talent Section */}
-      <section style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-          <h2 style={sectionHeadingStyle}>Hiring &amp; Talent</h2>
-          <Link href="/blog/hiring-top-talent" style={seeAllStyle}>See all</Link>
-        </div>
-        <div>
-          {hiringPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.category}/${post.slug}`} style={postRowStyle}>
-              <span style={postTitleStyle}>{post.title}</span>
-              <div style={postMetaStyle}>
-                <span style={tagPillStyle}>{post.tag}</span>
-                <span style={dateStyle}>{post.date}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Building Top Talent Section */}
-      <section style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-          <h2 style={sectionHeadingStyle}>Building Top Talent</h2>
-          <Link href="/blog/category/building-top-talent" style={seeAllStyle}>See all</Link>
-        </div>
-        <div>
-          {buildingTalentPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.category}/${post.slug}`} style={postRowStyle}>
-              <span style={postTitleStyle}>{post.title}</span>
-              <div style={postMetaStyle}>
-                <span style={tagPillStyle}>{post.tag}</span>
-                <span style={dateStyle}>{post.date}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Experiments with AI Section */}
-      <section style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-          <h2 style={sectionHeadingStyle}>Experiments with AI</h2>
-          <Link href="/blog/category/experiments-with-ai" style={seeAllStyle}>See all</Link>
+        <div style={{ marginTop: '16px' }}>
+          <Link href="/insights" style={seeAllStyle}>See all insights →</Link>
         </div>
       </section>
 
