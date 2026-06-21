@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     letterSpacing: 1,
     paddingBottom: 3,
-    marginTop: 12,
+    marginTop: 9,
     marginBottom: 4,
     borderBottomWidth: 1.5,
     borderBottomColor: '#C7D2FE',
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
   // ── Company ─────────────────────────────────────────
   companyBlock: {
-    marginBottom: 8,
+    marginBottom: 6,
   },
   companySeparator: {
     height: 0.5,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     fontSize: 9.5,
     color: '#4A4744',
     lineHeight: 1.4,
-    marginBottom: 1.5,
+    marginBottom: 1,
     marginLeft: 10,
   },
 
@@ -176,8 +176,8 @@ const styles = StyleSheet.create({
     borderColor: '#E5E3DC',
     borderStyle: 'solid',
     borderRadius: 4,
-    padding: 8,
-    marginBottom: 6,
+    padding: 6,
+    marginBottom: 4,
   },
   winNumber: {
     fontSize: 13,
@@ -330,23 +330,17 @@ export default function ResumePDF() {
 
         {/* ── Tools ── */}
         <Text style={styles.sectionHeading}>Tools</Text>
-        <View style={styles.twoColGrid}>
-          <View style={[styles.gridCol, styles.gridColLeft]}>
-            {toolsLeft.map((tool) => (
-              <View key={tool.category} style={styles.toolCard}>
-                <Text style={styles.toolCategory}>{tool.category}</Text>
-                <Text style={styles.toolItems}>{tool.items.join('  ·  ')}</Text>
-              </View>
-            ))}
-          </View>
-          <View style={styles.gridCol}>
-            {toolsRight.map((tool) => (
-              <View key={tool.category} style={styles.toolCard}>
-                <Text style={styles.toolCategory}>{tool.category}</Text>
-                <Text style={styles.toolItems}>{tool.items.join('  ·  ')}</Text>
-              </View>
-            ))}
-          </View>
+        <View style={{ marginTop: 2 }}>
+          {tools.map((tool) => (
+            <View key={tool.category} style={{ flexDirection: 'row', marginBottom: 4 }}>
+              <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: '#3730A3', textTransform: 'uppercase', letterSpacing: 0.5, marginRight: 4 }}>
+                {tool.category}:
+              </Text>
+              <Text style={{ fontSize: 9, color: '#2D2D2D', flex: 1 }}>
+                {tool.items.join('  ·  ')}
+              </Text>
+            </View>
+          ))}
         </View>
 
       </Page>
