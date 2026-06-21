@@ -5,17 +5,17 @@ import DownloadResumeButton from '@/components/DownloadResumeButtonWrapper'
 
 export default function About() {
   const sectionHeading: React.CSSProperties = {
-    fontSize: 22, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em',
+    fontSize: 18, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em',
     marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: '2px solid #E2E0D8',
   }
   const pStyle: React.CSSProperties = {
-    fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 18, color: '#2D2D2D',
-    lineHeight: 1.8, marginBottom: 16,
+    fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: 15, color: '#2D2D2D',
+    lineHeight: 1.6, marginBottom: 12,
   }
   return (
     <main style={{ maxWidth: 680, margin: '0 auto' }} className="about-page-main">
 
-      <h1 style={{ fontSize: 28, fontWeight: 700, color: '#1A1A1A', letterSpacing: '-0.02em', marginBottom: 24 }}>
+      <h1 style={{ fontSize: 26, fontWeight: 700, color: '#1A1A1A', letterSpacing: '-0.02em', marginBottom: 24 }}>
         Hey, Manan here.
       </h1>
 
@@ -94,7 +94,7 @@ export default function About() {
         <h2
           id="experience"
           style={{
-            fontSize: 22, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em',
+            fontSize: 18, fontWeight: 700, color: '#4A4744', letterSpacing: '-0.01em',
             margin: 0, padding: 0, border: 'none', scrollMarginTop: '80px',
           }}
         >
@@ -126,7 +126,7 @@ export default function About() {
               ),
               accent: role.accent,
               bullets: role.bullets,
-              extra: undefined,
+              extra: (company.name === 'Signeasy' && role.title === 'Head - Sales and Customer Success') ? <ResultsTable /> : undefined,
             }))}
           />
         ))}
@@ -165,11 +165,54 @@ export default function About() {
 
 // ── Shared components ─────────────────────────────────────
 function SectionLabel({ children, accent, id, scrollMarginTop }: { children: React.ReactNode, accent?: boolean, id?: string, scrollMarginTop?: string }) {
-  return <h2 id={id} style={{ fontSize: 22, fontWeight: 700, color: accent ? '#3730A3' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#3730A3' : '#E2E0D8'}`, scrollMarginTop }}>{children}</h2>
+  return <h2 id={id} style={{ fontSize: 18, fontWeight: 700, color: accent ? '#3730A3' : '#4A4744', letterSpacing: '-0.01em', marginBottom: 20, marginTop: 48, paddingBottom: 10, borderBottom: `2px solid ${accent ? '#3730A3' : '#E2E0D8'}`, scrollMarginTop }}>{children}</h2>
 }
 
 function Divider() {
   return <hr style={{ border: 'none', borderTop: '1px solid #E2E0D8', margin: '40px 0' }} />
+}
+
+const resultsRows = [
+  { quarter: 'Q2 2025', logos: '15', attainment: '60%', note: 'Ramp-up quarter, only 1 AE', alt: false },
+  { quarter: 'Q3 2025', logos: '30', attainment: '73%', note: '-', alt: true },
+  { quarter: 'Q4 2025', logos: '40', attainment: '90%', note: '-', alt: false },
+  { quarter: 'Q1 2026', logos: '64', attainment: '75%', note: '-', alt: true },
+  { quarter: 'Q2 2026', logos: '40', attainment: '150%', note: '2 Ent AE, 1 SMB AE, 1 BDR', alt: false },
+]
+
+function ResultsTable() {
+  return (
+    <div style={{ marginTop: 16 }}>
+      <p style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A', marginBottom: 8 }}>Results</p>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+          <thead>
+            <tr style={{ borderBottom: '2px solid #C7D2FE', background: '#EEF2FF' }}>
+              {['Quarter', 'New Logos', 'Attainment', 'Note'].map(h => (
+                <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#3730A3', fontWeight: 600 }}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {resultsRows.map((r) => (
+              <tr key={r.quarter} style={{ borderBottom: '1px solid #E5E3DC', background: r.alt ? '#FAFAFA' : '#FFFFFF' }}>
+                <td style={{ padding: '8px 12px', color: '#1A1A1A', fontWeight: 500 }}>{r.quarter}</td>
+                <td style={{ padding: '8px 12px', color: '#6B7280' }}>{r.logos}</td>
+                <td style={{ padding: '8px 12px', color: '#6B7280' }}>{r.attainment}</td>
+                <td style={{ padding: '8px 12px', color: '#9CA3AF', fontSize: 12 }}>{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style={{ fontSize: 13, color: '#4A4744', marginTop: 12, lineHeight: 1.6 }}>
+        Closed the highest-ever deal at Signeasy at $100K. Closed a Banking API customer at $50K, growing to $120K annually over the next 3 years.
+      </p>
+      <p style={{ fontSize: 13, color: '#4A4744', marginTop: 8, lineHeight: 1.6, fontStyle: 'italic' }}>
+        5 consecutive quarters of growth - scaling from 1 AE to a 4-person team while improving attainment from 60% to 150%.
+      </p>
+    </div>
+  )
 }
 
 

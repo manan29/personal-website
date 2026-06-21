@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 const pStyle: React.CSSProperties = {
   fontFamily: 'system-ui, -apple-system, sans-serif',
-  fontSize: '17px',
-  lineHeight: '1.7',
+  fontSize: '15px',
+  lineHeight: '1.6',
   color: '#2D2D2D',
   marginBottom: '10px',
 };
@@ -127,7 +127,7 @@ export default function HomePage() {
           <h1
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '32px',
+              fontSize: '26px',
               fontWeight: '500',
               color: '#1A1A1A',
               marginBottom: '1rem',
