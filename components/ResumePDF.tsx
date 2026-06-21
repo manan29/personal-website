@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: 'Helvetica',
     fontSize: 10,
-    paddingTop: 28,
-    paddingBottom: 28,
-    paddingLeft: 28,
-    paddingRight: 28,
+    paddingTop: 24,
+    paddingBottom: 24,
+    paddingLeft: 24,
+    paddingRight: 24,
     color: '#1A1A1A',
   },
 
@@ -35,27 +35,27 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor: '#3730A3',
     marginTop: 6,
-    marginBottom: 14,
+    marginBottom: 10,
   },
 
   // ── Summary ─────────────────────────────────────────
   summary: {
-    fontSize: 10,
+    fontSize: 9.5,
     color: '#2D2D2D',
-    lineHeight: 1.5,
-    marginBottom: 10,
+    lineHeight: 1.4,
+    marginBottom: 6,
   },
 
   // ── Section headings ────────────────────────────────
   sectionHeading: {
-    fontSize: 13,
+    fontSize: 12,
     fontFamily: 'Helvetica-Bold',
     color: '#3730A3',
     textTransform: 'uppercase',
     letterSpacing: 1,
-    paddingBottom: 4,
-    marginTop: 12,
-    marginBottom: 6,
+    paddingBottom: 3,
+    marginTop: 8,
+    marginBottom: 4,
     borderBottomWidth: 1.5,
     borderBottomColor: '#C7D2FE',
     borderBottomStyle: 'solid',
@@ -63,13 +63,13 @@ const styles = StyleSheet.create({
 
   // ── Company ─────────────────────────────────────────
   companyBlock: {
-    marginBottom: 8,
+    marginBottom: 5,
   },
   companySeparator: {
     height: 0.5,
     backgroundColor: '#E5E3DC',
-    marginTop: 8,
-    marginBottom: 8,
+    marginTop: 5,
+    marginBottom: 5,
   },
   companyHeader: {
     flexDirection: 'row',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   companyName: {
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: 'Helvetica-Bold',
     color: '#1A1A1A',
     marginRight: 6,
@@ -104,12 +104,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   companyDates: {
-    fontSize: 9,
+    fontSize: 8.5,
     color: '#6B7280',
     marginRight: 5,
   },
   durationPill: {
-    fontSize: 8,
+    fontSize: 7.5,
     color: '#3730A3',
     backgroundColor: '#EEF2FF',
     borderRadius: 3,
@@ -119,41 +119,41 @@ const styles = StyleSheet.create({
     paddingRight: 6,
   },
   tagline: {
-    fontSize: 9,
+    fontSize: 8.5,
     fontFamily: 'Helvetica-Oblique',
     color: '#9CA3AF',
     marginTop: 1,
-    marginBottom: 3,
+    marginBottom: 2,
   },
 
   // ── Role ────────────────────────────────────────────
   roleBlock: {
-    marginTop: 4,
-    marginBottom: 3,
+    marginTop: 2,
+    marginBottom: 2,
   },
   roleHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 2,
+    marginBottom: 1,
   },
   roleTitle: {
-    fontSize: 10,
+    fontSize: 9.5,
     fontFamily: 'Helvetica-Bold',
     color: '#1A1A1A',
     flex: 1,
     marginRight: 8,
   },
   roleMeta: {
-    fontSize: 8,
+    fontSize: 7.5,
     color: '#9CA3AF',
     flexShrink: 0,
   },
   bullet: {
-    fontSize: 9,
+    fontSize: 8.5,
     color: '#4A4744',
-    lineHeight: 1.35,
-    marginBottom: 1,
+    lineHeight: 1.3,
+    marginBottom: 0.5,
     marginLeft: 10,
   },
 
@@ -169,31 +169,31 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
 
-  // ── Notable Wins ────────────────────────────────────
+  // ── Track Record ─────────────────────────────────────
   winCard: {
     backgroundColor: '#F9F8FF',
     borderWidth: 0.5,
     borderColor: '#E5E3DC',
     borderStyle: 'solid',
     borderRadius: 4,
-    padding: 8,
-    marginBottom: 8,
+    padding: 6,
+    marginBottom: 6,
   },
   winNumber: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: 'Helvetica-Bold',
     color: '#3730A3',
   },
   winLabel: {
-    fontSize: 9,
+    fontSize: 8.5,
     fontFamily: 'Helvetica-Bold',
     color: '#1A1A1A',
     marginTop: 2,
   },
   winSub: {
-    fontSize: 8,
+    fontSize: 7.5,
     color: '#6B7280',
-    lineHeight: 1.4,
+    lineHeight: 1.35,
     marginTop: 2,
   },
 
@@ -204,26 +204,25 @@ const styles = StyleSheet.create({
     borderColor: '#E5E3DC',
     borderStyle: 'solid',
     borderRadius: 4,
-    padding: 8,
-    marginBottom: 8,
+    padding: 6,
+    marginBottom: 6,
   },
   toolCategory: {
-    fontSize: 9,
+    fontSize: 8.5,
     fontFamily: 'Helvetica-Bold',
     color: '#3730A3',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
   },
   toolItems: {
-    fontSize: 9,
+    fontSize: 8.5,
     color: '#2D2D2D',
-    marginTop: 3,
+    marginTop: 2,
   },
 });
 
 const totalYears = calculateTotalExperience('2015-06');
 
-// Split an array into two columns (left = even indices, right = odd indices)
 function splitColumns<T>(arr: T[]): [T[], T[]] {
   return [arr.filter((_, i) => i % 2 === 0), arr.filter((_, i) => i % 2 === 1)];
 }
@@ -287,14 +286,14 @@ export default function ResumePDF() {
                       <Text key={i} style={styles.bullet}>{`\u2022  ${bullet}`}</Text>
                     ))}
                     {role.results && (
-                      <View style={{ marginTop: 4, marginBottom: 4 }}>
-                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 2, marginBottom: 2 }}>
+                      <View style={{ marginTop: 3, marginBottom: 2 }}>
+                        <Text style={{ fontSize: 8.5, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 1, marginBottom: 2 }}>
                           {role.results.heading}
                         </Text>
                         {role.results.items.map((item, i) => (
                           <Text key={i} style={styles.bullet}>{`\u2022  ${item}`}</Text>
                         ))}
-                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.35, marginTop: 4 }}>
+                        <Text style={{ fontSize: 8.5, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.3, marginTop: 2 }}>
                           {role.results.closingNote}
                         </Text>
                       </View>
@@ -308,7 +307,7 @@ export default function ResumePDF() {
 
         {/* ── Track Record ── */}
         <Text style={styles.sectionHeading}>Track Record</Text>
-        <View style={styles.twoColGrid} wrap={false}>
+        <View style={styles.twoColGrid}>
           <View style={[styles.gridCol, styles.gridColLeft]}>
             {winsLeft.map((win) => (
               <View key={win.label} style={styles.winCard}>
@@ -331,7 +330,7 @@ export default function ResumePDF() {
 
         {/* ── Tools ── */}
         <Text style={styles.sectionHeading}>Tools</Text>
-        <View style={styles.twoColGrid} wrap={false}>
+        <View style={styles.twoColGrid}>
           <View style={[styles.gridCol, styles.gridColLeft]}>
             {toolsLeft.map((tool) => (
               <View key={tool.category} style={styles.toolCard}>
