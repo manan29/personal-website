@@ -4,6 +4,12 @@ export interface RoleManager {
   title: string;
 }
 
+export interface RoleResults {
+  heading: string;
+  items: string[];
+  closingNote: string;
+}
+
 export interface Role {
   title: string;
   startDate: string; // "YYYY-MM"
@@ -12,6 +18,7 @@ export interface Role {
   manager?: RoleManager;
   accent?: boolean;
   bullets: string[];
+  results?: RoleResults;
 }
 
 export interface Company {
@@ -42,14 +49,20 @@ export const experience: Company[] = [
         bullets: [
           'Promoted to Head of Sales and Customer Success in April 2026, now leading both Sales and CS functions',
           'Focusing on expansion, improving retention, and building Outbound alongside Sales',
-          'Q2 2025: 15 new logos, 60% attainment (ramp-up quarter, 1 AE)',
-          'Q3 2025: 30 new logos, 73% attainment',
-          'Q4 2025: 40 new logos, 90% attainment',
-          'Q1 2026: 64 new logos, 75% attainment',
-          'Q2 2026: 40 new logos, 150% attainment (2 Ent AE, 1 SMB AE, 1 BDR)',
-          'Closed the highest-ever deal at Signeasy at $100K',
-          'Closed a Banking API customer at $50K, growing to $120K annually over the next 3 years',
         ],
+        results: {
+          heading: 'Results in Last 12 Months',
+          items: [
+            'Q2 2025: 15 new logos, 60% attainment (ramp-up quarter, 1 AE)',
+            'Q3 2025: 30 new logos, 73% attainment',
+            'Q4 2025: 40 new logos, 90% attainment',
+            'Q1 2026: 64 new logos, 75% attainment',
+            'Q2 2026: 40 new logos, 150% attainment (2 Ent AE, 1 SMB AE, 1 BDR)',
+            'Closed the highest-ever deal at Signeasy at $100K',
+            'Closed a Banking API customer at $50K, growing to $120K annually over the next 3 years',
+          ],
+          closingNote: '5 consecutive quarters of growth - scaling from 1 AE to a 4-person team while improving attainment from 60% to 150%.',
+        },
       },
       {
         title: 'Senior Manager - Sales',

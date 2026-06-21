@@ -286,6 +286,19 @@ export default function ResumePDF() {
                     {role.bullets.map((bullet, i) => (
                       <Text key={i} style={styles.bullet}>{`\u2022  ${bullet}`}</Text>
                     ))}
+                    {role.results && (
+                      <View style={{ marginTop: 6, marginBottom: 4 }}>
+                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 4, marginBottom: 3 }}>
+                          {role.results.heading}
+                        </Text>
+                        {role.results.items.map((item, i) => (
+                          <Text key={i} style={styles.bullet}>{`\u2022  ${item}`}</Text>
+                        ))}
+                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.45, marginTop: 6 }}>
+                          {role.results.closingNote}
+                        </Text>
+                      </View>
+                    )}
                   </View>
                 ))}
               </View>
