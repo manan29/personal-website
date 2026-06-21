@@ -1,9 +1,69 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
+import { usePDF, type DocumentProps } from '@react-pdf/renderer';
 import ResumePDF from './ResumePDF';
 import ResumePDFATS from './ResumePDFATS';
+
+function DownloadOption({
+  label,
+  subtext,
+  fileName,
+  document: doc,
+  onDownload,
+}: {
+  label: string;
+  subtext: string;
+  fileName: string;
+  document: React.ReactElement<DocumentProps>;
+  onDownload: () => void;
+}) {
+  const [instance] = usePDF({ document: doc });
+  const [downloading, setDownloading] = useState(false);
+
+  function handleClick() {
+    if (instance.loading || downloading || !instance.url) return;
+    setDownloading(true);
+    const link = document.createElement('a');
+    link.href = instance.url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => {
+      setDownloading(false);
+      onDownload();
+    }, 300);
+  }
+
+  const busy = instance.loading || downloading;
+
+  return (
+    <div
+      onClick={handleClick}
+      style={{
+        padding: '12px 16px',
+        cursor: busy ? 'default' : 'pointer',
+        minHeight: '44px',
+        opacity: busy ? 0.6 : 1,
+        transition: 'background 0.1s',
+      }}
+      onMouseEnter={(e) => {
+        if (!busy) (e.currentTarget as HTMLDivElement).style.background = '#EEF2FF';
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLDivElement).style.background = 'transparent';
+      }}
+    >
+      <div style={{ fontSize: '13px', fontWeight: 600, color: '#1A1A1A', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        {busy ? 'Generating...' : label}
+      </div>
+      <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        {subtext}
+      </div>
+    </div>
+  );
+}
 
 export default function DownloadResumeButton() {
   const [open, setOpen] = useState(false);
@@ -23,7 +83,6 @@ export default function DownloadResumeButton() {
 
   return (
     <div ref={ref} style={{ position: 'relative', display: 'inline-block' }}>
-      {/* Main toggle button */}
       <button
         onClick={() => setOpen((o) => !o)}
         style={{
@@ -49,7 +108,6 @@ export default function DownloadResumeButton() {
         </span>
       </button>
 
-      {/* Dropdown */}
       {open && (
         <div
           style={{
@@ -66,68 +124,24 @@ export default function DownloadResumeButton() {
             overflow: 'hidden',
           }}
         >
-          {/* Option 1: Interactive */}
-          <PDFDownloadLink
-            document={<ResumePDF />}
-            fileName="manan-sachdeva-resume.pdf"
-            style={{ textDecoration: 'none', display: 'block' }}
-          >
-            {({ loading }) => (
-              <div
-                onClick={() => setOpen(false)}
-                style={{
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #F3F2EE',
-                  cursor: 'pointer',
-                  minHeight: '44px',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.background = '#EEF2FF';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.background = 'transparent';
-                }}
-              >
-                <div style={{ fontSize: '13px', fontWeight: 600, color: '#1A1A1A', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {loading ? 'Generating...' : 'Interactive Version'}
-                </div>
-                <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Designed, styled resume
-                </div>
-              </div>
-            )}
-          </PDFDownloadLink>
-
-          {/* Option 2: ATS */}
-          <PDFDownloadLink
+          <div style={{ borderBottom: '1px solid #F3F2EE' }}>
+            <DownloadOption
+              key="interactive"
+              label="Interactive Version"
+              subtext="Designed, styled resume"
+              fileName="manan-sachdeva-resume.pdf"
+              document={<ResumePDF />}
+              onDownload={() => setOpen(false)}
+            />
+          </div>
+          <DownloadOption
+            key="simple"
+            label="Simple Version"
+            subtext="Plain format for job applications"
+            fileName="manan-sachdeva-resume-simple.pdf"
             document={<ResumePDFATS />}
-            fileName="manan-sachdeva-resume-ats.pdf"
-            style={{ textDecoration: 'none', display: 'block' }}
-          >
-            {({ loading }) => (
-              <div
-                onClick={() => setOpen(false)}
-                style={{
-                  padding: '12px 16px',
-                  cursor: 'pointer',
-                  minHeight: '44px',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.background = '#EEF2FF';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.background = 'transparent';
-                }}
-              >
-                <div style={{ fontSize: '13px', fontWeight: 600, color: '#1A1A1A', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {loading ? 'Generating...' : 'ATS-Optimized Version'}
-                </div>
-                <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Plain format for job applications
-                </div>
-              </div>
-            )}
-          </PDFDownloadLink>
+            onDownload={() => setOpen(false)}
+          />
         </div>
       )}
     </div>
