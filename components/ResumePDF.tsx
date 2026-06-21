@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: 'Helvetica',
     fontSize: 10,
-    paddingTop: 36,
-    paddingBottom: 36,
-    paddingLeft: 36,
-    paddingRight: 36,
+    paddingTop: 28,
+    paddingBottom: 28,
+    paddingLeft: 28,
+    paddingRight: 28,
     color: '#1A1A1A',
   },
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   headerRule: {
     height: 2,
     backgroundColor: '#3730A3',
-    marginTop: 10,
+    marginTop: 6,
     marginBottom: 14,
   },
 
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: '#2D2D2D',
     lineHeight: 1.5,
-    marginBottom: 18,
+    marginBottom: 10,
   },
 
   // ── Section headings ────────────────────────────────
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     letterSpacing: 1,
     paddingBottom: 4,
-    marginTop: 18,
-    marginBottom: 10,
+    marginTop: 12,
+    marginBottom: 6,
     borderBottomWidth: 1.5,
     borderBottomColor: '#C7D2FE',
     borderBottomStyle: 'solid',
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
   // ── Company ─────────────────────────────────────────
   companyBlock: {
-    marginBottom: 12,
+    marginBottom: 8,
   },
   companySeparator: {
     height: 0.5,
@@ -122,13 +122,13 @@ const styles = StyleSheet.create({
     fontSize: 9,
     fontFamily: 'Helvetica-Oblique',
     color: '#9CA3AF',
-    marginTop: 2,
-    marginBottom: 6,
+    marginTop: 1,
+    marginBottom: 3,
   },
 
   // ── Role ────────────────────────────────────────────
   roleBlock: {
-    marginTop: 6,
+    marginTop: 4,
     marginBottom: 3,
   },
   roleHeader: {
@@ -152,8 +152,8 @@ const styles = StyleSheet.create({
   bullet: {
     fontSize: 9,
     color: '#4A4744',
-    lineHeight: 1.45,
-    marginBottom: 2,
+    lineHeight: 1.35,
+    marginBottom: 1,
     marginLeft: 10,
   },
 
@@ -287,14 +287,14 @@ export default function ResumePDF() {
                       <Text key={i} style={styles.bullet}>{`\u2022  ${bullet}`}</Text>
                     ))}
                     {role.results && (
-                      <View style={{ marginTop: 6, marginBottom: 4 }}>
-                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 4, marginBottom: 3 }}>
+                      <View style={{ marginTop: 4, marginBottom: 4 }}>
+                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: '#3730A3', marginTop: 2, marginBottom: 2 }}>
                           {role.results.heading}
                         </Text>
                         {role.results.items.map((item, i) => (
                           <Text key={i} style={styles.bullet}>{`\u2022  ${item}`}</Text>
                         ))}
-                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.45, marginTop: 6 }}>
+                        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Oblique', color: '#6B7280', lineHeight: 1.35, marginTop: 4 }}>
                           {role.results.closingNote}
                         </Text>
                       </View>
