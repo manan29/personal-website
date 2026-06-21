@@ -137,7 +137,7 @@ export default function DownloadResumeButton() {
           <DownloadOption
             key="simple"
             label="Simple Version"
-            subtext="Plain format for job applications"
+            subtext="Plain format"
             fileName="manan-sachdeva-resume-simple.pdf"
             document={<ResumePDFATS />}
             onDownload={() => setOpen(false)}
