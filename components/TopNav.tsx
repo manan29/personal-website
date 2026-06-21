@@ -4,7 +4,16 @@ export function TopNav() {
   return (
     <>
       <style>{`
-        .topnav-inner {
+        .topnav {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background: #FFFFFF;
+          border-bottom: 1px solid #E5E3DC;
+          font-family: var(--font-ui);
+        }
+        /* Desktop: single row, brand left, links centered */
+        .topnav-desktop {
           position: relative;
           max-width: 860px;
           margin: 0 auto;
@@ -13,7 +22,14 @@ export function TopNav() {
           display: flex;
           align-items: center;
         }
-        .topnav-links {
+        .nav-brand {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          text-decoration: none;
+          flex-shrink: 0;
+        }
+        .nav-links-centered {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
@@ -34,48 +50,60 @@ export function TopNav() {
           white-space: nowrap;
         }
         .topnav-link:hover { color: #1A1A1A; }
-        @media (max-width: 600px) {
-          .topnav-inner {
-            flex-wrap: wrap;
-            height: auto;
-            min-height: 48px;
-            padding: 8px 1rem;
-            gap: 4px;
+
+        /* Mobile: two rows */
+        @media (max-width: 768px) {
+          .topnav-desktop { display: none; }
+          .nav-brand-row {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            border-bottom: 1px solid #E5E3DC;
           }
-          .topnav-links {
-            position: static;
-            transform: none;
-            gap: 8px;
-            flex: 0 0 100%;
+          .nav-links-row {
+            display: flex;
             justify-content: center;
-            padding-bottom: 6px;
+            gap: 16px;
+            padding: 8px 16px;
+            list-style: none;
+            margin: 0;
           }
-          .topnav-link { font-size: 13px; padding: 4px 8px; }
+          .nav-links-row .topnav-link { font-size: 12px; }
+        }
+        @media (min-width: 769px) {
+          .nav-brand-row { display: none; }
+          .nav-links-row { display: none; }
         }
       `}</style>
-      <nav style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        background: '#FFFFFF',
-        borderBottom: '1px solid #E5E3DC',
-        fontFamily: 'var(--font-ui)',
-      }}>
-        <div className="topnav-inner">
-          {/* Brand — links home */}
-          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', flexShrink: 0 }}>
+
+      <nav className="topnav">
+        {/* ── Desktop layout (single row) ── */}
+        <div className="topnav-desktop">
+          <a href="/" className="nav-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/photo.png" alt="Manan" style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} />
             <span style={{ fontSize: 14, fontWeight: 600, color: '#3730A3' }}>Manan</span>
           </a>
-
-          {/* Centered nav links */}
-          <ul className="topnav-links">
+          <ul className="nav-links-centered">
             <li><Link href="/about" className="topnav-link">About Me</Link></li>
             <li><Link href="/about#experience" className="topnav-link">Experience</Link></li>
             <li><Link href="/insights" className="topnav-link">Insights</Link></li>
           </ul>
         </div>
+
+        {/* ── Mobile layout (two rows) ── */}
+        <div className="nav-brand-row">
+          <a href="/" className="nav-brand">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/photo.png" alt="Manan" style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} />
+            <span style={{ fontSize: 14, fontWeight: 600, color: '#3730A3' }}>Manan</span>
+          </a>
+        </div>
+        <ul className="nav-links-row">
+          <li><Link href="/about" className="topnav-link">About Me</Link></li>
+          <li><Link href="/about#experience" className="topnav-link">Experience</Link></li>
+          <li><Link href="/insights" className="topnav-link">Insights</Link></li>
+        </ul>
       </nav>
     </>
   );

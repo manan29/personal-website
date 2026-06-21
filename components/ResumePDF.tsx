@@ -254,7 +254,7 @@ export default function ResumePDF() {
         {experience.map((company, ci) => {
           const duration = calculateCompanyDuration(company.roles);
           return (
-            <View key={company.name} wrap={false}>
+            <View key={company.name}>
               {ci > 0 && <View style={styles.companySeparator} />}
               <View style={styles.companyBlock}>
                 <View style={styles.companyHeader}>
