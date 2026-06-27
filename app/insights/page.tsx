@@ -7,7 +7,7 @@ export default function InsightsPage() {
   return (
     <div style={{ maxWidth: 1040, margin: '0 auto', padding: '88px 40px 96px' }} className="page-container">
       <div style={{ fontFamily: 'var(--font-jetbrains)', fontSize: '12px', letterSpacing: '0.16em', color: '#2563eb', marginBottom: '20px' }}>
-        // INSIGHTS
+        INSIGHTS
       </div>
       <h1 style={{
         fontFamily: 'var(--font-space-grotesk)',
