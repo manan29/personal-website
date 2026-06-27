@@ -1,88 +1,75 @@
+"use client";
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export function TopNav() {
+  const pathname = usePathname();
+
   return (
-    <>
-      <style>{`
-        .topnav {
-          position: sticky;
-          top: 0;
-          z-index: 50;
-          background: #FFFFFF;
-          border-bottom: 1px solid #E5E3DC;
-          font-family: var(--font-ui);
-        }
-        .topnav-container {
-          position: relative;
-          max-width: 860px;
-          margin: 0 auto;
-          padding: 0 2rem;
-          height: 52px;
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-        }
-        .nav-brand {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          text-decoration: none;
-          flex-shrink: 0;
-        }
-        .nav-links-list {
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          align-items: center;
-          gap: 24px;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        .topnav-link {
-          font-size: 13px;
-          font-weight: 500;
-          color: #6B6B6B;
-          text-decoration: none;
-          padding: 6px 8px;
-          border-radius: 4px;
-          white-space: nowrap;
-        }
-        .topnav-link:hover { color: #1A1A1A; }
+    <header style={{
+      position: 'sticky',
+      top: 0,
+      zIndex: 40,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '18px 40px',
+      background: 'rgba(255,255,255,0.82)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
+      borderBottom: '1px solid #e8edf3',
+      flexWrap: 'wrap',
+      gap: '10px',
+    }}>
+      {/* Left: wordmark */}
+      <Link href="/" style={{ display: 'flex', alignItems: 'baseline', gap: '10px', textDecoration: 'none' }}>
+        <span style={{
+          fontFamily: 'var(--font-space-grotesk)',
+          fontWeight: 600,
+          fontSize: '18px',
+          letterSpacing: '-0.01em',
+          color: '#0f172a',
+        }}>Manan Sachdeva</span>
+        <span style={{
+          fontFamily: 'var(--font-jetbrains)',
+          fontSize: '11px',
+          letterSpacing: '0.08em',
+          color: '#94a3b8',
+        }}>/ SALES · GTM</span>
+      </Link>
 
-        @media (max-width: 768px) {
-          .topnav-container {
-            flex-direction: column;
-            align-items: center;
-            height: auto;
-            padding: 10px 16px 8px;
-            gap: 8px;
-            max-width: none;
-          }
-          .nav-links-list {
-            position: static;
-            transform: none;
-            gap: 16px;
-          }
-          .topnav-link { font-size: 13px; }
-        }
-      `}</style>
-
-      <nav className="topnav">
-        <div className="topnav-container">
-          <a href="/" className="nav-brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/photo.png" alt="Manan" style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} />
-            <span style={{ fontSize: 14, fontWeight: 600, color: '#3730A3' }}>Manan</span>
-          </a>
-          <ul className="nav-links-list">
-            <li><Link href="/about" className="topnav-link">About Me</Link></li>
-            <li><Link href="/about#experience" className="topnav-link">Experience</Link></li>
-            <li><Link href="/insights" className="topnav-link">Insights</Link></li>
-          </ul>
-        </div>
+      {/* Right: nav links */}
+      <nav style={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
+        {[
+          { href: '/about', label: 'About Me' },
+          { href: '/about#experience', label: 'Experience' },
+          { href: '/insights', label: 'Insights' },
+        ].map(({ href, label }) => {
+          const active = href === '/insights'
+            ? pathname === '/insights'
+            : href.startsWith('/about')
+            ? pathname === '/about' || pathname.startsWith('/about')
+            : pathname === href;
+          return (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                fontFamily: 'var(--font-work-sans)',
+                fontWeight: 500,
+                fontSize: '14px',
+                color: active ? '#2563eb' : '#475569',
+                borderBottom: active ? '2px solid #2563eb' : '2px solid transparent',
+                paddingBottom: '2px',
+                textDecoration: 'none',
+                transition: 'color 0.15s',
+              }}
+            >
+              {label}
+            </Link>
+          );
+        })}
       </nav>
-    </>
+    </header>
   );
 }

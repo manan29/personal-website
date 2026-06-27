@@ -1,6 +1,8 @@
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -8,6 +10,12 @@ interface BlogPostPageProps {
     slug: string;
   }>;
 }
+
+const CAT_LABEL: Record<string, string> = {
+  'large-deal-learnings': 'Large Deal Learnings',
+  'hiring-top-talent': 'Hiring & Talent',
+  'sales-systems': 'Sales Systems',
+};
 
 export async function generateStaticParams() {
   const posts = getAllBlogPosts();
@@ -47,31 +55,67 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main>
-      <div className="blog-post-inner" style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+      <div style={{ maxWidth: '720px', margin: '0 auto', padding: '72px 40px 96px' }}>
+        {/* Back link */}
+        <Link href="/insights" style={{
+          fontFamily: 'var(--font-jetbrains)',
+          fontSize: '12px',
+          letterSpacing: '0.06em',
+          color: '#2563eb',
+          display: 'inline-block',
+          marginBottom: '40px',
+          textDecoration: 'none',
+        }}>
+          ← All insights
+        </Link>
+
+        {/* Meta row */}
+        <div style={{
+          display: 'flex',
+          gap: '14px',
+          alignItems: 'center',
+          marginBottom: '20px',
+          fontFamily: 'var(--font-jetbrains)',
+          fontSize: '11px',
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          color: '#94a3b8',
+        }}>
+          <span style={{ color: '#2563eb' }}>{CAT_LABEL[category] || post.tag}</span>
+          <span>·</span>
+          <span>{post.date}</span>
+          <span>·</span>
+          <span>{readingTime} min read</span>
+        </div>
+
         {/* Title */}
         <h1
           style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '28px',
-            fontWeight: '700',
-            lineHeight: '1.3',
-            marginBottom: '16px',
-            color: '#1A1A1A',
+            fontFamily: 'var(--font-space-grotesk)',
+            fontWeight: 600,
+            fontSize: '38px',
+            lineHeight: 1.15,
+            letterSpacing: '-0.02em',
+            margin: '0 0 28px',
+            color: '#0f172a',
           }}
         >
           {post.title}
         </h1>
 
-        {/* Meta Line */}
-        <div
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '12px',
-            color: '#AAAAAA',
-            marginBottom: '32px',
-          }}
-        >
-          {post.date} · {post.tag} · {readingTime} min read
+        {/* Author byline */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          paddingBottom: '32px',
+          marginBottom: '32px',
+          borderBottom: '1px solid #e8edf3',
+        }}>
+          <Image src="/photo.png" alt="Manan Sachdeva" width={38} height={38} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+          <span style={{ fontFamily: 'var(--font-jetbrains)', fontSize: '12px', color: '#64748b' }}>
+            Manan Sachdeva
+          </span>
         </div>
 
         {/* Hero Image */}
@@ -86,13 +130,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Summary / Intro */}
         <div
           style={{
-            fontFamily: 'var(--font-lato)',
+            fontFamily: 'var(--font-hanken)',
             fontSize: '17px',
             lineHeight: '1.8',
-            color: '#4A4744',
+            color: '#334155',
             fontStyle: 'italic',
             paddingBottom: '28px',
-            borderBottom: '1px solid #E2E0D8',
+            borderBottom: '1px solid #e8edf3',
             marginBottom: '36px',
           }}
         >
@@ -102,10 +146,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Content */}
         <article
           style={{
-            fontFamily: 'var(--font-lato)',
-            fontSize: '16.5px',
-            lineHeight: '1.9',
-            color: '#2D2D2D',
+            fontFamily: 'var(--font-hanken)',
+            fontSize: '19px',
+            lineHeight: '1.75',
+            color: '#334155',
           }}
         >
           <ReactMarkdown
@@ -113,14 +157,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               h2: ({ children }) => (
                 <h2
                   style={{
-                    fontFamily: 'var(--font-ui)',
-                    fontSize: '19px',
-                    fontWeight: '700',
-                    color: '#1A1A1A',
-                    marginTop: '48px',
-                    marginBottom: '16px',
-                    paddingBottom: '8px',
-                    borderBottom: '1px solid #E2E0D8',
+                    fontFamily: 'var(--font-space-grotesk)',
+                    fontWeight: 600,
+                    fontSize: '23px',
+                    letterSpacing: '-0.01em',
+                    color: '#0f172a',
+                    margin: '40px 0 14px',
                   }}
                 >
                   {children}
@@ -129,12 +171,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               h3: ({ children }) => (
                 <h3
                   style={{
-                    fontFamily: 'var(--font-ui)',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    color: '#1A1A1A',
-                    marginTop: '32px',
-                    marginBottom: '12px',
+                    fontFamily: 'var(--font-space-grotesk)',
+                    fontWeight: 600,
+                    fontSize: '19px',
+                    letterSpacing: '-0.01em',
+                    color: '#0f172a',
+                    margin: '40px 0 14px',
                   }}
                 >
                   {children}
@@ -146,11 +188,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   return (
                     <div
                       style={{
-                        fontFamily: 'var(--font-ui)',
+                        fontFamily: 'var(--font-space-grotesk)',
                         fontSize: '17px',
                         fontWeight: '700',
-                        color: '#1A1A1A',
-                        background: '#EEF2FF',
+                        color: '#0f172a',
+                        background: '#eff4ff',
                         padding: '16px 20px',
                         borderRadius: '6px',
                         margin: '32px 0',
@@ -171,11 +213,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <p
                       style={{
                         fontStyle: 'italic',
-                        color: '#4A4744',
-                        borderLeft: '3px solid #3730A3',
+                        color: '#475569',
+                        borderLeft: '3px solid #2563eb',
                         paddingLeft: '20px',
                         margin: '32px 0',
                         marginBottom: '22px',
+                        fontFamily: 'var(--font-hanken)',
+                        fontSize: '19px',
+                        lineHeight: '1.75',
                       }}
                     >
                       {children}
@@ -186,10 +231,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 return (
                   <p
                     style={{
-                      fontFamily: 'var(--font-lato)',
-                      fontSize: '16.5px',
-                      lineHeight: '1.9',
-                      color: '#2D2D2D',
+                      fontFamily: 'var(--font-hanken)',
+                      fontSize: '19px',
+                      lineHeight: '1.75',
+                      color: '#334155',
                       marginBottom: '22px',
                     }}
                   >
@@ -225,10 +270,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               li: ({ children }) => (
                 <li
                   style={{
-                    fontFamily: 'var(--font-lato)',
-                    fontSize: '16px',
-                    lineHeight: '1.8',
-                    color: '#2D2D2D',
+                    fontFamily: 'var(--font-hanken)',
+                    fontSize: '18px',
+                    lineHeight: '1.75',
+                    color: '#334155',
                     marginBottom: '8px',
                   }}
                 >
@@ -238,7 +283,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               strong: ({ children }) => (
                 <strong
                   style={{
-                    color: '#1A1A1A',
+                    color: '#0f172a',
                     fontWeight: '700',
                   }}
                 >
@@ -253,6 +298,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.body}
           </ReactMarkdown>
         </article>
+
+        {/* Back link bottom */}
+        <div style={{ paddingTop: '32px', marginTop: '56px', borderTop: '1px solid #e8edf3' }}>
+          <Link href="/insights" style={{
+            fontFamily: 'var(--font-jetbrains)',
+            fontSize: '12px',
+            color: '#2563eb',
+            textDecoration: 'none',
+            letterSpacing: '0.06em',
+          }}>
+            ← Back to all insights
+          </Link>
+        </div>
       </div>
     </main>
   );

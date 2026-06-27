@@ -7,73 +7,20 @@ export const metadata: Metadata = {
   title: 'Manan Sachdeva - Sales · GTM · Talent Building',
 };
 
-const pStyle: React.CSSProperties = {
-  fontFamily: 'system-ui, -apple-system, sans-serif',
-  fontSize: '15px',
-  lineHeight: '1.6',
-  color: '#2D2D2D',
-  marginBottom: '10px',
-};
+function formatPostDate(dateStr: string): string {
+  try {
+    const d = new Date(dateStr);
+    if (!isNaN(d.getTime())) {
+      return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    }
+  } catch {}
+  return dateStr;
+}
 
-const sectionHeadingStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-ui)',
-  fontSize: '11px',
-  fontWeight: '600',
-  letterSpacing: '0.08em',
-  textTransform: 'uppercase',
-  color: '#AAAAAA',
-};
-
-const seeAllStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-ui)',
-  fontSize: '12px',
-  color: '#3730A3',
-  textDecoration: 'underline',
-  textUnderlineOffset: '3px',
-};
-
-const postRowStyle: React.CSSProperties = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '8px 0',
-  borderBottom: '1px solid rgba(226, 224, 216, 0.5)',
-  gap: '12px',
-  textDecoration: 'none',
-  color: 'inherit',
-};
-
-const postTitleStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-lato)',
-  fontSize: '15px',
-  color: '#1A1A1A',
-  fontWeight: '500',
-};
-
-const postMetaStyle: React.CSSProperties = {
-  flexShrink: 0,
-  display: 'flex',
-  gap: '8px',
-  alignItems: 'center',
-};
-
-const tagPillStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-ui)',
-  fontSize: '10px',
-  fontWeight: '700',
-  letterSpacing: '0.07em',
-  textTransform: 'uppercase',
-  color: '#3730A3',
-  border: '1px solid #C7D2FE',
-  background: '#EEF2FF',
-  borderRadius: '3px',
-  padding: '2px 8px',
-};
-
-const dateStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-ui)',
-  fontSize: '11px',
-  color: '#888',
+const CAT_LABEL: Record<string, string> = {
+  'large-deal-learnings': 'Large Deal Learnings',
+  'hiring-top-talent': 'Hiring & Talent',
+  'sales-systems': 'Sales Systems',
 };
 
 export default function HomePage() {
@@ -81,122 +28,286 @@ export default function HomePage() {
 
   return (
     <main>
-      {/* Two-column intro */}
-      <div className="home-intro">
-        {/* Left: profile photo + info */}
-        <div className="home-profile-col">
-          <Image
-            src="/photo.png"
-            alt="Manan Sachdeva"
-            width={120}
-            height={120}
-            style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover' }}
-            priority
-          />
-          <span style={{ fontSize: '16px', fontWeight: 600, color: '#3730A3', marginTop: '12px', display: 'block' }}>
-            Manan Sachdeva
-          </span>
-          <span style={{ fontSize: '12px', color: '#3730A3', marginTop: '4px', display: 'block' }}>
-            Sales · GTM · Talent Building
-          </span>
-          <span style={{ fontSize: '12px', color: '#6B7280', marginTop: '8px', lineHeight: '1.6', display: 'block' }}>
-            Scaling Signeasy&apos;s CLM Product. Prev - Hevo Data, o9 Solutions
-          </span>
-          <Link
-            href="/about"
-            style={{
-              display: 'inline-block',
-              marginTop: '16px',
-              border: '1px solid #3730A3',
-              color: '#3730A3',
-              padding: '6px 14px',
-              borderRadius: '6px',
+      {/* ── SECTION 1: Hero ── */}
+      <div style={{ maxWidth: 1120, margin: '0 auto', padding: '96px 40px 72px' }}>
+        <div
+          className="hero-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1.45fr 0.85fr',
+            gap: '64px',
+            alignItems: 'center',
+          }}
+        >
+          {/* Left column */}
+          <div>
+            <div style={{
+              fontFamily: 'var(--font-jetbrains)',
               fontSize: '12px',
-              background: 'transparent',
-              textDecoration: 'none',
-            }}
-          >
-            About me →
-          </Link>
-        </div>
-
-        {/* Right: intro text */}
-        <div className="home-intro-col">
-          <h1
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '26px',
-              fontWeight: '500',
-              color: '#1A1A1A',
-              marginBottom: '1rem',
-              letterSpacing: '-0.01em',
-            }}
-          >
-            Student of Sales, In Pursuit of Mastery.
-          </h1>
-
-          <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-            Operator with 10+ years in multiple GTM roles, working closely with CEOs and Founders to build revenue functions at growing tech companies.
-          </p>
-          <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-            I enjoy being at the intersection of technology and selling. From selling Supply Chain Planning solutions to Fortune 500 companies, to building and hiring sales teams at early-stage SaaS startups in India - I thrive on the challenge to master the craft of technology selling.
-          </p>
-          <p style={{ ...pStyle, marginBottom: '0.75rem' }}>
-            The range of experience has given me a unique ability to connect the dots, bring unique insights, solve problems creatively and execute faster than others.
-          </p>
-
-          <p style={{ fontSize: '15px', fontWeight: '500', color: '#6B6B6B', marginBottom: '0.75rem', letterSpacing: '0.01em', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-            I am at my best when I am:
-          </p>
-
-          {[
-            { title: 'In the field', sub: 'Executing complex deals from first call to close.' },
-            { title: 'Building hiring strategies', sub: 'Finding and developing top sales talent.' },
-            { title: 'Building sales systems', sub: 'Structured processes that enable teams to succeed.' },
-          ].map(({ title, sub }) => (
-            <div key={title} style={{ borderLeft: '3px solid #3730A3', paddingLeft: '1.25rem', marginBottom: '0.75rem' }}>
-              <div style={{ fontSize: '15px', fontWeight: '500', color: '#3730A3', marginBottom: '2px' }}>{title}</div>
-              <p style={{ fontSize: '14px', color: '#6B6B6B', lineHeight: '1.6', margin: 0 }}>{sub}</p>
+              letterSpacing: '0.16em',
+              color: '#2563eb',
+              marginBottom: '24px',
+            }}>
+              SALES · GTM · TALENT BUILDING
             </div>
-          ))}
 
-          <p style={{ ...pStyle, color: '#6B6B6B', marginBottom: '0.75rem' }}>
-            Off the field, I follow F1 and Test Cricket.
-          </p>
-          <p style={{ ...pStyle, marginBottom: 0 }}>
-            Know more about me,{' '}
-            <Link href="/about" style={{ color: '#3730A3', fontWeight: 600, textDecoration: 'underline' }}>HERE</Link>
-          </p>
+            <h1
+              className="hero-h1"
+              style={{
+                fontFamily: 'var(--font-space-grotesk)',
+                fontWeight: 600,
+                fontSize: '62px',
+                lineHeight: 1.04,
+                letterSpacing: '-0.025em',
+                margin: '0 0 28px',
+                color: '#0f172a',
+                whiteSpace: 'pre-line',
+              }}
+            >
+              {`Student of Sales,\nin pursuit of mastery.`}
+            </h1>
+
+            <p style={{
+              fontSize: '19px',
+              lineHeight: 1.6,
+              color: '#475569',
+              maxWidth: '46ch',
+              margin: '0 0 32px',
+              fontFamily: 'var(--font-hanken)',
+            }}>
+              Operator with 10+ years in multiple GTM roles, working closely with CEOs and founders to build revenue functions at growing tech companies.
+            </p>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              fontFamily: 'var(--font-jetbrains)',
+              fontSize: '12px',
+              letterSpacing: '0.04em',
+              color: '#64748b',
+              marginBottom: '36px',
+            }}>
+              <span style={{
+                width: 8, height: 8, borderRadius: '50%',
+                background: '#2563eb',
+                boxShadow: '0 0 0 4px rgba(37,99,235,0.14)',
+                flexShrink: 0,
+                display: 'inline-block',
+              }} />
+              CURRENTLY — Scaling SignEasy&apos;s CLM product
+            </div>
+
+            <div style={{ display: 'flex', gap: '14px' }}>
+              <Link href="/insights" style={{
+                fontFamily: 'var(--font-work-sans)',
+                fontWeight: 500,
+                fontSize: '15px',
+                letterSpacing: '0.01em',
+                background: '#0f172a',
+                color: 'white',
+                padding: '13px 24px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                display: 'inline-block',
+              }}>
+                Read the insights →
+              </Link>
+              <Link href="/about" style={{
+                fontFamily: 'var(--font-work-sans)',
+                fontWeight: 500,
+                fontSize: '15px',
+                letterSpacing: '0.01em',
+                background: 'white',
+                color: '#0f172a',
+                padding: '13px 24px',
+                borderRadius: '8px',
+                border: '1px solid #e2e8f0',
+                textDecoration: 'none',
+                display: 'inline-block',
+              }}>
+                About me
+              </Link>
+            </div>
+          </div>
+
+          {/* Right column: photo */}
+          <div
+            className="hero-photo"
+            style={{
+              aspectRatio: '4/5',
+              borderRadius: '14px',
+              overflow: 'hidden',
+              position: 'relative',
+              border: '1px solid #e2e8f0',
+            }}
+          >
+            <Image
+              src="/photo.png"
+              alt="Manan Sachdeva"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </div>
         </div>
       </div>
 
-      <h2 style={{
-        fontSize: '14px',
-        fontWeight: 600,
-        color: '#3730A3',
-        letterSpacing: '0.08em',
-        textTransform: 'uppercase',
-        marginTop: '2rem',
-        marginBottom: '1rem',
-      }}>Writings</h2>
+      {/* ── SECTION 2: At My Best ── */}
+      <div style={{ borderTop: '1px solid #e8edf3', borderBottom: '1px solid #e8edf3', background: '#f8fafc' }}>
+        <div style={{ maxWidth: 1120, margin: '0 auto', padding: '64px 40px' }}>
+          <div style={{
+            fontFamily: 'var(--font-jetbrains)',
+            fontSize: '12px',
+            letterSpacing: '0.16em',
+            color: '#94a3b8',
+            marginBottom: '36px',
+          }}>
+            // AT MY BEST WHEN I&apos;M
+          </div>
 
-      <section style={{ marginBottom: '24px' }}>
+          <div
+            className="pillars-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '36px' }}
+          >
+            {[
+              { num: '01', title: 'In the field', desc: 'Executing complex deals from first call to close.' },
+              { num: '02', title: 'Building hiring strategies', desc: 'Finding and developing top sales talent.' },
+              { num: '03', title: 'Building sales systems', desc: 'Structured processes that enable teams to succeed.' },
+            ].map(({ num, title, desc }) => (
+              <div key={num} style={{ borderTop: '2px solid #0f172a', paddingTop: '18px' }}>
+                <div style={{
+                  fontFamily: 'var(--font-jetbrains)',
+                  fontSize: '13px',
+                  color: '#2563eb',
+                  marginBottom: '14px',
+                }}>
+                  {num}
+                </div>
+                <div style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontWeight: 600,
+                  fontSize: '21px',
+                  color: '#0f172a',
+                  marginBottom: '8px',
+                }}>
+                  {title}
+                </div>
+                <p style={{
+                  fontSize: '15px',
+                  lineHeight: 1.55,
+                  color: '#475569',
+                  margin: 0,
+                  fontFamily: 'var(--font-hanken)',
+                }}>
+                  {desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            fontFamily: 'var(--font-jetbrains)',
+            fontSize: '12px',
+            color: '#94a3b8',
+            marginTop: '40px',
+            letterSpacing: '0.04em',
+          }}>
+            Off the field — F1 &amp; Test Cricket.
+          </div>
+        </div>
+      </div>
+
+      {/* ── SECTION 3: Writings ── */}
+      <div style={{ maxWidth: 1120, margin: '0 auto', padding: '80px 40px 96px' }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'baseline',
+          justifyContent: 'space-between',
+          marginBottom: '8px',
+        }}>
+          <h2 style={{
+            fontFamily: 'var(--font-space-grotesk)',
+            fontWeight: 600,
+            fontSize: '30px',
+            letterSpacing: '-0.02em',
+            margin: 0,
+            color: '#0f172a',
+          }}>
+            Writings
+          </h2>
+          <Link href="/insights" style={{
+            fontFamily: 'var(--font-jetbrains)',
+            fontSize: '12px',
+            letterSpacing: '0.06em',
+            color: '#2563eb',
+            textDecoration: 'none',
+          }}>
+            See all →
+          </Link>
+        </div>
+
         <div>
           {allPosts.map((post) => (
-            <Link key={`${post.category}/${post.slug}`} href={`/blog/${post.category}/${post.slug}`} style={postRowStyle}>
-              <span style={postTitleStyle}>{post.title}</span>
-              <div style={postMetaStyle}>
-                <span style={tagPillStyle}>{post.tag}</span>
-                <span style={dateStyle}>{post.date}</span>
+            <Link
+              key={`${post.category}/${post.slug}`}
+              href={`/blog/${post.category}/${post.slug}`}
+              className="article-row"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '120px 1fr 24px',
+                gap: '24px',
+                alignItems: 'center',
+                padding: '24px 8px',
+                borderTop: '1px solid #e8edf3',
+                textDecoration: 'none',
+                color: 'inherit',
+                cursor: 'pointer',
+              }}
+            >
+              <span
+                className="article-date"
+                style={{
+                  fontFamily: 'var(--font-jetbrains)',
+                  fontSize: '12px',
+                  color: '#94a3b8',
+                }}
+              >
+                {formatPostDate(post.date)}
+              </span>
+              <div>
+                <div style={{
+                  fontFamily: 'var(--font-jetbrains)',
+                  fontSize: '10px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#2563eb',
+                  marginBottom: '7px',
+                }}>
+                  {CAT_LABEL[post.category] || post.category}
+                </div>
+                <div style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontWeight: 500,
+                  fontSize: '19px',
+                  lineHeight: 1.3,
+                  color: '#0f172a',
+                }}>
+                  {post.title}
+                </div>
               </div>
+              <span style={{
+                fontFamily: 'var(--font-jetbrains)',
+                fontSize: '16px',
+                textAlign: 'right',
+                color: '#94a3b8',
+              }}>
+                →
+              </span>
             </Link>
           ))}
         </div>
-        <div style={{ marginTop: '16px' }}>
-          <Link href="/insights" style={seeAllStyle}>See all insights →</Link>
-        </div>
-      </section>
-
+      </div>
     </main>
   );
 }

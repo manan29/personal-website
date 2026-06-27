@@ -6,16 +6,33 @@ import type { BlogPost } from '@/lib/content';
 
 const FILTERS = [
   { id: 'all', label: 'All' },
-  { id: 'large-deal-learnings', label: 'Complex Deals' },
-  { id: 'hiring-top-talent', label: 'Hiring & Talent' },
+  { id: 'large-deal-learnings', label: 'Large Deal Learnings' },
+  { id: 'hiring-top-talent', label: 'Hiring' },
   { id: 'sales-systems', label: 'Sales Systems' },
 ];
 
 const CAT_LABEL: Record<string, string> = {
-  'large-deal-learnings': 'Complex Deals',
+  'large-deal-learnings': 'Large Deal Learnings',
   'hiring-top-talent': 'Hiring & Talent',
   'sales-systems': 'Sales Systems',
 };
+
+function formatPostDate(dateStr: string): string {
+  try {
+    const d = new Date(dateStr);
+    if (!isNaN(d.getTime())) {
+      return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    }
+  } catch {}
+  return dateStr;
+}
+
+function estimateReadTime(post: BlogPost): string {
+  // approximate — use summary length as proxy if no body available
+  const words = ((post as any).body || post.summary || '').split(/\s+/).length;
+  const mins = Math.max(1, Math.ceil(words / 200));
+  return `${mins} min`;
+}
 
 export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
   const [selected, setSelected] = useState('all');
@@ -24,30 +41,8 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
 
   return (
     <>
-      <style>{`
-        .insights-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
-          margin-top: 24px;
-        }
-        @media (max-width: 768px) {
-          .insights-grid { grid-template-columns: 1fr; }
-        }
-        .insights-card {
-          border: 1px solid #E5E3DC;
-          border-radius: 8px;
-          padding: 16px;
-          text-decoration: none;
-          color: inherit;
-          display: block;
-          transition: border-color 0.15s;
-        }
-        .insights-card:hover { border-color: #C7D2FE; }
-      `}</style>
-
-      {/* Filter pills */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+      {/* Filter chips */}
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '8px', flexWrap: 'wrap' }}>
         {FILTERS.map(f => {
           const active = selected === f.id;
           return (
@@ -55,15 +50,15 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
               key={f.id}
               onClick={() => setSelected(f.id)}
               style={{
-                padding: '8px 16px',
-                borderRadius: 100,
-                border: '1px solid #3730A3',
-                background: active ? '#3730A3' : 'transparent',
-                color: active ? '#FFFFFF' : '#3730A3',
-                fontSize: 14,
+                fontFamily: 'var(--font-work-sans)',
                 fontWeight: 500,
+                fontSize: '14px',
+                padding: '8px 18px',
+                borderRadius: '999px',
                 cursor: 'pointer',
-                fontFamily: 'var(--font-ui)',
+                border: `1px solid ${active ? '#2563eb' : '#e2e8f0'}`,
+                background: active ? '#eff4ff' : 'white',
+                color: active ? '#2563eb' : '#475569',
               }}
             >
               {f.label}
@@ -72,37 +67,72 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
         })}
       </div>
 
-      {/* Post grid */}
-      <div className="insights-grid">
+      {/* Article rows */}
+      <div>
         {filtered.map(post => (
           <Link
             key={`${post.category}/${post.slug}`}
             href={`/blog/${post.category}/${post.slug}`}
-            className="insights-card"
+            className="article-row"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '120px 1fr 90px 24px',
+              gap: '24px',
+              alignItems: 'center',
+              padding: '26px 8px',
+              borderTop: '1px solid #e8edf3',
+              textDecoration: 'none',
+              color: 'inherit',
+              cursor: 'pointer',
+            }}
           >
-            <span style={{
-              display: 'inline-block',
-              fontSize: 10,
-              fontWeight: 700,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              color: '#3730A3',
-              background: '#EEF2FF',
-              padding: '2px 8px',
-              borderRadius: 100,
-              marginBottom: 8,
-            }}>
-              {CAT_LABEL[post.category] || post.category}
+            <span
+              className="article-date"
+              style={{
+                fontFamily: 'var(--font-jetbrains)',
+                fontSize: '12px',
+                color: '#94a3b8',
+              }}
+            >
+              {formatPostDate(post.date)}
             </span>
-            <div style={{ fontSize: 15, fontWeight: 600, color: '#1A1A1A', lineHeight: 1.4 }}>
-              {post.title}
-            </div>
-            {post.summary && (
-              <div style={{ fontSize: 13, color: '#6B7280', marginTop: 6, lineHeight: 1.5 }}>
-                {post.summary}
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-jetbrains)',
+                fontSize: '10px',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: '#2563eb',
+                marginBottom: '7px',
+              }}>
+                {CAT_LABEL[post.category] || post.category}
               </div>
-            )}
-            <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 8 }}>{post.date}</div>
+              <div style={{
+                fontFamily: 'var(--font-space-grotesk)',
+                fontWeight: 500,
+                fontSize: '19px',
+                lineHeight: 1.3,
+                color: '#0f172a',
+              }}>
+                {post.title}
+              </div>
+            </div>
+            <span style={{
+              fontFamily: 'var(--font-jetbrains)',
+              fontSize: '11px',
+              color: '#94a3b8',
+              textAlign: 'right',
+            }}>
+              {estimateReadTime(post)}
+            </span>
+            <span style={{
+              fontFamily: 'var(--font-jetbrains)',
+              fontSize: '16px',
+              textAlign: 'right',
+              color: '#94a3b8',
+            }}>
+              →
+            </span>
           </Link>
         ))}
       </div>
