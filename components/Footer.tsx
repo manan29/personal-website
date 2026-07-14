@@ -1,45 +1,31 @@
-import Link from 'next/link';
+import { Container } from './Container';
 
 export function Footer() {
   return (
-    <footer
-      style={{
-        padding: '24px 2rem',
-        borderTop: '1px solid #E2E0D8',
-        fontFamily: 'var(--font-ui)',
-        fontSize: '12px',
-        color: '#AAAAAA',
-        maxWidth: '860px',
-        margin: '0 auto',
-      }}
-    >
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
-        <span>Manan Sachdeva © 2025</span>
-        <span>·</span>
-        <Link
-          href="/blog/large-deal-learnings"
-          style={{ color: '#AAAAAA', textDecoration: 'none' }}
-          className="footer-link"
+    <footer style={{ borderTop: '1px solid var(--border)', width: '100%' }}>
+      <Container>
+        <div
+          style={{
+            padding: '32px 0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '12px',
+            fontFamily: 'var(--font-jetbrains)',
+            fontSize: '12px',
+            letterSpacing: '0.04em',
+            color: 'var(--muted)',
+          }}
         >
-          Blog
-        </Link>
-        <span>·</span>
-        <Link
-          href="/notes"
-          style={{ color: '#AAAAAA', textDecoration: 'none' }}
-          className="footer-link"
-        >
-          Notes
-        </Link>
-        <span>·</span>
-        <Link
-          href="/about"
-          style={{ color: '#AAAAAA', textDecoration: 'none' }}
-          className="footer-link"
-        >
-          About
-        </Link>
-      </div>
+          <span>Manan Sachdeva © 2026</span>
+          <div style={{ display: 'flex', gap: '24px' }}>
+            <a href="/insights" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Insights</a>
+            <a href="/about" style={{ color: 'var(--muted)', textDecoration: 'none' }}>About</a>
+            <a href="https://www.linkedin.com/in/manansachdeva/" target="_blank" rel="noopener" style={{ color: 'var(--muted)', textDecoration: 'none' }}>LinkedIn ↗</a>
+          </div>
+        </div>
+      </Container>
     </footer>
   );
 }

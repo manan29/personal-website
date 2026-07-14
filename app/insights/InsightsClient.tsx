@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import type { BlogPost } from '@/lib/content';
 
@@ -34,10 +35,19 @@ function estimateReadTime(post: BlogPost): string {
   return `${mins} min`;
 }
 
-export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
-  const [selected, setSelected] = useState('all');
+export default function InsightsClient({ posts, initialCategory }: { posts: BlogPost[]; initialCategory?: string }) {
+  const router = useRouter();
+  const validIds = FILTERS.map((f) => f.id);
+  const [selected, setSelected] = useState(
+    initialCategory && validIds.includes(initialCategory) ? initialCategory : 'all'
+  );
 
-  const filtered = selected === 'all' ? posts : posts.filter(p => p.category === selected);
+  const filtered = selected === 'all' ? posts : posts.filter((p) => p.category === selected);
+
+  function selectFilter(id: string) {
+    setSelected(id);
+    router.replace(id === 'all' ? '/insights' : `/insights?category=${id}`, { scroll: false });
+  }
 
   return (
     <>
@@ -48,7 +58,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
           return (
             <button
               key={f.id}
-              onClick={() => setSelected(f.id)}
+              onClick={() => selectFilter(f.id)}
               style={{
                 fontFamily: 'var(--font-work-sans)',
                 fontWeight: 500,
@@ -56,9 +66,9 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
                 padding: '8px 18px',
                 borderRadius: '999px',
                 cursor: 'pointer',
-                border: `1px solid ${active ? '#2563eb' : '#e2e8f0'}`,
-                background: active ? '#eff4ff' : 'white',
-                color: active ? '#2563eb' : '#475569',
+                border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
+                background: active ? 'var(--accent-tint)' : 'var(--bg)',
+                color: active ? 'var(--accent)' : 'var(--body)',
               }}
             >
               {f.label}
@@ -80,7 +90,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
               gap: '24px',
               alignItems: 'center',
               padding: '26px 8px',
-              borderTop: '1px solid #e8edf3',
+              borderTop: '1px solid var(--border)',
               textDecoration: 'none',
               color: 'inherit',
               cursor: 'pointer',
@@ -91,7 +101,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: '12px',
-                color: '#94a3b8',
+                color: 'var(--muted)',
               }}
             >
               {formatPostDate(post.date)}
@@ -102,7 +112,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
                 fontSize: '10px',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: '#2563eb',
+                color: 'var(--accent)',
                 marginBottom: '7px',
               }}>
                 {CAT_LABEL[post.category] || post.category}
@@ -112,7 +122,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
                 fontWeight: 500,
                 fontSize: '19px',
                 lineHeight: 1.3,
-                color: '#0f172a',
+                color: 'var(--ink)',
               }}>
                 {post.title}
               </div>
@@ -120,7 +130,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
             <span style={{
               fontFamily: 'var(--font-jetbrains)',
               fontSize: '11px',
-              color: '#94a3b8',
+              color: 'var(--muted)',
               textAlign: 'right',
             }}>
               {estimateReadTime(post)}
@@ -129,7 +139,7 @@ export default function InsightsClient({ posts }: { posts: BlogPost[] }) {
               fontFamily: 'var(--font-jetbrains)',
               fontSize: '16px',
               textAlign: 'right',
-              color: '#94a3b8',
+              color: 'var(--muted)',
             }}>
               →
             </span>

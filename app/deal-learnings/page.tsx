@@ -1,25 +1,26 @@
 import { getAllDeals } from '@/lib/content';
 import { DealsClient } from '@/components/DealsClient';
+import { Container } from '@/components/Container';
 
 export default function DealLearningsPage() {
   const deals = getAllDeals();
 
   return (
-    <main>
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       <h1
         style={{
-          fontFamily: 'var(--font-ui)',
-          fontSize: '24px',
-          fontWeight: '700',
-          marginBottom: '24px',
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: '32px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
+          color: 'var(--ink)',
+          marginBottom: '32px',
         }}
       >
         Deal Learnings
       </h1>
 
       <DealsClient deals={deals} />
-          </div>
-    </main>
+    </Container>
   );
 }

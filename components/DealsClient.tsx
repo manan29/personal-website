@@ -25,14 +25,14 @@ export function DealsClient({ deals }: { deals: Deal[] }) {
             key={filter}
             onClick={() => setActiveFilter(filter)}
             style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-work-sans)',
               fontSize: '13px',
-              fontWeight: '500',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              border: '1px solid var(--border)',
-              background: activeFilter === filter ? 'var(--accent)' : 'transparent',
-              color: activeFilter === filter ? 'white' : 'var(--text)',
+              fontWeight: 500,
+              padding: '6px 14px',
+              borderRadius: '999px',
+              border: `1px solid ${activeFilter === filter ? 'var(--accent)' : 'var(--border)'}`,
+              background: activeFilter === filter ? 'var(--accent-tint)' : 'transparent',
+              color: activeFilter === filter ? 'var(--accent)' : 'var(--body)',
               cursor: 'pointer',
             }}
           >
@@ -50,9 +50,9 @@ export function DealsClient({ deals }: { deals: Deal[] }) {
               {/* Outcome badge */}
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '10px',
-                  fontWeight: '600',
+                  fontWeight: 600,
                   padding: '3px 10px',
                   borderRadius: '4px',
                   textTransform: 'uppercase',
@@ -66,13 +66,13 @@ export function DealsClient({ deals }: { deals: Deal[] }) {
               {/* Tag chip */}
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '10px',
-                  fontWeight: '500',
+                  fontWeight: 500,
                   padding: '3px 10px',
                   borderRadius: '4px',
                   textTransform: 'uppercase',
-                  border: `1px solid var(--border)`,
+                  border: '1px solid var(--border)',
                   color: 'var(--muted)',
                 }}
               >
@@ -82,9 +82,9 @@ export function DealsClient({ deals }: { deals: Deal[] }) {
               {/* Date */}
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '12px',
-                  color: 'var(--faint)',
+                  color: 'var(--muted)',
                   marginLeft: 'auto',
                 }}
               >
@@ -95,9 +95,10 @@ export function DealsClient({ deals }: { deals: Deal[] }) {
             {/* Title */}
             <h2
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '17px',
-                fontWeight: '700',
+                fontFamily: 'var(--font-space-grotesk)',
+                fontSize: '19px',
+                fontWeight: 600,
+                color: 'var(--ink)',
                 marginBottom: '8px',
               }}
             >
@@ -107,10 +108,10 @@ export function DealsClient({ deals }: { deals: Deal[] }) {
             {/* Body */}
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-hanken)',
                 fontSize: '15.5px',
                 lineHeight: '1.85',
-                color: 'var(--text)',
+                color: 'var(--body)',
               }}
             >
               {deal.body}

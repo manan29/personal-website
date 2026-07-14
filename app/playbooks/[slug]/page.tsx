@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getPlaybookBySlug, getAllPlaybooks } from '@/lib/content';
 import { notFound } from 'next/navigation';
+import { Container } from '@/components/Container';
 
 export async function generateStaticParams() {
   const playbooks = getAllPlaybooks();
@@ -9,8 +10,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function PlaybookPage({ params }: { params: { slug: string } }) {
-  const playbook = getPlaybookBySlug(params.slug);
+export default async function PlaybookPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const playbook = getPlaybookBySlug(slug);
 
   if (!playbook) {
     notFound();
@@ -28,13 +30,12 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <main>
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       {/* Back link */}
       <Link
         href="/playbooks"
         style={{
-          fontFamily: 'var(--font-ui)',
+          fontFamily: 'var(--font-work-sans)',
           fontSize: '14px',
           color: 'var(--muted)',
           textDecoration: 'none',
@@ -51,9 +52,9 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
           {/* Tag chip */}
           <span
             style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-jetbrains)',
               fontSize: '10px',
-              fontWeight: '500',
+              fontWeight: 500,
               padding: '3px 10px',
               borderRadius: '4px',
               textTransform: 'uppercase',
@@ -67,9 +68,9 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
           {/* Date */}
           <span
             style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-jetbrains)',
               fontSize: '12px',
-              color: 'var(--faint)',
+              color: 'var(--muted)',
             }}
           >
             {playbook.date}
@@ -79,9 +80,11 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
         {/* Title */}
         <h1
           style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '22px',
-            fontWeight: '700',
+            fontFamily: 'var(--font-space-grotesk)',
+            fontSize: '30px',
+            fontWeight: 600,
+            letterSpacing: '-0.02em',
+            color: 'var(--ink)',
             marginBottom: '12px',
           }}
         >
@@ -91,7 +94,7 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
         {/* Summary */}
         <p
           style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-hanken)',
             fontSize: '15px',
             lineHeight: '1.7',
             color: 'var(--muted)',
@@ -106,17 +109,16 @@ export default function PlaybookPage({ params }: { params: { slug: string } }) {
       {/* Body */}
       <div
         style={{
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-hanken)',
           fontSize: '15.5px',
           lineHeight: '1.85',
-          color: 'var(--text)',
+          color: 'var(--body)',
           marginTop: '24px',
           whiteSpace: 'pre-wrap',
         }}
       >
         {renderBody(playbook.body)}
       </div>
-          </div>
-    </main>
+    </Container>
   );
 }

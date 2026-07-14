@@ -1,6 +1,7 @@
 import { getNoteBySlug, getAllNotes } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import { Container } from '@/components/Container';
 
 interface NotePageProps {
   params: Promise<{
@@ -24,16 +25,17 @@ export default async function NotePage({ params }: NotePageProps) {
   }
 
   return (
-    <main>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       {/* Title */}
       <h1
         style={{
-          fontFamily: 'var(--font-ui)',
-          fontSize: '24px',
-          fontWeight: '700',
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: '30px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
           lineHeight: '1.3',
           marginBottom: '12px',
-          color: '#1A1A1A',
+          color: 'var(--ink)',
         }}
       >
         {note.title}
@@ -42,9 +44,9 @@ export default async function NotePage({ params }: NotePageProps) {
       {/* Meta Line */}
       <div
         style={{
-          fontFamily: 'var(--font-ui)',
+          fontFamily: 'var(--font-jetbrains)',
           fontSize: '12px',
-          color: '#AAAAAA',
+          color: 'var(--muted)',
           marginBottom: '32px',
         }}
       >
@@ -54,10 +56,10 @@ export default async function NotePage({ params }: NotePageProps) {
       {/* Content */}
       <article
         style={{
-          fontFamily: 'var(--font-lato)',
+          fontFamily: 'var(--font-hanken)',
           fontSize: '16.5px',
           lineHeight: '1.9',
-          color: '#2D2D2D',
+          color: 'var(--body)',
         }}
       >
         <ReactMarkdown
@@ -65,10 +67,10 @@ export default async function NotePage({ params }: NotePageProps) {
             p: ({ children }) => (
               <p
                 style={{
-                  fontFamily: 'var(--font-lato)',
+                  fontFamily: 'var(--font-hanken)',
                   fontSize: '16.5px',
                   lineHeight: '1.9',
-                  color: '#2D2D2D',
+                  color: 'var(--body)',
                   marginBottom: '22px',
                 }}
               >
@@ -78,8 +80,8 @@ export default async function NotePage({ params }: NotePageProps) {
             strong: ({ children }) => (
               <strong
                 style={{
-                  color: '#1A1A1A',
-                  fontWeight: '700',
+                  color: 'var(--ink)',
+                  fontWeight: 700,
                 }}
               >
                 {children}
@@ -91,6 +93,6 @@ export default async function NotePage({ params }: NotePageProps) {
           {note.body}
         </ReactMarkdown>
       </article>
-    </main>
+    </Container>
   );
 }

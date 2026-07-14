@@ -49,16 +49,16 @@ function DownloadOption({
         transition: 'background 0.1s',
       }}
       onMouseEnter={(e) => {
-        if (!busy) (e.currentTarget as HTMLDivElement).style.background = '#EEF2FF';
+        if (!busy) (e.currentTarget as HTMLDivElement).style.background = 'var(--accent-tint)';
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLDivElement).style.background = 'transparent';
       }}
     >
-      <div style={{ fontSize: '13px', fontWeight: 600, color: '#1A1A1A', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', fontFamily: 'var(--font-work-sans)' }}>
         {busy ? 'Generating...' : label}
       </div>
-      <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      <div style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '2px', fontFamily: 'var(--font-work-sans)' }}>
         {subtext}
       </div>
     </div>
@@ -89,14 +89,14 @@ export default function DownloadResumeButton() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: '6px',
-          background: '#3730A3',
-          color: '#FFFFFF',
+          background: 'var(--ink)',
+          color: 'var(--bg)',
           padding: '7px 14px',
           borderRadius: '6px',
           fontSize: '13px',
           fontWeight: 500,
           cursor: 'pointer',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
+          fontFamily: 'var(--font-work-sans)',
           lineHeight: 1,
           whiteSpace: 'nowrap',
           border: 'none',
@@ -115,16 +115,16 @@ export default function DownloadResumeButton() {
             top: '100%',
             right: 0,
             marginTop: '8px',
-            background: '#FFFFFF',
-            border: '1px solid #E5E3DC',
+            background: 'var(--bg)',
+            border: '1px solid var(--border)',
             borderRadius: '8px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+            boxShadow: '0 12px 32px rgba(20,20,15,0.08)',
             minWidth: '220px',
             zIndex: 50,
             overflow: 'hidden',
           }}
         >
-          <div style={{ borderBottom: '1px solid #F3F2EE' }}>
+          <div style={{ borderBottom: '1px solid var(--border)' }}>
             <DownloadOption
               key="interactive"
               label="Interactive Version"

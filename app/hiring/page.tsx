@@ -1,17 +1,19 @@
 import Link from 'next/link';
 import { getAllHiring } from '@/lib/content';
+import { Container } from '@/components/Container';
 
 export default function HiringPage() {
   const hiringPosts = getAllHiring();
 
   return (
-    <main>
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '60px 24px' }}>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       <h1
         style={{
-          fontFamily: 'var(--font-ui)',
-          fontSize: '24px',
-          fontWeight: '700',
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: '32px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
+          color: 'var(--ink)',
           marginBottom: '32px',
         }}
       >
@@ -36,9 +38,9 @@ export default function HiringPage() {
               {/* Tag chip */}
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '10px',
-                  fontWeight: '500',
+                  fontWeight: 500,
                   padding: '3px 10px',
                   borderRadius: '4px',
                   textTransform: 'uppercase',
@@ -52,9 +54,9 @@ export default function HiringPage() {
               {/* Date */}
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '12px',
-                  color: 'var(--faint)',
+                  color: 'var(--muted)',
                 }}
               >
                 {post.date}
@@ -64,9 +66,10 @@ export default function HiringPage() {
             {/* Title */}
             <h2
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '18px',
-                fontWeight: '700',
+                fontFamily: 'var(--font-space-grotesk)',
+                fontSize: '19px',
+                fontWeight: 600,
+                color: 'var(--ink)',
                 marginBottom: '6px',
               }}
             >
@@ -76,7 +79,7 @@ export default function HiringPage() {
             {/* Summary */}
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-hanken)',
                 fontSize: '15px',
                 lineHeight: '1.7',
                 color: 'var(--muted)',
@@ -91,7 +94,6 @@ export default function HiringPage() {
           </Link>
         ))}
       </div>
-          </div>
-    </main>
+    </Container>
   );
 }

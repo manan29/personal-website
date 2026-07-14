@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllBlogPosts } from '@/lib/content';
 import type { Metadata } from 'next';
+import { Section } from '@/components/Section';
+import { Card } from '@/components/Card';
 
 export const metadata: Metadata = {
   title: 'Manan Sachdeva - Sales · GTM · Talent Building',
@@ -29,13 +31,13 @@ export default function HomePage() {
   return (
     <main>
       {/* ── SECTION 1: Hero ── */}
-      <div style={{ maxWidth: 1120, margin: '0 auto', padding: '96px 40px 72px' }}>
+      <Section width="wide" paddingY="88px">
         <div
           className="hero-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: '1.45fr 0.85fr',
-            gap: '64px',
+            gridTemplateColumns: '1.3fr 1fr',
+            gap: '72px',
             alignItems: 'center',
           }}
         >
@@ -45,7 +47,7 @@ export default function HomePage() {
               fontFamily: 'var(--font-jetbrains)',
               fontSize: '12px',
               letterSpacing: '0.16em',
-              color: '#2563eb',
+              color: 'var(--accent)',
               marginBottom: '24px',
             }}>
               SALES · GTM · TALENT BUILDING
@@ -56,11 +58,11 @@ export default function HomePage() {
               style={{
                 fontFamily: 'var(--font-space-grotesk)',
                 fontWeight: 600,
-                fontSize: '62px',
+                fontSize: '64px',
                 lineHeight: 1.04,
                 letterSpacing: '-0.025em',
                 margin: '0 0 28px',
-                color: '#0f172a',
+                color: 'var(--ink)',
                 whiteSpace: 'pre-line',
               }}
             >
@@ -70,7 +72,7 @@ export default function HomePage() {
             <p style={{
               fontSize: '19px',
               lineHeight: 1.6,
-              color: '#475569',
+              color: 'var(--body)',
               maxWidth: '46ch',
               margin: '0 0 32px',
               fontFamily: 'var(--font-hanken)',
@@ -85,13 +87,13 @@ export default function HomePage() {
               fontFamily: 'var(--font-jetbrains)',
               fontSize: '12px',
               letterSpacing: '0.04em',
-              color: '#64748b',
+              color: 'var(--muted)',
               marginBottom: '36px',
             }}>
               <span style={{
                 width: 8, height: 8, borderRadius: '50%',
-                background: '#2563eb',
-                boxShadow: '0 0 0 4px rgba(37,99,235,0.14)',
+                background: 'var(--accent)',
+                boxShadow: '0 0 0 4px var(--accent-tint)',
                 flexShrink: 0,
                 display: 'inline-block',
               }} />
@@ -104,8 +106,8 @@ export default function HomePage() {
                 fontWeight: 500,
                 fontSize: '15px',
                 letterSpacing: '0.01em',
-                background: '#0f172a',
-                color: 'white',
+                background: 'var(--ink)',
+                color: 'var(--bg)',
                 padding: '13px 24px',
                 borderRadius: '8px',
                 textDecoration: 'none',
@@ -118,11 +120,11 @@ export default function HomePage() {
                 fontWeight: 500,
                 fontSize: '15px',
                 letterSpacing: '0.01em',
-                background: 'white',
-                color: '#0f172a',
+                background: 'var(--bg)',
+                color: 'var(--ink)',
                 padding: '13px 24px',
                 borderRadius: '8px',
-                border: '1px solid #e2e8f0',
+                border: '1px solid var(--border)',
                 textDecoration: 'none',
                 display: 'inline-block',
               }}>
@@ -136,10 +138,9 @@ export default function HomePage() {
             className="hero-photo"
             style={{
               aspectRatio: '4/5',
-              borderRadius: '14px',
+              borderRadius: '20px',
               overflow: 'hidden',
               position: 'relative',
-              border: '1px solid #e2e8f0',
             }}
           >
             <Image
@@ -151,75 +152,73 @@ export default function HomePage() {
             />
           </div>
         </div>
-      </div>
+      </Section>
 
       {/* ── SECTION 2: At My Best ── */}
-      <div style={{ borderTop: '1px solid #e8edf3', borderBottom: '1px solid #e8edf3', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1120, margin: '0 auto', padding: '64px 40px' }}>
-          <div style={{
-            fontFamily: 'var(--font-jetbrains)',
-            fontSize: '12px',
-            letterSpacing: '0.16em',
-            color: '#94a3b8',
-            marginBottom: '36px',
-          }}>
-            // AT MY BEST WHEN I&apos;M
-          </div>
-
-          <div
-            className="pillars-grid"
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '36px' }}
-          >
-            {[
-              { num: '01', title: 'In the field', desc: 'Executing complex deals from first call to close.' },
-              { num: '02', title: 'Building hiring strategies', desc: 'Finding and developing top sales talent.' },
-              { num: '03', title: 'Building sales systems', desc: 'Structured processes that enable teams to succeed.' },
-            ].map(({ num, title, desc }) => (
-              <div key={num} style={{ borderTop: '2px solid #0f172a', paddingTop: '18px' }}>
-                <div style={{
-                  fontFamily: 'var(--font-jetbrains)',
-                  fontSize: '13px',
-                  color: '#2563eb',
-                  marginBottom: '14px',
-                }}>
-                  {num}
-                </div>
-                <div style={{
-                  fontFamily: 'var(--font-space-grotesk)',
-                  fontWeight: 600,
-                  fontSize: '21px',
-                  color: '#0f172a',
-                  marginBottom: '8px',
-                }}>
-                  {title}
-                </div>
-                <p style={{
-                  fontSize: '15px',
-                  lineHeight: 1.55,
-                  color: '#475569',
-                  margin: 0,
-                  fontFamily: 'var(--font-hanken)',
-                }}>
-                  {desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{
-            fontFamily: 'var(--font-jetbrains)',
-            fontSize: '12px',
-            color: '#94a3b8',
-            marginTop: '40px',
-            letterSpacing: '0.04em',
-          }}>
-            Off the field — F1 &amp; Test Cricket.
-          </div>
+      <Section tinted bordered="both" width="wide" paddingY="72px">
+        <div style={{
+          fontFamily: 'var(--font-jetbrains)',
+          fontSize: '12px',
+          letterSpacing: '0.16em',
+          color: 'var(--muted)',
+          marginBottom: '36px',
+        }}>
+          // AT MY BEST WHEN I&apos;M
         </div>
-      </div>
+
+        <div
+          className="pillars-grid"
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}
+        >
+          {[
+            { num: '01', title: 'In the field', desc: 'Executing complex deals from first call to close.' },
+            { num: '02', title: 'Building hiring strategies', desc: 'Finding and developing top sales talent.' },
+            { num: '03', title: 'Building sales systems', desc: 'Structured processes that enable teams to succeed.' },
+          ].map(({ num, title, desc }) => (
+            <Card key={num} style={{ padding: '26px 24px' }}>
+              <div style={{
+                fontFamily: 'var(--font-jetbrains)',
+                fontSize: '13px',
+                color: 'var(--accent)',
+                marginBottom: '14px',
+              }}>
+                {num}
+              </div>
+              <div style={{
+                fontFamily: 'var(--font-space-grotesk)',
+                fontWeight: 600,
+                fontSize: '21px',
+                color: 'var(--ink)',
+                marginBottom: '8px',
+              }}>
+                {title}
+              </div>
+              <p style={{
+                fontSize: '15px',
+                lineHeight: 1.55,
+                color: 'var(--body)',
+                margin: 0,
+                fontFamily: 'var(--font-hanken)',
+              }}>
+                {desc}
+              </p>
+            </Card>
+          ))}
+        </div>
+
+        <div style={{
+          fontFamily: 'var(--font-jetbrains)',
+          fontSize: '12px',
+          color: 'var(--muted)',
+          marginTop: '32px',
+          letterSpacing: '0.04em',
+        }}>
+          Off the field — F1 &amp; Test Cricket.
+        </div>
+      </Section>
 
       {/* ── SECTION 3: Writings ── */}
-      <div style={{ maxWidth: 1120, margin: '0 auto', padding: '80px 40px 96px' }}>
+      <Section width="wide" paddingY="88px">
         <div style={{
           display: 'flex',
           alignItems: 'baseline',
@@ -232,7 +231,7 @@ export default function HomePage() {
             fontSize: '30px',
             letterSpacing: '-0.02em',
             margin: 0,
-            color: '#0f172a',
+            color: 'var(--ink)',
           }}>
             Writings
           </h2>
@@ -240,7 +239,7 @@ export default function HomePage() {
             fontFamily: 'var(--font-jetbrains)',
             fontSize: '12px',
             letterSpacing: '0.06em',
-            color: '#2563eb',
+            color: 'var(--accent)',
             textDecoration: 'none',
           }}>
             See all →
@@ -259,7 +258,7 @@ export default function HomePage() {
                 gap: '24px',
                 alignItems: 'center',
                 padding: '24px 8px',
-                borderTop: '1px solid #e8edf3',
+                borderTop: '1px solid var(--border)',
                 textDecoration: 'none',
                 color: 'inherit',
                 cursor: 'pointer',
@@ -270,7 +269,7 @@ export default function HomePage() {
                 style={{
                   fontFamily: 'var(--font-jetbrains)',
                   fontSize: '12px',
-                  color: '#94a3b8',
+                  color: 'var(--muted)',
                 }}
               >
                 {formatPostDate(post.date)}
@@ -281,7 +280,7 @@ export default function HomePage() {
                   fontSize: '10px',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#2563eb',
+                  color: 'var(--accent)',
                   marginBottom: '7px',
                 }}>
                   {CAT_LABEL[post.category] || post.category}
@@ -291,7 +290,7 @@ export default function HomePage() {
                   fontWeight: 500,
                   fontSize: '19px',
                   lineHeight: 1.3,
-                  color: '#0f172a',
+                  color: 'var(--ink)',
                 }}>
                   {post.title}
                 </div>
@@ -300,14 +299,14 @@ export default function HomePage() {
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: '16px',
                 textAlign: 'right',
-                color: '#94a3b8',
+                color: 'var(--muted)',
               }}>
                 →
               </span>
             </Link>
           ))}
         </div>
-      </div>
+      </Section>
     </main>
   );
 }

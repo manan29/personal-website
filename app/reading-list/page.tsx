@@ -1,5 +1,6 @@
 import { getAllBooks } from '@/lib/content';
 import type { Metadata } from 'next';
+import { Container } from '@/components/Container';
 
 export const metadata: Metadata = {
   title: 'Reading List — Manan Sachdeva',
@@ -9,12 +10,14 @@ export default function ReadingListPage() {
   const books = getAllBooks();
 
   return (
-    <main>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       <h1
         style={{
-          fontFamily: 'var(--font-ui)',
-          fontSize: '24px',
-          fontWeight: '700',
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: '32px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
+          color: 'var(--ink)',
           marginBottom: '32px',
         }}
       >
@@ -27,17 +30,17 @@ export default function ReadingListPage() {
             key={book.slug}
             style={{
               padding: '16px 0',
-              borderBottom: '1px solid #E2E0D8',
+              borderBottom: '1px solid var(--border)',
             }}
           >
             {/* Title and Author */}
             <div style={{ marginBottom: '8px' }}>
               <h2
                 style={{
-                  fontFamily: 'var(--font-lato)',
+                  fontFamily: 'var(--font-space-grotesk)',
                   fontSize: '16px',
-                  fontWeight: '700',
-                  color: '#1A1A1A',
+                  fontWeight: 600,
+                  color: 'var(--ink)',
                   display: 'inline',
                 }}
               >
@@ -45,9 +48,9 @@ export default function ReadingListPage() {
               </h2>
               <span
                 style={{
-                  fontFamily: 'var(--font-lato)',
+                  fontFamily: 'var(--font-hanken)',
                   fontSize: '16px',
-                  color: '#AAAAAA',
+                  color: 'var(--muted)',
                   marginLeft: '6px',
                 }}
               >
@@ -59,14 +62,14 @@ export default function ReadingListPage() {
             <div style={{ marginBottom: '8px' }}>
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '9.5px',
-                  fontWeight: '700',
+                  fontWeight: 700,
                   letterSpacing: '0.07em',
                   textTransform: 'uppercase',
-                  color: '#3730A3',
-                  border: '1px solid #C7D2FE',
-                  background: '#EEF2FF',
+                  color: 'var(--accent)',
+                  border: '1px solid var(--border)',
+                  background: 'var(--accent-tint)',
                   borderRadius: '3px',
                   padding: '1px 6px',
                 }}
@@ -78,10 +81,10 @@ export default function ReadingListPage() {
             {/* Why paragraph */}
             <p
               style={{
-                fontFamily: 'var(--font-lato)',
+                fontFamily: 'var(--font-hanken)',
                 fontSize: '14px',
                 lineHeight: '1.7',
-                color: '#6B6B6B',
+                color: 'var(--muted)',
               }}
             >
               {book.why}
@@ -89,6 +92,6 @@ export default function ReadingListPage() {
           </div>
         ))}
       </div>
-    </main>
+    </Container>
   );
 }

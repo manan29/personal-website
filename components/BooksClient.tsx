@@ -21,14 +21,14 @@ export function BooksClient({ books }: { books: Book[] }) {
             key={tag}
             onClick={() => setActiveFilter(tag)}
             style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-work-sans)',
               fontSize: '13px',
-              fontWeight: '500',
-              padding: '6px 12px',
-              borderRadius: '6px',
-              border: '1px solid var(--border)',
-              background: activeFilter === tag ? 'var(--accent)' : 'transparent',
-              color: activeFilter === tag ? 'white' : 'var(--text)',
+              fontWeight: 500,
+              padding: '6px 14px',
+              borderRadius: '999px',
+              border: `1px solid ${activeFilter === tag ? 'var(--accent)' : 'var(--border)'}`,
+              background: activeFilter === tag ? 'var(--accent-tint)' : 'transparent',
+              color: activeFilter === tag ? 'var(--accent)' : 'var(--body)',
               cursor: 'pointer',
             }}
           >
@@ -52,9 +52,10 @@ export function BooksClient({ books }: { books: Book[] }) {
               {/* Title */}
               <h2
                 style={{
-                  fontFamily: 'var(--font-ui)',
-                  fontSize: '16px',
-                  fontWeight: '700',
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  color: 'var(--ink)',
                   marginBottom: '2px',
                 }}
               >
@@ -64,9 +65,9 @@ export function BooksClient({ books }: { books: Book[] }) {
               {/* Author */}
               <p
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-work-sans)',
                   fontSize: '13px',
-                  color: 'var(--faint)',
+                  color: 'var(--muted)',
                   marginBottom: '8px',
                 }}
               >
@@ -76,9 +77,9 @@ export function BooksClient({ books }: { books: Book[] }) {
               {/* Tag chip */}
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '10px',
-                  fontWeight: '500',
+                  fontWeight: 500,
                   padding: '3px 10px',
                   borderRadius: '4px',
                   textTransform: 'uppercase',
@@ -95,10 +96,10 @@ export function BooksClient({ books }: { books: Book[] }) {
             {/* Body / Why */}
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-hanken)',
                 fontSize: '15px',
                 lineHeight: '1.7',
-                color: 'var(--text)',
+                color: 'var(--body)',
               }}
             >
               {book.why}

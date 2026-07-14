@@ -3,43 +3,41 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-export function Avatar() {
+export function Avatar({ size = 96 }: { size?: number }) {
   const [imageError, setImageError] = useState(false);
 
   if (imageError) {
-    // Fallback to gradient M
     return (
       <div
         style={{
-          width: '96px',
-          height: '96px',
+          width: size,
+          height: size,
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #3730A3, #4F46E5)',
+          background: 'linear-gradient(135deg, var(--accent-hover), var(--accent))',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          marginBottom: '16px',
+          flexShrink: 0,
         }}
       >
-        <span style={{ color: 'white', fontSize: '40px', fontWeight: '700' }}>M</span>
+        <span style={{ color: 'var(--bg)', fontSize: size * 0.42, fontWeight: 700 }}>M</span>
       </div>
     );
   }
 
   return (
-    <div style={{ marginBottom: '16px' }}>
-      <Image
-        src="/photo.png"
-        alt="Manan Sachdeva"
-        width={96}
-        height={96}
-        style={{
-          borderRadius: '50%',
-          objectFit: 'cover',
-        }}
-        onError={() => setImageError(true)}
-        priority
-      />
-    </div>
+    <Image
+      src="/photo.png"
+      alt="Manan Sachdeva"
+      width={size}
+      height={size}
+      style={{
+        borderRadius: '50%',
+        objectFit: 'cover',
+        flexShrink: 0,
+      }}
+      onError={() => setImageError(true)}
+      priority
+    />
   );
 }

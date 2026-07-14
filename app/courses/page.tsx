@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { Container } from '@/components/Container';
+import { Card } from '@/components/Card';
 
 export const metadata: Metadata = {
   title: 'Courses — Manan Sachdeva',
@@ -33,14 +35,15 @@ export default function CoursesPage() {
   ];
 
   return (
-    <main>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       {/* Title */}
       <h1
         style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '28px',
-          fontWeight: '700',
-          color: '#1A1A1A',
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: '32px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
+          color: 'var(--ink)',
           marginBottom: '12px',
         }}
       >
@@ -50,9 +53,9 @@ export default function CoursesPage() {
       {/* Subtitle */}
       <p
         style={{
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-hanken)',
           fontSize: '15px',
-          color: '#6B6B6B',
+          color: 'var(--muted)',
           marginBottom: '40px',
         }}
       >
@@ -60,29 +63,20 @@ export default function CoursesPage() {
       </p>
 
       {/* Course Cards */}
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {courses.map((course, index) => (
-          <div
-            key={index}
-            style={{
-              border: '1px solid #E2E0D8',
-              borderRadius: '8px',
-              padding: '24px',
-              marginBottom: '16px',
-              background: '#fff',
-            }}
-          >
+          <Card key={index} style={{ padding: '24px' }}>
             {/* Tag */}
             <div
               style={{
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-jetbrains)',
                 fontSize: '9.5px',
-                fontWeight: '700',
+                fontWeight: 700,
                 letterSpacing: '0.07em',
                 textTransform: 'uppercase',
-                color: '#AAAAAA',
-                border: '1px solid #E2E0D8',
-                background: '#F5F4EF',
+                color: 'var(--muted)',
+                border: '1px solid var(--border)',
+                background: 'var(--bg)',
                 borderRadius: '3px',
                 padding: '3px 8px',
                 display: 'inline-block',
@@ -95,10 +89,10 @@ export default function CoursesPage() {
             {/* Title */}
             <h2
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-space-grotesk)',
                 fontSize: '18px',
-                fontWeight: '700',
-                color: '#1A1A1A',
+                fontWeight: 600,
+                color: 'var(--ink)',
                 marginBottom: '8px',
               }}
             >
@@ -108,9 +102,9 @@ export default function CoursesPage() {
             {/* Description */}
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-hanken)',
                 fontSize: '14.5px',
-                color: '#6B6B6B',
+                color: 'var(--muted)',
                 lineHeight: '1.7',
                 marginBottom: '16px',
               }}
@@ -121,10 +115,10 @@ export default function CoursesPage() {
             {/* Price */}
             <div
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-space-grotesk)',
                 fontSize: '22px',
-                fontWeight: '700',
-                color: '#3730A3',
+                fontWeight: 700,
+                color: 'var(--accent)',
                 marginBottom: '16px',
               }}
             >
@@ -135,29 +129,29 @@ export default function CoursesPage() {
             <button
               disabled={!course.available}
               style={{
-                background: course.available ? '#3730A3' : '#E2E0D8',
-                color: course.available ? '#fff' : '#AAAAAA',
+                background: course.available ? 'var(--ink)' : 'var(--border)',
+                color: course.available ? 'var(--bg)' : 'var(--muted)',
                 padding: '10px 24px',
-                borderRadius: '4px',
-                fontWeight: '600',
+                borderRadius: '6px',
+                fontWeight: 600,
                 fontSize: '14px',
                 border: 'none',
                 cursor: course.available ? 'pointer' : 'not-allowed',
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-work-sans)',
               }}
             >
               {course.available ? 'Buy on Gumroad →' : 'Notify Me'}
             </button>
-          </div>
+          </Card>
         ))}
       </div>
 
       {/* Note */}
       <p
         style={{
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-hanken)',
           fontSize: '13px',
-          color: '#6B6B6B',
+          color: 'var(--muted)',
           fontStyle: 'italic',
           marginTop: '32px',
         }}
@@ -168,7 +162,7 @@ export default function CoursesPage() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: '#3730A3',
+            color: 'var(--accent)',
             textDecoration: 'underline',
           }}
         >
@@ -176,6 +170,6 @@ export default function CoursesPage() {
         </a>{' '}
         to get notified.
       </p>
-    </main>
+    </Container>
   );
 }

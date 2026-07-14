@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllNotes } from '@/lib/content';
 import type { Metadata } from 'next';
+import { Container } from '@/components/Container';
 
 export const metadata: Metadata = {
   title: 'Notes — Manan Sachdeva',
@@ -10,12 +11,14 @@ export default function NotesPage() {
   const notes = getAllNotes();
 
   return (
-    <main>
+    <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
       <h1
         style={{
-          fontFamily: 'var(--font-ui)',
-          fontSize: '24px',
-          fontWeight: '700',
+          fontFamily: 'var(--font-space-grotesk)',
+          fontSize: '32px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
+          color: 'var(--ink)',
           marginBottom: '32px',
         }}
       >
@@ -31,8 +34,8 @@ export default function NotesPage() {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              padding: '10px 0',
-              borderBottom: '1px solid #E2E0D8',
+              padding: '14px 0',
+              borderBottom: '1px solid var(--border)',
               gap: '12px',
               textDecoration: 'none',
               color: 'inherit',
@@ -40,19 +43,19 @@ export default function NotesPage() {
           >
             <span
               style={{
-                fontFamily: 'var(--font-lato)',
+                fontFamily: 'var(--font-hanken)',
                 fontSize: '15.5px',
-                color: '#1A1A1A',
-                fontWeight: '400',
+                color: 'var(--ink)',
+                fontWeight: 400,
               }}
             >
               {note.title}
             </span>
             <div
               style={{
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-jetbrains)',
                 fontSize: '11.5px',
-                color: '#AAAAAA',
+                color: 'var(--muted)',
                 flexShrink: 0,
                 display: 'flex',
                 gap: '8px',
@@ -61,14 +64,14 @@ export default function NotesPage() {
             >
               <span
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-jetbrains)',
                   fontSize: '9.5px',
-                  fontWeight: '700',
+                  fontWeight: 700,
                   letterSpacing: '0.07em',
                   textTransform: 'uppercase',
-                  color: '#3730A3',
-                  border: '1px solid #C7D2FE',
-                  background: '#EEF2FF',
+                  color: 'var(--accent)',
+                  border: '1px solid var(--border)',
+                  background: 'var(--accent-tint)',
                   borderRadius: '3px',
                   padding: '1px 6px',
                 }}
@@ -80,6 +83,6 @@ export default function NotesPage() {
           </Link>
         ))}
       </div>
-    </main>
+    </Container>
   );
 }

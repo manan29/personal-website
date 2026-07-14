@@ -1,23 +1,27 @@
+import { Container } from '@/components/Container';
+
 export default function BankingDealPage() {
   return (
     <>
       <style>{`
-        .prose p { font-size: 15.5px; line-height: 1.78; color: #1a1917; margin-bottom: 0.85rem; }
-        .prose h2 { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 400; letter-spacing: -0.01em; color: #1a1917; margin: 2.25rem 0 0.65rem; line-height: 1.3; }
-        .prose h3 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; color: #9b9890; margin: 1.75rem 0 0.5rem; }
-        .divider { height: 1px; background: #e5e3dc; margin: 2.25rem 0; }
-        .insight { border-left: 2px solid #d0cec6; padding: 0.7rem 1.2rem; margin: 1.25rem 0; background: #f3f2ee; border-radius: 0 8px 8px 0; }
-        .insight p { margin: 0; font-size: 14.5px; color: #6b6960; line-height: 1.65; }
+        .prose p { font-size: 15.5px; line-height: 1.78; color: var(--body); margin-bottom: 0.85rem; }
+        .prose h2 { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); margin: 2.25rem 0 0.65rem; line-height: 1.3; }
+        .prose h3 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin: 1.75rem 0 0.5rem; }
+        .divider { height: 1px; background: var(--border); margin: 2.25rem 0; }
+        .insight { border-left: 2px solid var(--border); padding: 0.7rem 1.2rem; margin: 1.25rem 0; background: var(--bg-panel); border-radius: 0 8px 8px 0; }
+        .insight p { margin: 0; font-size: 14.5px; color: var(--muted); line-height: 1.65; }
         .prose ul { list-style: none; padding: 0; margin: 0.4rem 0 0.9rem; }
-        .prose ul li { padding: 4px 0 4px 18px; position: relative; font-size: 15px; color: #1a1917; line-height: 1.6; }
-        .prose ul li::before { content: "→"; position: absolute; left: 0; color: #9b9890; font-size: 12px; top: 6px; }
-        .closing { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #e5e3dc; font-size: 15px; color: #6b6960; font-style: italic; font-family: Georgia, serif; line-height: 1.7; }
-        .article-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6960; margin-bottom: 0.75rem; }
-        .article-subtitle { font-size: 1rem; color: #6b6960; margin-bottom: 1.75rem; max-width: 560px; line-height: 1.6; }
-        .article-meta { display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 12.5px; color: #9b9890; padding-bottom: 1.75rem; border-bottom: 1px solid #e5e3dc; margin-bottom: 2rem; }
-        .breadcrumb { font-size: 12px; color: #9b9890; margin-bottom: 2rem; display: flex; align-items: center; gap: 6px; }
-        .breadcrumb a { color: #6b6960; text-decoration: none; }
+        .prose ul li { padding: 4px 0 4px 18px; position: relative; font-size: 15px; color: var(--body); line-height: 1.6; }
+        .prose ul li::before { content: "→"; position: absolute; left: 0; color: var(--muted); font-size: 12px; top: 6px; }
+        .closing { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 15px; color: var(--muted); font-style: italic; font-family: Georgia, serif; line-height: 1.7; }
+        .article-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+        .article-subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 1.75rem; max-width: 560px; line-height: 1.6; }
+        .article-meta { display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 12.5px; color: var(--muted); padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 2rem; display: flex; align-items: center; gap: 6px; }
+        .breadcrumb a { color: var(--muted); text-decoration: none; }
       `}</style>
+
+      <Container width="narrow" style={{ padding: '72px 40px 96px' }}>
 
       <div className="breadcrumb">
         <a href="/">Home</a>
@@ -29,7 +33,7 @@ export default function BankingDealPage() {
 
       <div className="article-eyebrow">Complex Deals · Enterprise Sales</div>
 
-      <h1 style={{fontFamily:`Georgia, serif`,fontSize:`2.1rem`,fontWeight:400,lineHeight:1.25,letterSpacing:`-0.02em`,color:`#1a1917`,marginBottom:`0.75rem`,maxWidth:`680px`}}>
+      <h1 style={{fontFamily:`Georgia, serif`,fontSize:`2.1rem`,fontWeight:400,lineHeight:1.25,letterSpacing:`-0.02em`,color:`var(--ink)`,marginBottom:`0.75rem`,maxWidth:`680px`}}>
         How We Closed a $70K Banking Deal <em>(And What It Taught Us About Enterprise Sales)</em>
       </h1>
 
@@ -97,9 +101,9 @@ export default function BankingDealPage() {
         <h3>How We Define a Complex Deal (P1 Deal)</h3>
         <p>We classify a deal as P1 if it meets any of the following:</p>
         <ol style={{paddingLeft:'20px',marginBottom:'0.9rem'}}>
-          <li style={{fontSize:'15px',color:'#1a1917',lineHeight:'1.6',marginBottom:'8px'}}>API-heavy, volume-based deals (regardless of company size)</li>
-          <li style={{fontSize:'15px',color:'#1a1917',lineHeight:'1.6',marginBottom:'8px'}}>SaaS platform deals over $10K on volume or number of users</li>
-          <li style={{fontSize:'15px',color:'#1a1917',lineHeight:'1.6',marginBottom:'8px'}}>Business-critical integrations that are central to customer operations</li>
+          <li style={{fontSize:'15px',color:'var(--body)',lineHeight:'1.6',marginBottom:'8px'}}>API-heavy, volume-based deals (regardless of company size)</li>
+          <li style={{fontSize:'15px',color:'var(--body)',lineHeight:'1.6',marginBottom:'8px'}}>SaaS platform deals over $10K on volume or number of users</li>
+          <li style={{fontSize:'15px',color:'var(--body)',lineHeight:'1.6',marginBottom:'8px'}}>Business-critical integrations that are central to customer operations</li>
         </ol>
         <p><strong>Why the special treatment?</strong></p>
         <ul>
@@ -219,37 +223,37 @@ export default function BankingDealPage() {
         <div style={{overflowX:'auto',margin:'1.5rem 0'}}>
           <table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px',fontFamily:'system-ui'}}>
             <thead>
-              <tr style={{borderBottom:'2px solid #C7D2FE',background:'#EEF2FF'}}>
-                <th style={{padding:'10px 14px',textAlign:'left',color:'#3730A3',fontWeight:600}}>Stakeholder</th>
-                <th style={{padding:'10px 14px',textAlign:'left',color:'#3730A3',fontWeight:600}}>Role</th>
-                <th style={{padding:'10px 14px',textAlign:'left',color:'#3730A3',fontWeight:600}}>Authority</th>
+              <tr style={{borderBottom:'2px solid var(--accent-tint)',background:'var(--bg-panel)'}}>
+                <th style={{padding:'10px 14px',textAlign:'left',color:'var(--accent)',fontWeight:600}}>Stakeholder</th>
+                <th style={{padding:'10px 14px',textAlign:'left',color:'var(--accent)',fontWeight:600}}>Role</th>
+                <th style={{padding:'10px 14px',textAlign:'left',color:'var(--accent)',fontWeight:600}}>Authority</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{borderBottom:'1px solid #E5E3DC'}}>
-                <td style={{padding:'10px 14px',color:'#1A1A1A',fontWeight:500}}>VP Digital</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Champion, day-to-day owner</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Platform selection, budget approval</td>
+              <tr style={{borderBottom:'1px solid var(--border)'}}>
+                <td style={{padding:'10px 14px',color:'var(--ink)',fontWeight:500}}>VP Digital</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Champion, day-to-day owner</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Platform selection, budget approval</td>
               </tr>
-              <tr style={{borderBottom:'1px solid #E5E3DC',background:'#F9F8FF'}}>
-                <td style={{padding:'10px 14px',color:'#1A1A1A',fontWeight:500}}>President, Digital Division</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Executive sponsor</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Final business approval</td>
+              <tr style={{borderBottom:'1px solid var(--border)',background:'var(--bg-panel)'}}>
+                <td style={{padding:'10px 14px',color:'var(--ink)',fontWeight:500}}>President, Digital Division</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Executive sponsor</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Final business approval</td>
               </tr>
-              <tr style={{borderBottom:'1px solid #E5E3DC'}}>
-                <td style={{padding:'10px 14px',color:'#1A1A1A',fontWeight:500}}>FDIC Compliance Committee</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Gatekeeper (6 members)</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Formal vendor approval</td>
+              <tr style={{borderBottom:'1px solid var(--border)'}}>
+                <td style={{padding:'10px 14px',color:'var(--ink)',fontWeight:500}}>FDIC Compliance Committee</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Gatekeeper (6 members)</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Formal vendor approval</td>
               </tr>
-              <tr style={{borderBottom:'1px solid #E5E3DC',background:'#F9F8FF'}}>
-                <td style={{padding:'10px 14px',color:'#1A1A1A',fontWeight:500}}>Compliance Officer</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Due diligence lead</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Security and compliance clearance</td>
+              <tr style={{borderBottom:'1px solid var(--border)',background:'var(--bg-panel)'}}>
+                <td style={{padding:'10px 14px',color:'var(--ink)',fontWeight:500}}>Compliance Officer</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Due diligence lead</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Security and compliance clearance</td>
               </tr>
               <tr>
-                <td style={{padding:'10px 14px',color:'#1A1A1A',fontWeight:500}}>Board of Directors</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Final governance</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Strategic approval</td>
+                <td style={{padding:'10px 14px',color:'var(--ink)',fontWeight:500}}>Board of Directors</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Final governance</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Strategic approval</td>
               </tr>
             </tbody>
           </table>
@@ -369,31 +373,31 @@ export default function BankingDealPage() {
         <div style={{overflowX:'auto',margin:'1.5rem 0'}}>
           <table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px',fontFamily:'system-ui'}}>
             <thead>
-              <tr style={{borderBottom:'2px solid #C7D2FE',background:'#EEF2FF'}}>
-                <th style={{padding:'10px 14px',textAlign:'left',color:'#3730A3',fontWeight:600}}>Date</th>
-                <th style={{padding:'10px 14px',textAlign:'left',color:'#3730A3',fontWeight:600}}>Milestone</th>
+              <tr style={{borderBottom:'2px solid var(--accent-tint)',background:'var(--bg-panel)'}}>
+                <th style={{padding:'10px 14px',textAlign:'left',color:'var(--accent)',fontWeight:600}}>Date</th>
+                <th style={{padding:'10px 14px',textAlign:'left',color:'var(--accent)',fontWeight:600}}>Milestone</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{borderBottom:'1px solid #E5E3DC'}}>
-                <td style={{padding:'10px 14px',color:'#3730A3',fontWeight:500}}>December 2025</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Sign contract and pay implementation fee</td>
+              <tr style={{borderBottom:'1px solid var(--border)'}}>
+                <td style={{padding:'10px 14px',color:'var(--accent)',fontWeight:500}}>December 2025</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Sign contract and pay implementation fee</td>
               </tr>
-              <tr style={{borderBottom:'1px solid #E5E3DC',background:'#F9F8FF'}}>
-                <td style={{padding:'10px 14px',color:'#3730A3',fontWeight:500}}>Q1 2026</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Engineering integration begins</td>
+              <tr style={{borderBottom:'1px solid var(--border)',background:'var(--bg-panel)'}}>
+                <td style={{padding:'10px 14px',color:'var(--accent)',fontWeight:500}}>Q1 2026</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Engineering integration begins</td>
               </tr>
-              <tr style={{borderBottom:'1px solid #E5E3DC'}}>
-                <td style={{padding:'10px 14px',color:'#3730A3',fontWeight:500}}>Q2 2026</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Usage-based billing starts (50% of envelope volume)</td>
+              <tr style={{borderBottom:'1px solid var(--border)'}}>
+                <td style={{padding:'10px 14px',color:'var(--accent)',fontWeight:500}}>Q2 2026</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Usage-based billing starts (50% of envelope volume)</td>
               </tr>
-              <tr style={{borderBottom:'1px solid #E5E3DC',background:'#F9F8FF'}}>
-                <td style={{padding:'10px 14px',color:'#3730A3',fontWeight:500}}>Q3 2026</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Full volume goes live</td>
+              <tr style={{borderBottom:'1px solid var(--border)',background:'var(--bg-panel)'}}>
+                <td style={{padding:'10px 14px',color:'var(--accent)',fontWeight:500}}>Q3 2026</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Full volume goes live</td>
               </tr>
               <tr>
-                <td style={{padding:'10px 14px',color:'#3730A3',fontWeight:500}}>Jan 2027</td>
-                <td style={{padding:'10px 14px',color:'#6B7280'}}>Year 2 full pricing begins</td>
+                <td style={{padding:'10px 14px',color:'var(--accent)',fontWeight:500}}>Jan 2027</td>
+                <td style={{padding:'10px 14px',color:'var(--muted)'}}>Year 2 full pricing begins</td>
               </tr>
             </tbody>
           </table>
@@ -510,6 +514,7 @@ export default function BankingDealPage() {
         </div>
 
       </div>
+      </Container>
     </>
   );
 }
