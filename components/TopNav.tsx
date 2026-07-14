@@ -58,10 +58,10 @@ export function TopNav() {
       {/* Right: nav links */}
       <nav style={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
         {[
-          { href: '/about', label: 'About Me' },
+          { href: '/about', label: 'More About Me' },
           { href: '/about#experience', label: 'Experience' },
         ].map(({ href, label }) => {
-          const active = href.startsWith('/about') ? pathname === '/about' || pathname.startsWith('/about') : pathname === href;
+          const active = href === '/about' && pathname === '/about';
           return (
             <Link
               key={href}

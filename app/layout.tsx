@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Hanken_Grotesk, Work_Sans, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
+import "@fontsource-variable/mona-sans";
 import "./globals.css";
 import { TopNav } from "@/components/TopNav";
 import { Footer } from "@/components/Footer";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'], weight: ['400','500','600','700'], variable: '--font-space-grotesk'
-})
-const hankenGrotesk = Hanken_Grotesk({
-  subsets: ['latin'], weight: ['400','500','600'], variable: '--font-hanken'
-})
-const workSans = Work_Sans({
-  subsets: ['latin'], weight: ['400','500','600'], variable: '--font-work-sans'
+const inter = Inter({
+  subsets: ['latin'], weight: ['400','500','600','700'], variable: '--font-inter'
 })
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'], weight: ['400','500','600'], variable: '--font-jetbrains'
@@ -37,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${hankenGrotesk.variable} ${workSans.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased">
         <TopNav />
         {children}

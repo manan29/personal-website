@@ -24,6 +24,10 @@
   --container-max: 1200px;
   --container-narrow: 880px;
   --container-wide: 1440px;
+
+  --font-space-grotesk: 'Mona Sans Variable', sans-serif;
+  --font-hanken: var(--font-inter), sans-serif;
+  --font-work-sans: var(--font-inter), sans-serif;
 }
 
 * { box-sizing: border-box; }
