@@ -59,9 +59,9 @@ export function TopNav() {
       <nav style={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
         {[
           { href: '/about', label: 'More About Me' },
-          { href: '/about#experience', label: 'Experience' },
+          { href: '/experience', label: 'Experience' },
         ].map(({ href, label }) => {
-          const active = href === '/about' && pathname === '/about';
+          const active = pathname === href;
           return (
             <Link
               key={href}
