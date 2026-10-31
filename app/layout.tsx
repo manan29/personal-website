@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from 'next/font/google'
-import "@fontsource-variable/mona-sans";
+import { Inter, JetBrains_Mono, Source_Serif_4 } from 'next/font/google'
 import "./globals.css";
 import { TopNav } from "@/components/TopNav";
 import { Footer } from "@/components/Footer";
@@ -10,6 +9,9 @@ const inter = Inter({
 })
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'], weight: ['400','500','600'], variable: '--font-jetbrains'
+})
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'], weight: ['500','600','700'], style: ['normal','italic'], variable: '--font-source-serif'
 })
 
 export const metadata: Metadata = {
@@ -32,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${sourceSerif.variable}`}>
       <body className="antialiased">
         <TopNav />
         {children}

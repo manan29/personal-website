@@ -15,7 +15,7 @@ export function Card({
       style={{
         background: 'var(--bg-panel)',
         border: '1px solid var(--border)',
-        borderRadius: 10,
+        borderRadius: 6,
         padding: padded ? '20px 22px' : 0,
         ...style,
       }}

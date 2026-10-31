@@ -7,9 +7,9 @@
   --body: #3A3830;
   --muted: #6E6B62;
   --border: #E7E4DA;
-  --accent: #B8862E;
-  --accent-hover: #9C7226;
-  --accent-tint: #F3E9D6;
+  --accent: #3C3A72;
+  --accent-hover: #31305D;
+  --accent-tint: rgba(60, 58, 114, 0.14);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -25,7 +25,10 @@
   --container-narrow: 880px;
   --container-wide: 1440px;
 
-  --font-space-grotesk: 'Mona Sans Variable', sans-serif;
+  /* Note: historically named after Space Grotesk / Mona Sans — this is now
+     the site's serif headline font (Source Serif 4). Kept under the old
+     name so every heading across the site picks it up from one token. */
+  --font-space-grotesk: var(--font-source-serif), 'Source Serif 4 Fallback', serif;
   --font-hanken: var(--font-inter), sans-serif;
   --font-work-sans: var(--font-inter), sans-serif;
 }
@@ -92,6 +95,9 @@ a { text-decoration: none; }
     gap: 10px;
   }
   .grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+  .story-row {
     grid-template-columns: 1fr !important;
   }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import type { BlogPost } from '@/lib/content';
@@ -30,7 +30,7 @@ function formatPostDate(dateStr: string): string {
 
 function estimateReadTime(post: BlogPost): string {
   // approximate — use summary length as proxy if no body available
-  const words = ((post as any).body || post.summary || '').split(/\s+/).length;
+  const words = (post.body || post.summary || '').split(/\s+/).length;
   const mins = Math.max(1, Math.ceil(words / 200));
   return `${mins} min`;
 }
@@ -51,28 +51,29 @@ export default function InsightsClient({ posts, initialCategory }: { posts: Blog
 
   return (
     <>
-      {/* Filter chips */}
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '8px', flexWrap: 'wrap' }}>
-        {FILTERS.map(f => {
+      {/* Filter list */}
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap', alignItems: 'center', fontSize: '13px', fontFamily: 'var(--font-work-sans)' }}>
+        {FILTERS.map((f, i) => {
           const active = selected === f.id;
           return (
-            <button
-              key={f.id}
-              onClick={() => selectFilter(f.id)}
-              style={{
-                fontFamily: 'var(--font-work-sans)',
-                fontWeight: 500,
-                fontSize: '14px',
-                padding: '8px 18px',
-                borderRadius: '999px',
-                cursor: 'pointer',
-                border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
-                background: active ? 'var(--accent-tint)' : 'var(--bg)',
-                color: active ? 'var(--accent)' : 'var(--body)',
-              }}
-            >
-              {f.label}
-            </button>
+            <Fragment key={f.id}>
+              {i > 0 && <span style={{ color: 'var(--border)' }}>·</span>}
+              <button
+                onClick={() => selectFilter(f.id)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  fontSize: 'inherit',
+                  fontWeight: active ? 600 : 400,
+                  color: active ? 'var(--ink)' : 'var(--muted)',
+                }}
+              >
+                {f.label}
+              </button>
+            </Fragment>
           );
         })}
       </div>

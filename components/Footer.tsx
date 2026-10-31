@@ -20,7 +20,7 @@ export function Footer() {
         >
           <span>Manan Sachdeva © 2026</span>
           <div style={{ display: 'flex', gap: '24px' }}>
-            <a href="/insights" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Insights</a>
+            <a href="/insights" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Field Notes</a>
             <a href="/about" style={{ color: 'var(--muted)', textDecoration: 'none' }}>About</a>
             <a href="https://www.linkedin.com/in/manansachdeva/" target="_blank" rel="noopener" style={{ color: 'var(--muted)', textDecoration: 'none' }}>LinkedIn ↗</a>
           </div>
