@@ -1,28 +1,10 @@
 import Link from 'next/link';
-import { getAllBlogPosts } from '@/lib/content';
 import { experience } from '@/lib/experienceData';
 import type { Metadata } from 'next';
 import { Section } from '@/components/Section';
-import { Card } from '@/components/Card';
 
 export const metadata: Metadata = {
   title: 'Manan Sachdeva - Sales · GTM · Talent Building',
-};
-
-function formatPostDate(dateStr: string): string {
-  try {
-    const d = new Date(dateStr);
-    if (!isNaN(d.getTime())) {
-      return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-    }
-  } catch {}
-  return dateStr;
-}
-
-const CAT_LABEL: Record<string, string> = {
-  'large-deal-learnings': 'Large Deal Learnings',
-  'hiring-top-talent': 'Hiring & Talent',
-  'sales-systems': 'Sales Systems',
 };
 
 function yearRange(dates: string): string {
@@ -55,8 +37,6 @@ const STORY_COPY: Record<string, { headline: string; body: string }> = {
 };
 
 export default function HomePage() {
-  const allPosts = getAllBlogPosts();
-
   return (
     <main>
       {/* ── SECTION 1: Hero ── */}
@@ -204,160 +184,6 @@ export default function HomePage() {
               </div>
             );
           })}
-        </div>
-      </Section>
-
-      {/* ── SECTION 3: At My Best ── */}
-      <Section tinted bordered="both" width="wide" paddingY="72px">
-        <div style={{
-          fontFamily: 'var(--font-jetbrains)',
-          fontSize: '12px',
-          letterSpacing: '0.16em',
-          color: 'var(--muted)',
-          marginBottom: '36px',
-        }}>
-          {'// AT MY BEST WHEN I\u2019M'}
-        </div>
-
-        <div
-          className="pillars-grid"
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}
-        >
-          {[
-            { num: '01', title: 'In the field', desc: 'Executing complex deals from first call to close.' },
-            { num: '02', title: 'Building hiring strategies', desc: 'Finding and developing top sales talent.' },
-            { num: '03', title: 'Building sales systems', desc: 'Structured processes that enable teams to succeed.' },
-          ].map(({ num, title, desc }) => (
-            <Card key={num} style={{ padding: '26px 24px' }}>
-              <div style={{
-                fontFamily: 'var(--font-jetbrains)',
-                fontSize: '13px',
-                color: 'var(--accent)',
-                marginBottom: '14px',
-              }}>
-                {num}
-              </div>
-              <div style={{
-                fontFamily: 'var(--font-space-grotesk)',
-                fontWeight: 600,
-                fontSize: '21px',
-                color: 'var(--ink)',
-                marginBottom: '8px',
-              }}>
-                {title}
-              </div>
-              <p style={{
-                fontSize: '15px',
-                lineHeight: 1.55,
-                color: 'var(--body)',
-                margin: 0,
-                fontFamily: 'var(--font-hanken)',
-              }}>
-                {desc}
-              </p>
-            </Card>
-          ))}
-        </div>
-
-        <div style={{
-          fontFamily: 'var(--font-jetbrains)',
-          fontSize: '12px',
-          color: 'var(--muted)',
-          marginTop: '32px',
-          letterSpacing: '0.04em',
-        }}>
-          Off the field: F1 and Test Cricket.
-        </div>
-      </Section>
-
-      {/* ── SECTION 4: Writings ── */}
-      <Section width="wide" paddingY="88px">
-        <div style={{
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: 'space-between',
-          marginBottom: '8px',
-        }}>
-          <h2 style={{
-            fontFamily: 'var(--font-space-grotesk)',
-            fontWeight: 600,
-            fontSize: '30px',
-            letterSpacing: '-0.02em',
-            margin: 0,
-            color: 'var(--ink)',
-          }}>
-            Writings
-          </h2>
-          <Link href="/insights" style={{
-            fontFamily: 'var(--font-jetbrains)',
-            fontSize: '12px',
-            letterSpacing: '0.06em',
-            color: 'var(--accent)',
-            textDecoration: 'none',
-          }}>
-            See all field notes →
-          </Link>
-        </div>
-
-        <div>
-          {allPosts.map((post) => (
-            <Link
-              key={`${post.category}/${post.slug}`}
-              href={`/blog/${post.category}/${post.slug}`}
-              className="article-row"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '120px 1fr 24px',
-                gap: '24px',
-                alignItems: 'center',
-                padding: '24px 8px',
-                borderTop: '1px solid var(--border)',
-                textDecoration: 'none',
-                color: 'inherit',
-                cursor: 'pointer',
-              }}
-            >
-              <span
-                className="article-date"
-                style={{
-                  fontFamily: 'var(--font-jetbrains)',
-                  fontSize: '12px',
-                  color: 'var(--muted)',
-                }}
-              >
-                {formatPostDate(post.date)}
-              </span>
-              <div>
-                <div style={{
-                  fontFamily: 'var(--font-jetbrains)',
-                  fontSize: '10px',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--accent)',
-                  marginBottom: '7px',
-                }}>
-                  {CAT_LABEL[post.category] || post.category}
-                </div>
-                <div style={{
-                  fontFamily: 'var(--font-space-grotesk)',
-                  fontWeight: 500,
-                  fontSize: '19px',
-                  lineHeight: 1.3,
-                  color: 'var(--ink)',
-                }}>
-                  {post.title}
-                </div>
-              </div>
-              <span style={{
-                fontFamily: 'var(--font-jetbrains)',
-                fontSize: '16px',
-                textAlign: 'right',
-                color: 'var(--muted)',
-              }}>
-                →
-              </span>
-            </Link>
-          ))}
         </div>
       </Section>
     </main>
